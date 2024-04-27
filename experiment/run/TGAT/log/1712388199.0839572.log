@@ -1,0 +1,7 @@
+2024-04-06 15:23:19,084 - root - INFO - Namespace(agg_method='attn', attn_mode='prod', bs=1000, data='mooc', drop_out=0.1, gpu=3, lr=0.0001, n_degree=20, n_epoch=50, n_head=2, n_layer=1, node_dim=100, prefix='mooc', time='time', time_dim=100, uniform=True)
+2024-04-06 15:23:21,109 - module - INFO - Aggregation uses attention model
+2024-04-06 15:23:21,125 - module - INFO - Using scaled prod attention
+2024-04-06 15:23:21,126 - module - INFO - Using time encoding
+2024-04-06 15:23:23,252 - root - INFO - num of training instances: 227485
+2024-04-06 15:23:23,252 - root - INFO - num of batches per epoch: 228
+2024-04-06 15:23:23,259 - root - INFO - start 0 epoch

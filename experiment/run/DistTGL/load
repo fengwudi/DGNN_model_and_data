@@ -1,0 +1,7 @@
+usage: gen_minibatch.py [-h] [--data DATA]
+                        [--train_neg_samples TRAIN_NEG_SAMPLES]
+                        [--neg_sets NEG_SETS] [--seed SEED] [--gen_eval]
+                        [--eval_cap EVAL_CAP]
+                        [--minibatch_parallelism MINIBATCH_PARALLELISM]
+                        [--edge_classification]
+gen_minibatch.py: error: unrecognized arguments: _dgraphfin.log

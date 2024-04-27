@@ -1,0 +1,121 @@
+2024-03-21 21:51:35,682 - root - INFO - Namespace(agg_method='attn', attn_mode='prod', bs=1000, data='wikipedia', drop_out=0.1, gpu=2, lr=0.0001, n_degree=20, n_epoch=50, n_head=2, n_layer=1, node_dim=100, prefix='wiki', time='time', time_dim=100, uniform=True)
+2024-03-21 21:51:36,389 - module - INFO - Aggregation uses attention model
+2024-03-21 21:51:36,402 - module - INFO - Using scaled prod attention
+2024-03-21 21:51:36,402 - module - INFO - Using time encoding
+2024-03-21 21:51:37,440 - root - INFO - num of training instances: 81029
+2024-03-21 21:51:37,440 - root - INFO - num of batches per epoch: 82
+2024-03-21 21:51:37,442 - root - INFO - start 0 epoch
+2024-03-21 21:51:51,069 - root - INFO - epoch: 0:
+2024-03-21 21:51:51,069 - root - INFO - Epoch mean loss: 1.118352226367811
+2024-03-21 21:51:51,069 - root - INFO - train acc: 0.6764878048780488, val acc: 0.6384306260575295, new node val acc: 0.6661263507896924
+2024-03-21 21:51:51,069 - root - INFO - train auc: 0.7605904342956694, val auc: 0.7103842357586013, new node val auc: 0.74278331947908
+2024-03-21 21:51:51,069 - root - INFO - train ap: 0.7813170670350071, val ap: 0.7551318001579661, new node val ap: 0.7872099171678253
+2024-03-21 21:51:51,458 - root - INFO - start 1 epoch
+2024-03-21 21:52:04,481 - root - INFO - epoch: 1:
+2024-03-21 21:52:04,481 - root - INFO - Epoch mean loss: 1.0301096999063724
+2024-03-21 21:52:04,481 - root - INFO - train acc: 0.7160418118466898, val acc: 0.6844331641285957, new node val acc: 0.7067331670822942
+2024-03-21 21:52:04,482 - root - INFO - train auc: 0.8053368786709807, val auc: 0.7625211505922166, new node val auc: 0.7880631753948462
+2024-03-21 21:52:04,482 - root - INFO - train ap: 0.8194666944898852, val ap: 0.7930831521431858, new node val ap: 0.820879219475475
+2024-03-21 21:52:04,870 - root - INFO - start 2 epoch
+2024-03-21 21:52:17,884 - root - INFO - epoch: 2:
+2024-03-21 21:52:17,884 - root - INFO - Epoch mean loss: 0.9929302981713923
+2024-03-21 21:52:17,884 - root - INFO - train acc: 0.7384695121951219, val acc: 0.6912225042301186, new node val acc: 0.7013715710723192
+2024-03-21 21:52:17,884 - root - INFO - train auc: 0.8269629099054256, val auc: 0.7750888324873096, new node val auc: 0.7914824050983651
+2024-03-21 21:52:17,884 - root - INFO - train ap: 0.8356755874598694, val ap: 0.7989950681347581, new node val ap: 0.8167222824915712
+2024-03-21 21:52:18,273 - root - INFO - start 3 epoch
+2024-03-21 21:52:31,230 - root - INFO - epoch: 3:
+2024-03-21 21:52:31,230 - root - INFO - Epoch mean loss: 0.9623188078403473
+2024-03-21 21:52:31,231 - root - INFO - train acc: 0.7521959930313589, val acc: 0.7021362098138747, new node val acc: 0.7078969243557772
+2024-03-21 21:52:31,231 - root - INFO - train auc: 0.842231169611747, val auc: 0.7889981669486745, new node val auc: 0.8006095871432529
+2024-03-21 21:52:31,231 - root - INFO - train ap: 0.8493973325583886, val ap: 0.8094449928701453, new node val ap: 0.8250362513109789
+2024-03-21 21:52:31,617 - root - INFO - start 4 epoch
+2024-03-21 21:52:44,586 - root - INFO - epoch: 4:
+2024-03-21 21:52:44,586 - root - INFO - Epoch mean loss: 0.9437358270331127
+2024-03-21 21:52:44,586 - root - INFO - train acc: 0.759525261324042, val acc: 0.7126057529610829, new node val acc: 0.7189110556940982
+2024-03-21 21:52:44,586 - root - INFO - train auc: 0.8498580139372821, val auc: 0.7973441906373379, new node val auc: 0.8080368523136604
+2024-03-21 21:52:44,586 - root - INFO - train ap: 0.8561974316477706, val ap: 0.819079500210314, new node val ap: 0.8303736809404718
+2024-03-21 21:52:44,973 - root - INFO - start 5 epoch
+2024-03-21 21:52:57,884 - root - INFO - epoch: 5:
+2024-03-21 21:52:57,884 - root - INFO - Epoch mean loss: 0.915388162543134
+2024-03-21 21:52:57,884 - root - INFO - train acc: 0.7700069686411151, val acc: 0.7259517766497463, new node val acc: 0.7314630091438071
+2024-03-21 21:52:57,884 - root - INFO - train auc: 0.8605119773519164, val auc: 0.8077890580936267, new node val auc: 0.817105846494874
+2024-03-21 21:52:57,884 - root - INFO - train ap: 0.8667357581242978, val ap: 0.8282117287434861, new node val ap: 0.8404020406580723
+2024-03-21 21:52:58,269 - root - INFO - start 6 epoch
+2024-03-21 21:53:11,164 - root - INFO - epoch: 6:
+2024-03-21 21:53:11,164 - root - INFO - Epoch mean loss: 0.9068652842102981
+2024-03-21 21:53:11,164 - root - INFO - train acc: 0.7733606271777004, val acc: 0.720748730964467, new node val acc: 0.733956774729842
+2024-03-21 21:53:11,164 - root - INFO - train auc: 0.8639160413140867, val auc: 0.8096531302876481, new node val auc: 0.8240454419506787
+2024-03-21 21:53:11,164 - root - INFO - train ap: 0.8696816962599051, val ap: 0.8289613315188014, new node val ap: 0.8445563774398995
+2024-03-21 21:53:11,549 - root - INFO - start 7 epoch
+2024-03-21 21:53:24,454 - root - INFO - epoch: 7:
+2024-03-21 21:53:24,454 - root - INFO - Epoch mean loss: 0.9053214395918497
+2024-03-21 21:53:24,454 - root - INFO - train acc: 0.7734878048780488, val acc: 0.7323181049069375, new node val acc: 0.7426433915211971
+2024-03-21 21:53:24,454 - root - INFO - train auc: 0.8634654581881532, val auc: 0.8187196841511563, new node val auc: 0.8288930451648655
+2024-03-21 21:53:24,454 - root - INFO - train ap: 0.8678361161116259, val ap: 0.8374562943796496, new node val ap: 0.8485455439531068
+2024-03-21 21:53:24,837 - root - INFO - start 8 epoch
+2024-03-21 21:53:37,721 - root - INFO - epoch: 8:
+2024-03-21 21:53:37,721 - root - INFO - Epoch mean loss: 0.8822320852337814
+2024-03-21 21:53:37,721 - root - INFO - train acc: 0.781705574912892, val acc: 0.7332698815566835, new node val acc: 0.743308395677473
+2024-03-21 21:53:37,721 - root - INFO - train auc: 0.8725076479591838, val auc: 0.8187535250987028, new node val auc: 0.826920199501247
+2024-03-21 21:53:37,721 - root - INFO - train ap: 0.8769877901786035, val ap: 0.8351455157989306, new node val ap: 0.844200270540613
+2024-03-21 21:53:38,107 - root - INFO - start 9 epoch
+2024-03-21 21:53:50,999 - root - INFO - epoch: 9:
+2024-03-21 21:53:50,999 - root - INFO - Epoch mean loss: 0.8750640779006772
+2024-03-21 21:53:50,999 - root - INFO - train acc: 0.7853449477351917, val acc: 0.730520304568528, new node val acc: 0.7413965087281794
+2024-03-21 21:53:50,999 - root - INFO - train auc: 0.8746988593827774, val auc: 0.8171813310772701, new node val auc: 0.8277971737323359
+2024-03-21 21:53:50,999 - root - INFO - train ap: 0.8790908311321923, val ap: 0.8338108233704259, new node val ap: 0.8466588406455384
+2024-03-21 21:53:51,383 - root - INFO - start 10 epoch
+2024-03-21 21:54:04,369 - root - INFO - epoch: 10:
+2024-03-21 21:54:04,370 - root - INFO - Epoch mean loss: 0.8773881763946719
+2024-03-21 21:54:04,370 - root - INFO - train acc: 0.7844808362369338, val acc: 0.7373519458544839, new node val acc: 0.7425602660016625
+2024-03-21 21:54:04,370 - root - INFO - train auc: 0.8742742473867597, val auc: 0.8235265087422448, new node val auc: 0.8301759490163481
+2024-03-21 21:54:04,370 - root - INFO - train ap: 0.878536119600815, val ap: 0.8402723960558559, new node val ap: 0.8483666046961446
+2024-03-21 21:54:04,758 - root - INFO - start 11 epoch
+2024-03-21 21:54:17,726 - root - INFO - epoch: 11:
+2024-03-21 21:54:17,726 - root - INFO - Epoch mean loss: 0.8669666676986508
+2024-03-21 21:54:17,726 - root - INFO - train acc: 0.7877055749128921, val acc: 0.7421954314720811, new node val acc: 0.7454280964256026
+2024-03-21 21:54:17,726 - root - INFO - train auc: 0.878197474489796, val auc: 0.8270685279187817, new node val auc: 0.833416458852868
+2024-03-21 21:54:17,726 - root - INFO - train ap: 0.8817699486850485, val ap: 0.8420777904024169, new node val ap: 0.8513588042735288
+2024-03-21 21:54:18,110 - root - INFO - start 12 epoch
+2024-03-21 21:54:31,059 - root - INFO - epoch: 12:
+2024-03-21 21:54:31,060 - root - INFO - Epoch mean loss: 0.8515018798956057
+2024-03-21 21:54:31,060 - root - INFO - train acc: 0.7906925087108013, val acc: 0.7434433164128594, new node val acc: 0.7441396508728179
+2024-03-21 21:54:31,060 - root - INFO - train auc: 0.8826375175460428, val auc: 0.8288832487309644, new node val auc: 0.8292283180936548
+2024-03-21 21:54:31,060 - root - INFO - train ap: 0.8865312988768769, val ap: 0.844123637169947, new node val ap: 0.8461036962726899
+2024-03-21 21:54:31,440 - root - INFO - start 13 epoch
+2024-03-21 21:54:44,399 - root - INFO - epoch: 13:
+2024-03-21 21:54:44,399 - root - INFO - Epoch mean loss: 0.8534748401583695
+2024-03-21 21:54:44,399 - root - INFO - train acc: 0.7922587108013939, val acc: 0.7451353637901861, new node val acc: 0.7482959268495429
+2024-03-21 21:54:44,399 - root - INFO - train auc: 0.8824261177202588, val auc: 0.8304145516074449, new node val auc: 0.8362787475755057
+2024-03-21 21:54:44,399 - root - INFO - train ap: 0.8864530976633903, val ap: 0.8453923652048995, new node val ap: 0.853971526419467
+2024-03-21 21:54:44,786 - root - INFO - start 14 epoch
+2024-03-21 21:54:57,727 - root - INFO - epoch: 14:
+2024-03-21 21:54:57,727 - root - INFO - Epoch mean loss: 0.8433907591715092
+2024-03-21 21:54:57,727 - root - INFO - train acc: 0.7948571428571428, val acc: 0.7499788494077835, new node val acc: 0.7536575228595179
+2024-03-21 21:54:57,727 - root - INFO - train auc: 0.8853101533101044, val auc: 0.8357550761421318, new node val auc: 0.8396536436686063
+2024-03-21 21:54:57,727 - root - INFO - train ap: 0.8893703557913728, val ap: 0.8504069290224244, new node val ap: 0.8562633841700431
+2024-03-21 21:54:58,111 - root - INFO - start 15 epoch
+2024-03-21 21:55:11,045 - root - INFO - epoch: 15:
+2024-03-21 21:55:11,045 - root - INFO - Epoch mean loss: 0.8400881682954183
+2024-03-21 21:55:11,045 - root - INFO - train acc: 0.7958249128919861, val acc: 0.7505710659898478, new node val acc: 0.7577722360764755
+2024-03-21 21:55:11,045 - root - INFO - train auc: 0.886047300398208, val auc: 0.8382332205301749, new node val auc: 0.8470864505403157
+2024-03-21 21:55:11,045 - root - INFO - train ap: 0.890700295841595, val ap: 0.8528683100742623, new node val ap: 0.8626889777413752
+2024-03-21 21:55:11,427 - root - INFO - start 16 epoch
+2024-03-21 21:55:24,380 - root - INFO - epoch: 16:
+2024-03-21 21:55:24,381 - root - INFO - Epoch mean loss: 0.835702946273292
+2024-03-21 21:55:24,381 - root - INFO - train acc: 0.7978188153310106, val acc: 0.7521573604060914, new node val acc: 0.7597256857855361
+2024-03-21 21:55:24,381 - root - INFO - train auc: 0.8880036560477852, val auc: 0.837599407783418, new node val auc: 0.8458035466888335
+2024-03-21 21:55:24,381 - root - INFO - train ap: 0.8925125889290432, val ap: 0.8523671393614383, new node val ap: 0.8623622487017997
+2024-03-21 21:55:24,766 - root - INFO - start 17 epoch
+2024-03-21 21:55:37,707 - root - INFO - epoch: 17:
+2024-03-21 21:55:37,707 - root - INFO - Epoch mean loss: 0.8225336191130848
+2024-03-21 21:55:37,707 - root - INFO - train acc: 0.8001472125435541, val acc: 0.7544416243654822, new node val acc: 0.7594763092269325
+2024-03-21 21:55:37,707 - root - INFO - train auc: 0.8914738993280239, val auc: 0.8413705583756346, new node val auc: 0.8464533111665282
+2024-03-21 21:55:37,707 - root - INFO - train ap: 0.8962680343600196, val ap: 0.8562388830848686, new node val ap: 0.8635780660179176
+2024-03-21 21:55:38,091 - root - INFO - start 18 epoch
+2024-03-21 21:55:51,022 - root - INFO - epoch: 18:
+2024-03-21 21:55:51,022 - root - INFO - Epoch mean loss: 0.8269830309763188
+2024-03-21 21:55:51,022 - root - INFO - train acc: 0.7996489547038328, val acc: 0.756979695431472, new node val acc: 0.7561512884455529
+2024-03-21 21:55:51,022 - root - INFO - train auc: 0.8906554329268292, val auc: 0.8435025380710661, new node val auc: 0.8460099750623441
+2024-03-21 21:55:51,022 - root - INFO - train ap: 0.8956594376096364, val ap: 0.857053330701239, new node val ap: 0.863201214485224
+2024-03-21 21:55:51,405 - root - INFO - start 19 epoch

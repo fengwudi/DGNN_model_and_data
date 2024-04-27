@@ -1,0 +1,25 @@
+2024-03-22 11:03:15,278 - root - INFO - Namespace(agg_method='attn', attn_mode='prod', bs=1000, data='wikipedia', drop_out=0.1, gpu=2, lr=0.0001, n_degree=20, n_epoch=2, n_head=2, n_layer=1, node_dim=100, prefix='wiki', time='time', time_dim=100, uniform=True)
+2024-03-22 11:03:15,981 - module - INFO - Aggregation uses attention model
+2024-03-22 11:03:15,994 - module - INFO - Using scaled prod attention
+2024-03-22 11:03:15,994 - module - INFO - Using time encoding
+2024-03-22 11:03:17,023 - root - INFO - num of training instances: 81029
+2024-03-22 11:03:17,024 - root - INFO - num of batches per epoch: 82
+2024-03-22 11:03:17,026 - root - INFO - start 0 epoch
+2024-03-22 11:03:32,210 - root - INFO - epoch: 0
+2024-03-22 11:03:32,211 - root - INFO - train time: 5.06 s
+2024-03-22 11:03:32,211 - root - INFO - Epoch mean loss: 1.1325553306719152
+2024-03-22 11:03:32,211 - root - INFO - train acc: 0.6690, val acc: 0.6262, new node val acc: 0.6514
+2024-03-22 11:03:32,211 - root - INFO - train auc: 0.7513, val auc: 0.6974, new node val auc: 0.7295
+2024-03-22 11:03:32,211 - root - INFO - train ap: 0.7724, val ap: 0.7424, new node val ap: 0.7757
+2024-03-22 11:03:32,211 - root - INFO - train recall: 0.6288, val recall: 0.6315, new node val recall: 0.6579
+2024-03-22 11:03:32,818 - root - INFO - start 1 epoch
+2024-03-22 11:03:47,295 - root - INFO - epoch: 1
+2024-03-22 11:03:47,295 - root - INFO - train time: 4.36 s
+2024-03-22 11:03:47,295 - root - INFO - Epoch mean loss: 1.0519452880068523
+2024-03-22 11:03:47,295 - root - INFO - train acc: 0.7054, val acc: 0.6543, new node val acc: 0.6735
+2024-03-22 11:03:47,295 - root - INFO - train auc: 0.7931, val auc: 0.7291, new node val auc: 0.7508
+2024-03-22 11:03:47,295 - root - INFO - train ap: 0.8079, val ap: 0.7674, new node val ap: 0.7909
+2024-03-22 11:03:47,296 - root - INFO - train recall: 0.6901, val recall: 0.6536, new node val recall: 0.6730
+2024-03-22 11:03:56,682 - root - INFO - Test statistics: Old nodes -- acc: 0.6255, auc: 0.6851, ap: 0.7255, recall: 0.6458
+2024-03-22 11:03:56,682 - root - INFO - Test statistics: New nodes -- acc: 0.6313, auc: 0.6967, ap: 0.7400, recall: 0.6575
+2024-03-22 11:03:56,682 - root - INFO - memory use: 797.39 MB

@@ -1,0 +1,31 @@
+2024-03-26 16:29:43,951 - root - INFO - Namespace(agg_method='attn', attn_mode='prod', bs=1000, data='wikipedia', drop_out=0.1, gpu=0, lr=0.0001, n_degree=20, n_epoch=2, n_head=2, n_layer=1, node_dim=100, prefix='wiki', time='time', time_dim=100, uniform=True)
+2024-03-26 16:29:44,716 - module - INFO - Aggregation uses attention model
+2024-03-26 16:29:44,731 - module - INFO - Using scaled prod attention
+2024-03-26 16:29:44,731 - module - INFO - Using time encoding
+2024-03-26 16:29:46,788 - root - INFO - num of training instances: 81029
+2024-03-26 16:29:46,788 - root - INFO - num of batches per epoch: 82
+2024-03-26 16:29:46,791 - root - INFO - start 0 epoch
+2024-03-26 16:30:01,668 - root - INFO - epoch: 0
+2024-03-26 16:30:01,669 - root - INFO - total memory use: 797.62 MB
+2024-03-26 16:30:01,669 - root - INFO - train time: 5.35 s
+2024-03-26 16:30:01,669 - root - INFO - Epoch mean loss: 1.1176469936603453
+2024-03-26 16:30:01,669 - root - INFO - train acc: 0.6750, val acc: 0.6282, new node val acc: 0.6401
+2024-03-26 16:30:01,669 - root - INFO - train auc: 0.7577, val auc: 0.7095, new node val auc: 0.7299
+2024-03-26 16:30:01,669 - root - INFO - train ap: 0.7793, val ap: 0.7540, new node val ap: 0.7763
+2024-03-26 16:30:01,669 - root - INFO - train recall: 0.6336, val recall: 0.7005, new node val recall: 0.7166
+2024-03-26 16:30:02,477 - root - INFO - start 1 epoch
+2024-03-26 16:30:16,867 - root - INFO - epoch: 1
+2024-03-26 16:30:16,867 - root - INFO - total memory use: 1595.23 MB
+2024-03-26 16:30:16,867 - root - INFO - train time: 4.86 s
+2024-03-26 16:30:16,867 - root - INFO - Epoch mean loss: 1.0340759623341444
+2024-03-26 16:30:16,867 - root - INFO - train acc: 0.7169, val acc: 0.6690, new node val acc: 0.6873
+2024-03-26 16:30:16,867 - root - INFO - train auc: 0.8041, val auc: 0.7486, new node val auc: 0.7710
+2024-03-26 16:30:16,867 - root - INFO - train ap: 0.8194, val ap: 0.7826, new node val ap: 0.8056
+2024-03-26 16:30:16,867 - root - INFO - train recall: 0.7072, val recall: 0.6897, new node val recall: 0.7126
+2024-03-26 16:30:26,305 - root - INFO - Test statistics: Old nodes -- acc: 0.6409, auc: 0.7083, ap: 0.7440, recall: 0.6729
+2024-03-26 16:30:26,306 - root - INFO - Test statistics: New nodes -- acc: 0.6416, auc: 0.7142, ap: 0.7532, recall: 0.6815
+2024-03-26 16:30:26,306 - root - INFO - total time: 10.21 s
+2024-03-26 16:30:26,306 - root - INFO - complete average time: 5.11 s
+2024-03-26 16:30:26,306 - root - INFO - average memory use: 797.62 MB
+2024-03-26 16:30:26,306 - root - INFO - Saving TGAN model
+2024-03-26 16:30:27,088 - root - INFO - TGAN models saved

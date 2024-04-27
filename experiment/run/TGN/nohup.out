@@ -1,0 +1,158 @@
+usage: TGN self-supervised training [-h] [-d DATA] [--bs BS] [--prefix PREFIX]
+                                    [--n_degree N_DEGREE] [--n_head N_HEAD]
+                                    [--n_epoch N_EPOCH] [--n_layer N_LAYER]
+                                    [--lr LR] [--patience PATIENCE]
+                                    [--n_runs N_RUNS] [--drop_out DROP_OUT]
+                                    [--gpu GPU] [--node_dim NODE_DIM]
+                                    [--time_dim TIME_DIM]
+                                    [--backprop_every BACKPROP_EVERY]
+                                    [--use_memory]
+                                    [--embedding_module {graph_attention,graph_sum,identity,time}]
+                                    [--message_function {mlp,identity}]
+                                    [--aggregator AGGREGATOR]
+                                    [--memory_update_at_end]
+                                    [--message_dim MESSAGE_DIM]
+                                    [--memory_dim MEMORY_DIM]
+                                    [--different_new_nodes] [--uniform]
+                                    [--randomize_features]
+                                    [--use_destination_embedding_in_message]
+                                    [--use_source_embedding_in_message]
+                                    [--n_neg N_NEG] [--use_validation]
+                                    [--new_node]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d DATA, --data DATA  Dataset name (eg. wikipedia or reddit)
+  --bs BS               Batch_size
+  --prefix PREFIX       Prefix to name the checkpoints
+  --n_degree N_DEGREE   Number of neighbors to sample
+  --n_head N_HEAD       Number of heads used in attention layer
+  --n_epoch N_EPOCH     Number of epochs
+  --n_layer N_LAYER     Number of network layers
+  --lr LR               Learning rate
+  --patience PATIENCE   Patience for early stopping
+  --n_runs N_RUNS       Number of runs
+  --drop_out DROP_OUT   Dropout probability
+  --gpu GPU             Idx for the gpu to use
+  --node_dim NODE_DIM   Dimensions of the node embedding
+  --time_dim TIME_DIM   Dimensions of the time embedding
+  --backprop_every BACKPROP_EVERY
+                        Every how many batches to backprop
+  --use_memory          Whether to augment the model with a node memory
+  --embedding_module {graph_attention,graph_sum,identity,time}
+                        Type of embedding module
+  --message_function {mlp,identity}
+                        Type of message function
+  --aggregator AGGREGATOR
+                        Type of message aggregator
+  --memory_update_at_end
+                        Whether to update memory at the end or at the start of
+                        the batch
+  --message_dim MESSAGE_DIM
+                        Dimensions of the messages
+  --memory_dim MEMORY_DIM
+                        Dimensions of the memory for each user
+  --different_new_nodes
+                        Whether to use disjoint set of new nodes for train and
+                        val
+  --uniform             take uniform sampling from temporal neighbors
+  --randomize_features  Whether to randomize node features
+  --use_destination_embedding_in_message
+                        Whether to use the embedding of the destination node
+                        as part of the message
+  --use_source_embedding_in_message
+                        Whether to use the embedding of the source node as
+                        part of the message
+  --n_neg N_NEG
+  --use_validation      Whether to use a validation set
+  --new_node            model new node
+usage: TGN self-supervised training [-h] [-d DATA] [--bs BS] [--prefix PREFIX]
+                                    [--n_degree N_DEGREE] [--n_head N_HEAD]
+                                    [--n_epoch N_EPOCH] [--n_layer N_LAYER]
+                                    [--lr LR] [--patience PATIENCE]
+                                    [--n_runs N_RUNS] [--drop_out DROP_OUT]
+                                    [--gpu GPU] [--node_dim NODE_DIM]
+                                    [--time_dim TIME_DIM]
+                                    [--backprop_every BACKPROP_EVERY]
+                                    [--use_memory]
+                                    [--embedding_module {graph_attention,graph_sum,identity,time}]
+                                    [--message_function {mlp,identity}]
+                                    [--aggregator AGGREGATOR]
+                                    [--memory_update_at_end]
+                                    [--message_dim MESSAGE_DIM]
+                                    [--memory_dim MEMORY_DIM]
+                                    [--different_new_nodes] [--uniform]
+                                    [--randomize_features]
+                                    [--use_destination_embedding_in_message]
+                                    [--use_source_embedding_in_message]
+                                    [--n_neg N_NEG] [--use_validation]
+                                    [--new_node]
+TGN self-supervised training: error: argument --gpu: expected one argument
+usage: TGN self-supervised training [-h] [-d DATA] [--bs BS] [--prefix PREFIX]
+                                    [--n_degree N_DEGREE] [--n_head N_HEAD]
+                                    [--n_epoch N_EPOCH] [--n_layer N_LAYER]
+                                    [--lr LR] [--patience PATIENCE]
+                                    [--n_runs N_RUNS] [--drop_out DROP_OUT]
+                                    [--gpu GPU] [--node_dim NODE_DIM]
+                                    [--time_dim TIME_DIM]
+                                    [--backprop_every BACKPROP_EVERY]
+                                    [--use_memory]
+                                    [--embedding_module {graph_attention,graph_sum,identity,time}]
+                                    [--message_function {mlp,identity}]
+                                    [--aggregator AGGREGATOR]
+                                    [--memory_update_at_end]
+                                    [--message_dim MESSAGE_DIM]
+                                    [--memory_dim MEMORY_DIM]
+                                    [--different_new_nodes] [--uniform]
+                                    [--randomize_features]
+                                    [--use_destination_embedding_in_message]
+                                    [--use_source_embedding_in_message]
+                                    [--n_neg N_NEG] [--use_validation]
+                                    [--new_node]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d DATA, --data DATA  Dataset name (eg. wikipedia or reddit)
+  --bs BS               Batch_size
+  --prefix PREFIX       Prefix to name the checkpoints
+  --n_degree N_DEGREE   Number of neighbors to sample
+  --n_head N_HEAD       Number of heads used in attention layer
+  --n_epoch N_EPOCH     Number of epochs
+  --n_layer N_LAYER     Number of network layers
+  --lr LR               Learning rate
+  --patience PATIENCE   Patience for early stopping
+  --n_runs N_RUNS       Number of runs
+  --drop_out DROP_OUT   Dropout probability
+  --gpu GPU             Idx for the gpu to use
+  --node_dim NODE_DIM   Dimensions of the node embedding
+  --time_dim TIME_DIM   Dimensions of the time embedding
+  --backprop_every BACKPROP_EVERY
+                        Every how many batches to backprop
+  --use_memory          Whether to augment the model with a node memory
+  --embedding_module {graph_attention,graph_sum,identity,time}
+                        Type of embedding module
+  --message_function {mlp,identity}
+                        Type of message function
+  --aggregator AGGREGATOR
+                        Type of message aggregator
+  --memory_update_at_end
+                        Whether to update memory at the end or at the start of
+                        the batch
+  --message_dim MESSAGE_DIM
+                        Dimensions of the messages
+  --memory_dim MEMORY_DIM
+                        Dimensions of the memory for each user
+  --different_new_nodes
+                        Whether to use disjoint set of new nodes for train and
+                        val
+  --uniform             take uniform sampling from temporal neighbors
+  --randomize_features  Whether to randomize node features
+  --use_destination_embedding_in_message
+                        Whether to use the embedding of the destination node
+                        as part of the message
+  --use_source_embedding_in_message
+                        Whether to use the embedding of the source node as
+                        part of the message
+  --n_neg N_NEG
+  --use_validation      Whether to use a validation set
+  --new_node            model new node

@@ -1,0 +1,7 @@
+--2023-11-30 21:21:15--  https://s3.us-west-2.amazonaws.com/dgl-data/dataset/tgl/MAG/node_features.pt
+Resolving s3.us-west-2.amazonaws.com (s3.us-west-2.amazonaws.com)... 52.92.194.184, 52.92.227.64, 52.92.225.144, ...
+Connecting to s3.us-west-2.amazonaws.com (s3.us-west-2.amazonaws.com)|52.92.194.184|:443... connected.
+HTTP request sent, awaiting response... 416 Requested Range Not Satisfiable
+
+    The file is already fully retrieved; nothing to do.
+

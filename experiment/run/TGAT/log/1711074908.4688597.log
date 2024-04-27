@@ -1,0 +1,18 @@
+2024-03-22 10:35:08,468 - root - INFO - Namespace(agg_method='attn', attn_mode='prod', bs=1000, data='wikipedia', drop_out=0.1, gpu=2, lr=0.0001, n_degree=20, n_epoch=1, n_head=2, n_layer=1, node_dim=100, prefix='wiki', time='time', time_dim=100, uniform=True)
+2024-03-22 10:35:09,169 - module - INFO - Aggregation uses attention model
+2024-03-22 10:35:09,182 - module - INFO - Using scaled prod attention
+2024-03-22 10:35:09,182 - module - INFO - Using time encoding
+2024-03-22 10:35:10,223 - root - INFO - num of training instances: 81029
+2024-03-22 10:35:10,224 - root - INFO - num of batches per epoch: 82
+2024-03-22 10:35:10,226 - root - INFO - start 0 epoch
+2024-03-22 10:35:25,047 - root - INFO - epoch: 0:
+2024-03-22 10:35:25,047 - root - INFO - Epoch mean loss: 1.1322103876893113
+2024-03-22 10:35:25,047 - root - INFO - train acc: 0.6740496515679443, val acc: 0.6286802030456853, new node val acc: 0.6551537822111388
+2024-03-22 10:35:25,047 - root - INFO - train auc: 0.7568923036336487, val auc: 0.7074027072758038, new node val auc: 0.7440953172623995
+2024-03-22 10:35:25,047 - root - INFO - train ap: 0.7739010772598578, val ap: 0.7515757503010544, new node val ap: 0.7886211732419861
+2024-03-22 10:35:25,047 - root - INFO - train recall: 0.6521777003484321, val recall: 0.7031302876480542, new node val recall: 0.7278470490440565
+2024-03-22 10:35:34,288 - root - INFO - Test statistics: Old nodes -- acc: 0.6012478849407783, auc: 0.6652157360406092, ap: 0.7118632504924157, recall: 0.6930203045685279
+2024-03-22 10:35:34,289 - root - INFO - Test statistics: New nodes -- acc: 0.6048471562538059, auc: 0.6763517580945423, ap: 0.7264801688421879, recall: 0.6945195469492144
+2024-03-22 10:35:34,289 - root - INFO - memory use:797388800
+2024-03-22 10:35:34,289 - root - INFO - Saving TGAN model
+2024-03-22 10:35:34,681 - root - INFO - TGAN models saved

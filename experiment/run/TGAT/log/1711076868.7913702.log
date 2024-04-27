@@ -1,0 +1,31 @@
+2024-03-22 11:07:48,791 - root - INFO - Namespace(agg_method='attn', attn_mode='prod', bs=1000, data='Flights', drop_out=0.1, gpu=3, lr=0.0001, n_degree=20, n_epoch=50, n_head=2, n_layer=1, node_dim=100, prefix='flight', time='time', time_dim=100, uniform=True)
+2024-03-22 11:07:58,554 - module - INFO - Aggregation uses attention model
+2024-03-22 11:07:58,567 - module - INFO - Using scaled prod attention
+2024-03-22 11:07:58,567 - module - INFO - Using time encoding
+2024-03-22 11:07:59,819 - root - INFO - num of training instances: 1102788
+2024-03-22 11:07:59,819 - root - INFO - num of batches per epoch: 1103
+2024-03-22 11:07:59,851 - root - INFO - start 0 epoch
+2024-03-22 11:10:40,520 - root - INFO - epoch: 0
+2024-03-22 11:10:40,521 - root - INFO - train time: 61.06 s
+2024-03-22 11:10:40,521 - root - INFO - Epoch mean loss: 1.0821061640680647
+2024-03-22 11:10:40,521 - root - INFO - train acc: 0.7199, val acc: 0.6272, new node val acc: 0.6309
+2024-03-22 11:10:40,521 - root - INFO - train auc: 0.7740, val auc: 0.7029, new node val auc: 0.7054
+2024-03-22 11:10:40,521 - root - INFO - train ap: 0.7227, val ap: 0.6799, new node val ap: 0.6822
+2024-03-22 11:10:40,521 - root - INFO - train recall: 0.8272, val recall: 0.5662, new node val recall: 0.5710
+2024-03-22 11:10:45,001 - root - INFO - start 1 epoch
+2024-03-22 11:13:25,487 - root - INFO - epoch: 1
+2024-03-22 11:13:25,487 - root - INFO - train time: 60.53 s
+2024-03-22 11:13:25,488 - root - INFO - Epoch mean loss: 1.073950886456186
+2024-03-22 11:13:25,488 - root - INFO - train acc: 0.7233, val acc: 0.6310, new node val acc: 0.6306
+2024-03-22 11:13:25,488 - root - INFO - train auc: 0.7780, val auc: 0.7036, new node val auc: 0.7021
+2024-03-22 11:13:25,488 - root - INFO - train ap: 0.7277, val ap: 0.6798, new node val ap: 0.6792
+2024-03-22 11:13:25,488 - root - INFO - train recall: 0.8338, val recall: 0.5877, new node val recall: 0.5898
+2024-03-22 11:13:29,951 - root - INFO - start 2 epoch
+2024-03-22 11:16:10,534 - root - INFO - epoch: 2
+2024-03-22 11:16:10,534 - root - INFO - train time: 60.58 s
+2024-03-22 11:16:10,534 - root - INFO - Epoch mean loss: 1.0747951254018955
+2024-03-22 11:16:10,534 - root - INFO - train acc: 0.7228, val acc: 0.6346, new node val acc: 0.6382
+2024-03-22 11:16:10,535 - root - INFO - train auc: 0.7768, val auc: 0.7036, new node val auc: 0.7070
+2024-03-22 11:16:10,535 - root - INFO - train ap: 0.7258, val ap: 0.6798, new node val ap: 0.6833
+2024-03-22 11:16:10,535 - root - INFO - train recall: 0.8329, val recall: 0.6160, new node val recall: 0.6206
+2024-03-22 11:16:15,001 - root - INFO - start 3 epoch

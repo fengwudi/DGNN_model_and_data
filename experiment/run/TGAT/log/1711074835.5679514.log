@@ -1,0 +1,21 @@
+2024-03-22 10:33:55,568 - root - INFO - Namespace(agg_method='attn', attn_mode='prod', bs=1000, data='wikipedia', drop_out=0.1, gpu=2, lr=0.0001, n_degree=20, n_epoch=2, n_head=2, n_layer=1, node_dim=100, prefix='wiki', time='time', time_dim=100, uniform=True)
+2024-03-22 10:33:56,281 - module - INFO - Aggregation uses attention model
+2024-03-22 10:33:56,294 - module - INFO - Using scaled prod attention
+2024-03-22 10:33:56,294 - module - INFO - Using time encoding
+2024-03-22 10:33:57,331 - root - INFO - num of training instances: 81029
+2024-03-22 10:33:57,331 - root - INFO - num of batches per epoch: 82
+2024-03-22 10:33:57,334 - root - INFO - start 0 epoch
+2024-03-22 10:34:12,095 - root - INFO - epoch: 0:
+2024-03-22 10:34:12,095 - root - INFO - Epoch mean loss: 1.1914577178838777
+2024-03-22 10:34:12,095 - root - INFO - train acc: 0.6516550522648085, val acc: 0.6244923857868021, new node val acc: 0.6397755610972569
+2024-03-22 10:34:12,095 - root - INFO - train auc: 0.7224094710054753, val auc: 0.6967681895093063, new node val auc: 0.7216181767802716
+2024-03-22 10:34:12,095 - root - INFO - train ap: 0.7361415724695062, val ap: 0.7419032281348018, new node val ap: 0.7686785159257866
+2024-03-22 10:34:12,095 - root - INFO - train recall: 0.6333048780487806, val recall: 0.6856175972927242, new node val recall: 0.6963424771404821
+2024-03-22 10:34:12,698 - root - INFO - start 1 epoch
+2024-03-22 10:34:26,772 - root - INFO - epoch: 1:
+2024-03-22 10:34:26,772 - root - INFO - Epoch mean loss: 1.0263438166641607
+2024-03-22 10:34:26,772 - root - INFO - train acc: 0.7246045296167247, val acc: 0.6766285956006768, new node val acc: 0.6958852867830424
+2024-03-22 10:34:26,772 - root - INFO - train auc: 0.8123069491040319, val auc: 0.7513635081782291, new node val auc: 0.7748642283180937
+2024-03-22 10:34:26,773 - root - INFO - train ap: 0.8244156444084054, val ap: 0.784415485829209, new node val ap: 0.8079154421021534
+2024-03-22 10:34:26,773 - root - INFO - train recall: 0.7121271777003485, val recall: 0.6609983079526227, new node val recall: 0.6881961762261015
+2024-03-22 10:34:35,959 - root - INFO - Test statistics: Old nodes -- acc: 0.6493866328257191, auc: 0.7161357868020305, ap: 0.7485903219588096, recall: 0.6436125211505922

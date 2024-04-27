@@ -1,0 +1,56 @@
+2024-04-07 16:06:05,582 - root - INFO - Namespace(agg_method='attn', attn_mode='prod', bs=1000, data='wikipedia', drop_out=0.1, gpu=3, lr=0.0003, n_degree=20, n_epoch=15, n_head=2, n_layer=1, n_neg=1, new_node=False, node_dim=None, prefix='wiki', time='time', time_dim=None, tune=False, uniform=True)
+2024-04-07 16:06:05,762 - root - INFO - Training use all train data
+2024-04-07 16:06:07,004 - module - INFO - Aggregation uses attention model
+2024-04-07 16:06:07,030 - module - INFO - Using scaled prod attention
+2024-04-07 16:06:07,030 - module - INFO - Using time encoding
+2024-04-07 16:06:09,702 - root - DEBUG - num of training instances: 133853
+2024-04-07 16:06:09,702 - root - DEBUG - num of batches per epoch: 134
+2024-04-07 16:06:09,705 - root - INFO - loading saved TGAN model
+2024-04-07 16:06:15,427 - root - INFO - TGAN models loaded
+2024-04-07 16:06:15,427 - root - INFO - Start training node classification task
+2024-04-07 16:06:24,572 - root - INFO - train auc: 0.7015, test auc: 0.6345
+2024-04-07 16:06:24,573 - root - INFO - train f1: 0.0030, test f1: 0.0030
+2024-04-07 16:06:24,573 - root - INFO - train ap: 0.0000, test ap: 0.0000
+2024-04-07 16:06:33,135 - root - INFO - train auc: 0.7091, test auc: 0.6192
+2024-04-07 16:06:33,136 - root - INFO - train f1: 0.0031, test f1: 0.0029
+2024-04-07 16:06:33,136 - root - INFO - train ap: 0.0000, test ap: 0.0000
+2024-04-07 16:06:41,696 - root - INFO - train auc: 0.7143, test auc: 0.6466
+2024-04-07 16:06:41,696 - root - INFO - train f1: 0.0032, test f1: 0.0032
+2024-04-07 16:06:41,696 - root - INFO - train ap: 0.0000, test ap: 0.0000
+2024-04-07 16:06:50,165 - root - INFO - train auc: 0.7064, test auc: 0.6231
+2024-04-07 16:06:50,166 - root - INFO - train f1: 0.0033, test f1: 0.0031
+2024-04-07 16:06:50,166 - root - INFO - train ap: 0.0000, test ap: 0.0000
+2024-04-07 16:06:58,590 - root - INFO - train auc: 0.7140, test auc: 0.6313
+2024-04-07 16:06:58,590 - root - INFO - train f1: 0.0033, test f1: 0.0031
+2024-04-07 16:06:58,590 - root - INFO - train ap: 0.0000, test ap: 0.0000
+2024-04-07 16:07:07,074 - root - INFO - train auc: 0.7202, test auc: 0.6240
+2024-04-07 16:07:07,074 - root - INFO - train f1: 0.0034, test f1: 0.0031
+2024-04-07 16:07:07,074 - root - INFO - train ap: 0.0000, test ap: 0.0000
+2024-04-07 16:07:15,555 - root - INFO - train auc: 0.7165, test auc: 0.6425
+2024-04-07 16:07:15,555 - root - INFO - train f1: 0.0035, test f1: 0.0034
+2024-04-07 16:07:15,555 - root - INFO - train ap: 0.0000, test ap: 0.0000
+2024-04-07 16:07:24,005 - root - INFO - train auc: 0.7262, test auc: 0.6127
+2024-04-07 16:07:24,005 - root - INFO - train f1: 0.0034, test f1: 0.0033
+2024-04-07 16:07:24,005 - root - INFO - train ap: 0.0000, test ap: 0.0000
+2024-04-07 16:07:32,366 - root - INFO - train auc: 0.7333, test auc: 0.6460
+2024-04-07 16:07:32,366 - root - INFO - train f1: 0.0036, test f1: 0.0035
+2024-04-07 16:07:32,366 - root - INFO - train ap: 0.0000, test ap: 0.0000
+2024-04-07 16:07:40,770 - root - INFO - train auc: 0.7342, test auc: 0.6461
+2024-04-07 16:07:40,770 - root - INFO - train f1: 0.0040, test f1: 0.0034
+2024-04-07 16:07:40,770 - root - INFO - train ap: 0.0000, test ap: 0.0000
+2024-04-07 16:07:49,044 - root - INFO - train auc: 0.7426, test auc: 0.6478
+2024-04-07 16:07:49,044 - root - INFO - train f1: 0.0041, test f1: 0.0034
+2024-04-07 16:07:49,044 - root - INFO - train ap: 0.0000, test ap: 0.0000
+2024-04-07 16:07:57,349 - root - INFO - train auc: 0.7428, test auc: 0.6212
+2024-04-07 16:07:57,349 - root - INFO - train f1: 0.0038, test f1: 0.0033
+2024-04-07 16:07:57,349 - root - INFO - train ap: 0.0000, test ap: 0.0000
+2024-04-07 16:08:05,728 - root - INFO - train auc: 0.7522, test auc: 0.6446
+2024-04-07 16:08:05,729 - root - INFO - train f1: 0.0042, test f1: 0.0034
+2024-04-07 16:08:05,729 - root - INFO - train ap: 0.0000, test ap: 0.0000
+2024-04-07 16:08:14,213 - root - INFO - train auc: 0.7503, test auc: 0.6386
+2024-04-07 16:08:14,213 - root - INFO - train f1: 0.0044, test f1: 0.0037
+2024-04-07 16:08:14,213 - root - INFO - train ap: 0.0000, test ap: 0.0000
+2024-04-07 16:08:22,644 - root - INFO - train auc: 0.7561, test auc: 0.6774
+2024-04-07 16:08:22,645 - root - INFO - train f1: 0.0044, test f1: 0.0039
+2024-04-07 16:08:22,645 - root - INFO - train ap: 0.0000, test ap: 0.0000
+2024-04-07 16:08:23,325 - root - INFO - test auc: 0.6821, test f1: 0.004088323292560867, test ap: 0.0000

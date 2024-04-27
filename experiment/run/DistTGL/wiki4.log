@@ -1,0 +1,6 @@
+Global Epoch: 0
+	train loss:33952.3588  train time:10.25
+	t_prep1:0.08 t_prep2:0.83 t_compute:9.33 t_writeback:0.00
+	val loss:5907.7295    val mrr:0.9438    val_ap:0.9071
+	test AP:0.901548  test MRR:0.941747
+Global Epoch: 1

@@ -1,0 +1,16 @@
+experiment/datasets/*.csv
+experiment/datasets/DGraphFin
+experiment/run/Roland/graphgym
+experiment/run/APAN/data/*
+experiment/run/CAW/processed/*
+experiment/run/DySAT/raw_data/*
+experiment/run/DySAT/data/*
+experiment/run/DySAT/.idea
+experiment/run/EvolveGCN/data/*
+experiment/run/TGAT/processed/*
+experiment/run/TGL/DATA/*
+experiment/run/TGN/DATA/data/*
+experiment/run/Roland/roland_public_data/*
+experiment/run/SPEED/data/*
+experiment/run/SPEED/partition/data/*
+experiment/run/SPEED/partition/divided_nodes_seed/*
