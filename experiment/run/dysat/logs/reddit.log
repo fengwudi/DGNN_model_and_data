@@ -1,0 +1,116 @@
+/home/wtx/workspace/python_project/DySAT_pytorch/utils/minibatch.py:111: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at /opt/conda/conda-bld/pytorch_1670525541990/work/torch/csrc/utils/tensor_new.cpp:230.)
+  node_2_neg_list = [torch.LongTensor(node) for node in node_2_negative]
+Namespace(time_steps=-1, dataset='reddit', GPU_ID=0, epochs=200, val_freq=1, test_freq=1, batch_size=512, featureless=True, early_stop=10, residual=True, neg_sample_size=10, walk_len=20, neg_weight=1.0, learning_rate=0.01, spatial_drop=0.1, temporal_drop=0.5, weight_decay=0.0005, structural_head_config='16,8,8', structural_layer_config='128', temporal_head_config='16', temporal_layer_config='128', position_ffn='True', window=-1)
+Loaded 27 graphs 
+Computing training pairs ...
+# nodes with random walk samples: 5983
+# sampled pairs: 14750598
+# nodes with random walk samples: 6567
+# sampled pairs: 16310208
+# nodes with random walk samples: 6757
+# sampled pairs: 16786408
+# nodes with random walk samples: 7001
+# sampled pairs: 17474462
+# nodes with random walk samples: 7153
+# sampled pairs: 17814698
+# nodes with random walk samples: 6742
+# sampled pairs: 16721768
+# nodes with random walk samples: 6609
+# sampled pairs: 16394400
+# nodes with random walk samples: 7339
+# sampled pairs: 18270316
+# nodes with random walk samples: 7325
+# sampled pairs: 18197582
+# nodes with random walk samples: 7471
+# sampled pairs: 18621128
+# nodes with random walk samples: 7517
+# sampled pairs: 18742802
+# nodes with random walk samples: 7132
+# sampled pairs: 17728800
+# nodes with random walk samples: 6836
+# sampled pairs: 17010382
+# nodes with random walk samples: 7519
+# sampled pairs: 18787342
+# nodes with random walk samples: 7402
+# sampled pairs: 18400938
+# nodes with random walk samples: 7376
+# sampled pairs: 18372838
+# nodes with random walk samples: 7373
+# sampled pairs: 18347740
+# nodes with random walk samples: 7116
+# sampled pairs: 17682976
+# nodes with random walk samples: 6681
+# sampled pairs: 16575844
+# nodes with random walk samples: 7366
+# sampled pairs: 18340876
+# nodes with random walk samples: 7436
+# sampled pairs: 18453018
+# nodes with random walk samples: 7327
+# sampled pairs: 18130056
+# nodes with random walk samples: 7332
+# sampled pairs: 18206066
+# nodes with random walk samples: 6796
+# sampled pairs: 16800648
+# nodes with random walk samples: 6451
+# sampled pairs: 15973678
+# nodes with random walk samples: 7067
+# sampled pairs: 17538676
+# nodes with random walk samples: 6335
+# sampled pairs: 15542464
+Generating eval data ....
+No. Train: Pos=1803, Neg=1803 
+No. Val: Pos=1803, Neg=1803 
+No. Test: Pos=5409, Neg=5409
+Epoch 0  ,  Loss = 35.082, Val AUC 0.908 Test AUC 0.914
+val auc 0.902, ap 0.907, recall 0.960, acc 0.719
+test auc 0.905, ap 0.907, recall 0.967, acc 0.720
+average time 137.5426254272461, memory 29511058432.0
+Epoch 1  ,  Loss = 25.948, Val AUC 0.941 Test AUC 0.936
+val auc 0.916, ap 0.920, recall 0.965, acc 0.730
+test auc 0.913, ap 0.918, recall 0.964, acc 0.722
+average time 137.1735692024231, memory 36213778944.0
+Epoch 2  ,  Loss = 24.344, Val AUC 0.943 Test AUC 0.941
+val auc 0.920, ap 0.926, recall 0.966, acc 0.731
+test auc 0.917, ap 0.923, recall 0.962, acc 0.723
+average time 137.84663844108582, memory 38448019114.666664
+Epoch 3  ,  Loss = 23.605, Val AUC 0.938 Test AUC 0.935
+val auc 0.921, ap 0.928, recall 0.964, acc 0.727
+test auc 0.917, ap 0.925, recall 0.959, acc 0.722
+average time 138.7672839164734, memory 39565139200.0
+Epoch 4  ,  Loss = 23.152, Val AUC 0.940 Test AUC 0.939
+val auc 0.921, ap 0.929, recall 0.963, acc 0.725
+test auc 0.917, ap 0.926, recall 0.956, acc 0.719
+average time 140.1969048500061, memory 40235411251.2
+Epoch 5  ,  Loss = 22.839, Val AUC 0.941 Test AUC 0.940
+val auc 0.919, ap 0.929, recall 0.960, acc 0.722
+test auc 0.915, ap 0.926, recall 0.953, acc 0.718
+average time 138.5433051586151, memory 40682259285.333336
+Epoch 6  ,  Loss = 22.606, Val AUC 0.940 Test AUC 0.939
+val auc 0.918, ap 0.929, recall 0.958, acc 0.721
+test auc 0.914, ap 0.927, recall 0.950, acc 0.717
+average time 137.27288120133537, memory 41001436452.57143
+Epoch 7  ,  Loss = 22.471, Val AUC 0.937 Test AUC 0.936
+val auc 0.917, ap 0.929, recall 0.956, acc 0.719
+test auc 0.913, ap 0.927, recall 0.948, acc 0.716
+average time 136.29397800564766, memory 41240819328.0
+Epoch 8  ,  Loss = 22.277, Val AUC 0.941 Test AUC 0.942
+val auc 0.916, ap 0.928, recall 0.954, acc 0.717
+test auc 0.911, ap 0.926, recall 0.946, acc 0.714
+average time 136.03850682576498, memory 41427006008.888885
+Epoch 9  ,  Loss = 22.096, Val AUC 0.935 Test AUC 0.936
+val auc 0.914, ap 0.927, recall 0.952, acc 0.715
+test auc 0.910, ap 0.925, recall 0.944, acc 0.713
+average time 136.62611746788025, memory 41575955353.6
+Epoch 10 ,  Loss = 21.961, Val AUC 0.933 Test AUC 0.935
+val auc 0.912, ap 0.926, recall 0.950, acc 0.713
+test auc 0.908, ap 0.924, recall 0.942, acc 0.711
+average time 136.55804443359375, memory 41697822999.27273
+Epoch 11 ,  Loss = 21.839, Val AUC 0.933 Test AUC 0.936
+val auc 0.910, ap 0.925, recall 0.947, acc 0.711
+test auc 0.906, ap 0.923, recall 0.941, acc 0.709
+average time 136.6528752644857, memory 41799379370.666664
+Epoch 12 ,  Loss = 21.712, Val AUC 0.931 Test AUC 0.935
+val auc 0.908, ap 0.924, recall 0.946, acc 0.710
+test auc 0.904, ap 0.922, recall 0.939, acc 0.708
+average time 136.94451022148132, memory 41885311684.92308
+Best Test AUC = 0.941

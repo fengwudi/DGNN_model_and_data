@@ -1,0 +1,83 @@
+Namespace(GPU_ID=0, batch_size=512, dataset='mooc', early_stop=3, epochs=50, featureless=True, learning_rate=0.01, neg_sample_size=10, neg_weight=1.0, position_ffn='True', residual=True, spatial_drop=0.1, structural_head_config='16,8,8', structural_layer_config='128', temporal_drop=0.5, temporal_head_config='16', temporal_layer_config='128', test_freq=1, time_steps=-1, val_freq=1, walk_len=20, weight_decay=0.0005, window=-1)
+Loaded 26 graphs 
+Computing training pairs ...
+# nodes with random walk samples: 779
+# sampled pairs: 2199844
+# nodes with random walk samples: 1600
+# sampled pairs: 4528768
+# nodes with random walk samples: 1362
+# sampled pairs: 3851822
+# nodes with random walk samples: 1273
+# sampled pairs: 3583784
+# nodes with random walk samples: 1137
+# sampled pairs: 3197288
+# nodes with random walk samples: 1082
+# sampled pairs: 3034284
+# nodes with random walk samples: 1151
+# sampled pairs: 3246228
+# nodes with random walk samples: 1470
+# sampled pairs: 4181902
+# nodes with random walk samples: 1474
+# sampled pairs: 4192432
+# nodes with random walk samples: 1381
+# sampled pairs: 3915364
+# nodes with random walk samples: 1239
+# sampled pairs: 3513846
+# nodes with random walk samples: 1231
+# sampled pairs: 3484708
+# nodes with random walk samples: 1226
+# sampled pairs: 3480194
+# nodes with random walk samples: 1238
+# sampled pairs: 3526208
+# nodes with random walk samples: 1293
+# sampled pairs: 3687302
+# nodes with random walk samples: 1330
+# sampled pairs: 3786222
+# nodes with random walk samples: 1176
+# sampled pairs: 3345140
+# nodes with random walk samples: 1107
+# sampled pairs: 3148728
+# nodes with random walk samples: 1257
+# sampled pairs: 3578806
+# nodes with random walk samples: 1244
+# sampled pairs: 3553564
+# nodes with random walk samples: 1128
+# sampled pairs: 3223240
+# nodes with random walk samples: 1313
+# sampled pairs: 3747578
+# nodes with random walk samples: 1058
+# sampled pairs: 3017956
+# nodes with random walk samples: 973
+# sampled pairs: 2775938
+# nodes with random walk samples: 1116
+# sampled pairs: 3183816
+# nodes with random walk samples: 1033
+# sampled pairs: 2946700
+Generating eval data ....
+No. Train: Pos=1877, Neg=1877 
+No. Val: Pos=1877, Neg=1877 
+No. Test: Pos=5634, Neg=5634
+Traceback (most recent call last):
+  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/queues.py", line 236, in _feed
+    obj = _ForkingPickler.dumps(obj)
+  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+TypeError: can't pickle generator objects
+Traceback (most recent call last):
+  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/queues.py", line 236, in _feed
+    obj = _ForkingPickler.dumps(obj)
+  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+TypeError: can't pickle generator objects
+Traceback (most recent call last):
+  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/queues.py", line 236, in _feed
+    obj = _ForkingPickler.dumps(obj)
+  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+TypeError: can't pickle generator objects
+Traceback (most recent call last):
+  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/queues.py", line 236, in _feed
+    obj = _ForkingPickler.dumps(obj)
+  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+TypeError: can't pickle generator objects

@@ -1,0 +1,86 @@
+Namespace(GPU_ID=2, batch_size=512, dataset='reddit', early_stop=3, epochs=50, featureless=True, learning_rate=0.01, neg_sample_size=10, neg_weight=1.0, position_ffn='True', residual=True, spatial_drop=0.1, structural_head_config='16,8,8', structural_layer_config='128', temporal_drop=0.5, temporal_head_config='16', temporal_layer_config='128', test_freq=1, time_steps=-1, val_freq=1, walk_len=20, weight_decay=0.0005, window=-1)
+Loaded 27 graphs 
+Computing training pairs ...
+# nodes with random walk samples: 5983
+# sampled pairs: 14746100
+# nodes with random walk samples: 6567
+# sampled pairs: 16312942
+# nodes with random walk samples: 6757
+# sampled pairs: 16785572
+# nodes with random walk samples: 7001
+# sampled pairs: 17475548
+# nodes with random walk samples: 7153
+# sampled pairs: 17807504
+# nodes with random walk samples: 6742
+# sampled pairs: 16721732
+# nodes with random walk samples: 6609
+# sampled pairs: 16400782
+# nodes with random walk samples: 7339
+# sampled pairs: 18273706
+# nodes with random walk samples: 7325
+# sampled pairs: 18200378
+# nodes with random walk samples: 7471
+# sampled pairs: 18620214
+# nodes with random walk samples: 7517
+# sampled pairs: 18739130
+# nodes with random walk samples: 7132
+# sampled pairs: 17733168
+# nodes with random walk samples: 6836
+# sampled pairs: 17016578
+# nodes with random walk samples: 7519
+# sampled pairs: 18782436
+# nodes with random walk samples: 7402
+# sampled pairs: 18407676
+# nodes with random walk samples: 7376
+# sampled pairs: 18374918
+# nodes with random walk samples: 7373
+# sampled pairs: 18342126
+# nodes with random walk samples: 7116
+# sampled pairs: 17675872
+# nodes with random walk samples: 6681
+# sampled pairs: 16583708
+# nodes with random walk samples: 7366
+# sampled pairs: 18344028
+# nodes with random walk samples: 7436
+# sampled pairs: 18454146
+# nodes with random walk samples: 7327
+# sampled pairs: 18129032
+# nodes with random walk samples: 7332
+# sampled pairs: 18201290
+# nodes with random walk samples: 6796
+# sampled pairs: 16803824
+# nodes with random walk samples: 6451
+# sampled pairs: 15979918
+# nodes with random walk samples: 7067
+# sampled pairs: 17538156
+# nodes with random walk samples: 6335
+# sampled pairs: 15539980
+Generating eval data ....
+No. Train: Pos=1803, Neg=1803 
+No. Val: Pos=1803, Neg=1803 
+No. Test: Pos=5409, Neg=5409
+Epoch 0  ,  Loss = 34.796, Val AUC 0.918 Test AUC 0.919
+val auc 0.912, ap 0.918, recall 0.965, acc 0.725
+test auc 0.9100, ap 0.9135, recall 0.9676, acc 0.7292
+average time 263.86 s, memory 30061.16 MB
+Epoch 1  ,  Loss = 25.842, Val AUC 0.934 Test AUC 0.934
+val auc 0.919, ap 0.926, recall 0.962, acc 0.732
+test auc 0.9244, ap 0.9288, recall 0.9638, acc 0.7312
+average time 254.95 s, memory 36786.35 MB
+Epoch 2  ,  Loss = 24.282, Val AUC 0.942 Test AUC 0.940
+val auc 0.923, ap 0.930, recall 0.963, acc 0.734
+test auc 0.9249, ap 0.9341, recall 0.9608, acc 0.7305
+average time 253.27 s, memory 39028.08 MB
+Epoch 3  ,  Loss = 23.563, Val AUC 0.940 Test AUC 0.940
+val auc 0.924, ap 0.932, recall 0.961, acc 0.734
+test auc 0.9220, ap 0.9349, recall 0.9505, acc 0.7266
+average time 252.14 s, memory 40148.95 MB
+Epoch 4  ,  Loss = 23.115, Val AUC 0.937 Test AUC 0.937
+val auc 0.924, ap 0.933, recall 0.959, acc 0.733
+test auc 0.9170, ap 0.9339, recall 0.9442, acc 0.7179
+average time 250.92 s, memory 40821.47 MB
+Epoch 5  ,  Loss = 22.785, Val AUC 0.934 Test AUC 0.936
+val auc 0.923, ap 0.933, recall 0.957, acc 0.730
+test auc 0.9117, ap 0.9296, recall 0.9405, acc 0.7188
+average time 249.51 s, memory 41269.81 MB
+Best Test AUC = 0.940
