@@ -1,11 +1,7 @@
 experiment/datasets
 experiment/datasets/DGraphFin
 experiment/run/Roland/graphgym
-experiment/run/APAN/data/*.ipynb
-experiment/run/APAN/data/*.bin
-experiment/run/APAN/data/*.csv
-experiment/run/APAN/data/*.npy
-experiment/run/APAN/data/*.npz
+experiment/run/APAN/data/*
 experiment/run/CAW/processed/*
 experiment/run/DySAT/raw_data/*.npy
 experiment/run/DySAT/raw_data/*.csv
@@ -27,6 +23,7 @@ experiment/run/TGAT/__pycache__/
 experiment/run/EvolveGCN/__pycache__/
 experiment/run/TGAT/log/*
 experiment/run/TGAT/saved_checkpoints/*
+!experiment/run/APAN/data
 !experiment/run/TGL/DATA
 !experiment/run/Roland/roland_public_data
 !experiment/run/TGN/data
