@@ -1,2 +1,0 @@
-2024-03-21 23:19:56,626 - root - INFO - Namespace(agg_method='attn', attn_mode='prod', bs=1000, data='Flights', drop_out=0.1, gpu=0, lr=0.0001, n_degree=20, n_epoch=50, n_head=2, n_layer=1, node_dim=100, prefix='flight', time='time', time_dim=100, uniform=True)
-2024-03-21 23:20:07,012 - module - INFO - Aggregation uses attention model

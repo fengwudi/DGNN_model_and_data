@@ -1,7 +1,0 @@
-2024-03-21 21:49:27,810 - root - INFO - Namespace(agg_method='attn', attn_mode='prod', bs=1000, data='wikipedia', drop_out=0.1, gpu=3, lr=0.0001, n_degree=20, n_epoch=50, n_head=2, n_layer=1, node_dim=100, prefix='wiki', time='time', time_dim=100, uniform=True)
-2024-03-21 21:49:28,517 - module - INFO - Aggregation uses attention model
-2024-03-21 21:49:28,530 - module - INFO - Using scaled prod attention
-2024-03-21 21:49:28,530 - module - INFO - Using time encoding
-2024-03-21 21:49:29,546 - root - INFO - num of training instances: 81029
-2024-03-21 21:49:29,546 - root - INFO - num of batches per epoch: 82
-2024-03-21 21:49:29,548 - root - INFO - start 0 epoch
