@@ -3,9 +3,10 @@ experiment/datasets/DGraphFin
 experiment/run/Roland/graphgym
 experiment/run/APAN/data/*
 experiment/run/CAW/processed/*
-experiment/run/dysat/raw_data/*.npy
-experiment/run/dysat/raw_data/*.csv
-experiment/run/dysat/data/*
+experiment/run/DySAT/raw_data/*.npy
+experiment/run/DySAT/raw_data/*.csv
+experiment/run/DySAT/data/*
+experiment/run/dysat/utils/__pycache__/*
 experiment/run/EvolveGCN/data/*.csv
 experiment/run/EvolveGCN/data/raw_data/*.npz
 experiment/run/EvolveGCN/data/raw_data/*.csv
