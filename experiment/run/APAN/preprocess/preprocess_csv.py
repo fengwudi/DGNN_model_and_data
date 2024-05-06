@@ -12,7 +12,7 @@ import os
 def preprocess(args):
   Path("data/").mkdir(parents=True, exist_ok=True)
 
-  if args.data == 'wikipedia' or args.data == 'reddit' or args.data == "flight" or args.data == "ml25m" or args.data == 'mooc':
+  if args.data == 'wikipedia' or args.data == 'reddit' or args.data == "flights" or args.data == "ml25m" or args.data == 'mooc':
     PATH = ['./data/{}_raw.csv'.format(args.data)]
     feat_dim = 172
   else:
@@ -47,7 +47,7 @@ def preprocess(args):
           ts = 1
         
         label = float(e[3])  # int(e[3])
-        if args.data == 'flight' or args.data == 'mooc':
+        if args.data == 'flights' or args.data == 'mooc':
           feat = [float(0) for i in range(172)]
         else:
           feat = [float(x) for x in e[4:]]
@@ -74,30 +74,6 @@ def preprocess(args):
                        'ts': ts_list,
                        'label': label_list,
                        'idx': idx_list}), feat
-
-# def write_temporal_subgraph(args, graph, edge_feat):
-#   sources = graph.u.values
-#   destinations = graph.i.values
-#   edge_idxs = graph.idx.values
-#   labels = graph.label.values
-#   timestamps = graph.ts.values
-#   OUTPUT_EDATA = f'./dataset/{args.data}_TSG.csv'
-
-#   max_node_idx = max(sources.max(), destinations.max())
-#   adj_list = [[] for _ in range(max_node_idx + 1)]
-#   for source, destination, edge_idx, labels, timestamp, edge_feat in tqdm(zip(sources, destinations,
-#                                                       edge_idxs, labels,
-#                                                       timestamps, edge_feat)):
-#     # edge_feat = np.array2string(edge_feat, max_line_width= 99999, precision=8, separator=',', suppress_small=True)
-#     # print(edge_feat)
-#     edge_feat = edge_feat.tolist()
-#     adj_list[source].append([destination, edge_idx, labels, timestamp] + edge_feat)
-#     adj_list[destination].append([source, edge_idx, labels, timestamp] + edge_feat)
-
-#   with open(OUTPUT_EDATA,'w') as TSG:
-#     csv_writer = csv.writer(TSG)
-#     for tsg in tqdm(adj_list):
-#       csv_writer.writerow(tsg)
 
 
 class reindex(object):

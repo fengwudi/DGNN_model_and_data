@@ -15,7 +15,7 @@ class Wikipedia_Dataset():
                                 })
         args.wikipedia_args = u.Namespace(args.wikipedia_args)
         
-        edges, feat = self.load_edges(args.wikipedia_args)
+        edges = self.load_edges(args.wikipedia_args)
         edges = self.make_contigous_node_ids(edges)
         num_nodes = edges[:,[self.ecols.FromNodeId,
                             self.ecols.ToNodeId]].unique().size(0)
@@ -92,7 +92,7 @@ class Wikipedia_Dataset():
         self.edges = {'idx': indices_labels, 'vals': vals}
         self.num_nodes = num_nodes
         self.num_classes = 2
-        self.feats_per_node = feat.size(1)
+        self.feats_per_node = 172
         
     def load_node_labels(self, edges):
         nodes_labels_times = edges[:,[0,3,2]]
@@ -105,10 +105,7 @@ class Wikipedia_Dataset():
             lines = f.read().splitlines()
         edges = [[float(r) for r in row.split(',')] for row in lines]
         edges = torch.tensor(edges,dtype = torch.long)
-        feat = np.load('./data/wikipedia.npy')
-        feat_res = torch.from_numpy(feat)
-        # print(feat_res)
-        return edges, feat_res
+        return edges
     
     def make_contigous_node_ids(self,edges):
         new_edges = edges[:,[self.ecols.FromNodeId,self.ecols.ToNodeId]]

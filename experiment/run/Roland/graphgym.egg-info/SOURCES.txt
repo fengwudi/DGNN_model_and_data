@@ -67,6 +67,7 @@ graphgym/contrib/loader/roland_btc.py
 graphgym/contrib/loader/roland_generic.py
 graphgym/contrib/loader/roland_reddit_hyperlink.py
 graphgym/contrib/loader/roland_ucimsg.py
+graphgym/contrib/loader/roland_wiki_reddit_flight.py
 graphgym/contrib/loss/__init__.py
 graphgym/contrib/loss/example.py
 graphgym/contrib/network/__init__.py

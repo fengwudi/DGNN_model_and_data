@@ -1,0 +1,274 @@
+GPU Mem: [ 872    3 1042    3]
+GPU Prob: [0.08 0.43 0.07 0.43]
+Random select GPU, select GPU 1 with mem: 3
+Load: 6.038s, Before split: 4.527s, Split: 11.42s, After split: 4.148e-05s
+GNN(
+  (node_encoder): TransactionNodeEncoder(
+    (embedding_list): ModuleList(
+      (0): Embedding(1483, 16)
+      (1): Embedding(32, 16)
+      (2): Embedding(13, 16)
+      (3): Embedding(24, 16)
+      (4): Embedding(5, 16)
+    )
+  )
+  (node_encoder_bn): BatchNorm1dNode(
+    (bn): BatchNorm1d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (edge_encoder): TransactionEdgeEncoder(
+    (embedding_list): ModuleList()
+    (linear_amount): Linear(in_features=1, out_features=16, bias=True)
+    (linear_time): Linear(in_features=1, out_features=16, bias=True)
+  )
+  (edge_encoder_bn): BatchNorm1dEdge(
+    (bn): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (preprocess): Preprocess(
+    node_feature: dim_out=80
+    Total: dim_out=80
+  )
+  (pre_mp): GeneralMultiLayer(
+    (Layer_0): GeneralLayer(
+      (layer): Linear(
+        (model): Linear(in_features=80, out_features=64, bias=False)
+      )
+      (post_layer): Sequential(
+        (0): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): PReLU(num_parameters=1)
+      )
+    )
+  )
+  (mp): GNNStackStage(
+    (layer0): GraphRecurrentLayerWrapper(
+      (layer): ResidualEdgeConv(
+        (model): ResidualEdgeConvLayer(64, 64)
+      )
+      (post_layer): Sequential(
+        (0): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): PReLU(num_parameters=1)
+      )
+      (embedding_updater): MLPUpdater(
+        (mlp): MLP(
+          (model): Sequential(
+            (0): GeneralMultiLayer(
+              (Layer_0): GeneralLayer(
+                (layer): Linear(
+                  (model): Linear(in_features=128, out_features=128, bias=False)
+                )
+                (post_layer): Sequential(
+                  (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                  (1): PReLU(num_parameters=1)
+                )
+              )
+            )
+            (1): Linear(
+              (model): Linear(in_features=128, out_features=64, bias=True)
+            )
+          )
+        )
+      )
+    )
+    (layer1): GraphRecurrentLayerWrapper(
+      (layer): ResidualEdgeConv(
+        (model): ResidualEdgeConvLayer(64, 64)
+      )
+      (post_layer): Sequential(
+        (0): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): PReLU(num_parameters=1)
+      )
+      (embedding_updater): MLPUpdater(
+        (mlp): MLP(
+          (model): Sequential(
+            (0): GeneralMultiLayer(
+              (Layer_0): GeneralLayer(
+                (layer): Linear(
+                  (model): Linear(in_features=128, out_features=128, bias=False)
+                )
+                (post_layer): Sequential(
+                  (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                  (1): PReLU(num_parameters=1)
+                )
+              )
+            )
+            (1): Linear(
+              (model): Linear(in_features=128, out_features=64, bias=True)
+            )
+          )
+        )
+      )
+    )
+  )
+  (post_mp): GNNEdgeHead(
+    (layer_post_mp): MLP(
+      (model): Sequential(
+        (0): GeneralMultiLayer(
+          (Layer_0): GeneralLayer(
+            (layer): Linear(
+              (model): Linear(in_features=128, out_features=128, bias=False)
+            )
+            (post_layer): Sequential(
+              (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (1): PReLU(num_parameters=1)
+            )
+          )
+        )
+        (1): Linear(
+          (model): Linear(in_features=128, out_features=1, bias=True)
+        )
+      )
+    )
+  )
+)
+bn:
+  eps: 1e-05
+  mom: 0.1
+cfg_dest: config.yaml
+dataset:
+  AS_node_feature: one
+  augment_feature: []
+  augment_feature_dims: []
+  augment_feature_repr: position
+  augment_label: 
+  augment_label_dims: 0
+  cache_load: False
+  cache_save: False
+  dir: /home/fzz/work/experiment/roland-fzz/roland_public_data
+  edge_dim: 32
+  edge_encoder: True
+  edge_encoder_bn: True
+  edge_encoder_name: roland
+  edge_message_ratio: 0.8
+  edge_negative_sampling_ratio: 1.0
+  edge_train_mode: all
+  encoder_dim: 80
+  format: wrf
+  include_node_features: False
+  is_hetero: False
+  load_cache: False
+  name: Flights
+  negative_sample_weight: uniform
+  node_encoder: True
+  node_encoder_bn: True
+  node_encoder_name: roland
+  num_nodes: 13170
+  premade_datasets: fresh
+  remove_feature: False
+  shuffle: True
+  split: [0.8, 0.1, 0.1]
+  split_method: default
+  task: link_pred
+  task_type: classification
+  transductive: True
+  transform: none
+  tu_simple: True
+  type_info_loc: append
+device: cuda:1
+example_arg: example
+example_group:
+  example_arg: example
+experimental:
+  rank_eval_multiplier: 100
+  restrict_training_set: -1
+  visualize_gnn_layer: False
+gnn:
+  act: prelu
+  agg: add
+  att_final_linear: False
+  att_final_linear_bn: False
+  att_heads: 1
+  batchnorm: True
+  dim_inner: 64
+  dropout: 0.0
+  embed_update_method: mlp
+  gru_kernel: linear
+  keep_edge: 0.5
+  l2norm: True
+  layer_type: residual_edge_conv
+  layers_mp: 2
+  layers_post_mp: 2
+  layers_pre_mp: 1
+  mlp_update_layers: 2
+  msg_direction: single
+  normalize_adj: False
+  only_update_top_state: False
+  skip_connection: affine
+  skip_every: 1
+  stage_type: stack
+link_pred_spec:
+  forecast_frequency: 1
+  forecast_horizon: 7
+mem:
+  inplace: False
+meta:
+  alpha: 0.9
+  is_meta: False
+  method: moving_average
+metric:
+  mrr_method: max
+metric_best: auto
+model:
+  edge_decoding: concat
+  edge_pred_shape: label_index
+  graph_pooling: add
+  loss_fun: cross_entropy
+  match_upper: True
+  size_average: True
+  thresh: 0.5
+  type: gnn_recurrent
+num_threads: 6
+num_workers: 0
+optim:
+  base_lr: 0.03
+  lr_decay: 0.1
+  max_epoch: 100
+  momentum: 0.9
+  optimizer: adam
+  scheduler: cos
+  steps: [30, 60, 90]
+  weight_decay: 0.0005
+out_dir: results/flights/1
+print: both
+remark: roland_example_run
+round: 4
+seed: 1
+tensorboard_agg: True
+tensorboard_each_run: False
+train:
+  auto_resume: False
+  batch_size: 32
+  ckpt_clean: True
+  ckpt_period: 400
+  epoch_resume: -1
+  eval_period: 20
+  internal_validation_tolerance: 5
+  mode: live_update
+  node_per_graph: 32
+  radius: extend
+  sample_node: False
+  start_compute_mrr: 0
+  stop_live_update_after: 99999999
+  tbptt_freq: 5
+transaction:
+  check_snapshot: False
+  feature_amount_dim: 16
+  feature_edge_int_num: []
+  feature_int_dim: 16
+  feature_node_int_num: [1483, 32, 13, 24, 5]
+  feature_time_dim: 16
+  history: rolling
+  horizon: 1
+  keep_ratio: linear
+  loss: supervised
+  node_feature: raw
+  pred_mode: at
+  snapshot: True
+  snapshot_freq: 7s
+  snapshot_num: 100
+  time_enc_mode: enc_before_diff
+  time_enc_periods: [1]
+val:
+  node_per_graph: 32
+  radius: extend
+  sample_node: False
+view_emb: False
+Num parameters: 117874

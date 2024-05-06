@@ -1,4 +1,4 @@
-experiment/datasets/*.csv
+experiment/datasets
 experiment/datasets/DGraphFin
 experiment/run/Roland/graphgym
 experiment/run/APAN/data/*
@@ -6,7 +6,9 @@ experiment/run/CAW/processed/*
 experiment/run/DySAT/raw_data/*
 experiment/run/DySAT/data/*
 experiment/run/DySAT/.idea
-experiment/run/EvolveGCN/data/*
+experiment/run/EvolveGCN/data/*.csv
+experiment/run/EvolveGCN/data/raw_data/*.npz
+experiment/run/EvolveGCN/data/raw_data/*.csv
 experiment/run/TGAT/processed/*
 experiment/run/TGL/DATA/*
 experiment/run/TGN/DATA/data/*
@@ -14,3 +16,9 @@ experiment/run/Roland/roland_public_data/*
 experiment/run/SPEED/data/*
 experiment/run/SPEED/partition/data/*
 experiment/run/SPEED/partition/divided_nodes_seed/*
+experiment/run/DistTGL/minibatches/*
+experiment/run/DistTGL/__pycache__/
+experiment/run/TGAT/__pycache__/
+experiment/run/EvolveGCN/__pycache__/
+experiment/run/TGAT/log/
+experiment/run/TGAT/saved_checkpoints/

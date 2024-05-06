@@ -1,500 +1,0 @@
-/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launch.py:178: FutureWarning: The module torch.distributed.launch is deprecated
-and will be removed in future. Use torchrun.
-Note that --use_env is set by default in torchrun.
-If your script expects `--local_rank` argument to be set, please
-change it to read from `os.environ['LOCAL_RANK']` instead. See 
-https://pytorch.org/docs/stable/distributed.html#launch-utility for 
-further instructions
-
-  warnings.warn(
-WARNING:torch.distributed.run:
-*****************************************
-Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-*****************************************
-Using backend: pytorch
-Using backend: pytorchUsing backend: pytorch
-
-Using backend: pytorch
-Using backend: pytorch
-libibverbs: Warning: couldn't load driver 'libefa-rdmav34.so': libefa-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libqedr-rdmav34.so': libqedr-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmthca-rdmav34.so': libmthca-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libsiw-rdmav34.so': libsiw-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav34.so': libbnxt_re-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav34.so': libipathverbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmlx4-rdmav34.so': libmlx4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhns-rdmav34.so': libhns-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libocrdma-rdmav34.so': libocrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'librxe-rdmav34.so': librxe-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav34.so': libvmw_pvrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav34.so': libhfi1verbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav34.so': libcxgb4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libefa-rdmav34.so': libefa-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libqedr-rdmav34.so': libqedr-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmthca-rdmav34.so': libmthca-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libsiw-rdmav34.so': libsiw-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav34.so': libbnxt_re-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav34.so': libipathverbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmlx4-rdmav34.so': libmlx4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhns-rdmav34.so': libhns-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libocrdma-rdmav34.so': libocrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'librxe-rdmav34.so': librxe-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav34.so': libvmw_pvrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav34.so': libhfi1verbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav34.so': libcxgb4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libefa-rdmav34.so': libefa-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libefa-rdmav34.so': libefa-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libqedr-rdmav34.so': libqedr-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libqedr-rdmav34.so': libqedr-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmthca-rdmav34.so': libmthca-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmthca-rdmav34.so': libmthca-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libsiw-rdmav34.so': libsiw-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libsiw-rdmav34.so': libsiw-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav34.so': libbnxt_re-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav34.so': libbnxt_re-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav34.so': libipathverbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav34.so': libipathverbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmlx4-rdmav34.so': libmlx4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmlx4-rdmav34.so': libmlx4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhns-rdmav34.so': libhns-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhns-rdmav34.so': libhns-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libocrdma-rdmav34.so': libocrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libocrdma-rdmav34.so': libocrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'librxe-rdmav34.so': librxe-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'librxe-rdmav34.so': librxe-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav34.so': libvmw_pvrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav34.so': libvmw_pvrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav34.so': libhfi1verbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav34.so': libhfi1verbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav34.so': libcxgb4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav34.so': libcxgb4-rdmav34.so: cannot open shared object file: No such file or directory
-Epoch 0:
-  0%|          | 0/40940 [00:00<?, ?it/s]  0%|          | 1/40940 [00:05<62:37:48,  5.51s/it]  0%|          | 8/40940 [00:05<6:15:11,  1.82it/s]   0%|          | 11/40940 [00:19<6:15:10,  1.82it/s][E ProcessGroupNCCL.cpp:587] [Rank 3] Watchdog caught collective operation timeout: WorkNCCL(OpType=ALLREDUCE, Timeout(ms)=1800000) ran for 1805168 milliseconds before timing out.
-[E ProcessGroupNCCL.cpp:341] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data. To avoid this inconsistency, we are taking the entire process down.
-  0%|          | 11/40940 [30:13<1874:30:58, 164.88s/it]
-Traceback (most recent call last):
-  File "train_dist.py", line 492, in <module>
-    torch.distributed.scatter_object_list(my_model_state, model_state, src=args.num_gpus)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1919, in scatter_object_list
-    broadcast(max_tensor_size, src=src, group=group)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1167, in broadcast
-    work.wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1634272068694/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [192.168.1.105]:58276
-Traceback (most recent call last):
-  File "train_dist.py", line 190, in <module>
-    torch.distributed.scatter_object_list(my_model_state, model_state, src=args.num_gpus)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1923, in scatter_object_list
-    scatter(
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 2290, in scatter
-    work.wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1634272068694/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [192.168.1.105]:59586
-Traceback (most recent call last):
-  File "train_dist.py", line 190, in <module>
-    torch.distributed.scatter_object_list(my_model_state, model_state, src=args.num_gpus)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1923, in scatter_object_list
-    scatter(
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 2290, in scatter
-    work.wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1634272068694/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [192.168.1.105]:11669
-Traceback (most recent call last):
-  File "train_dist.py", line 190, in <module>
-    torch.distributed.scatter_object_list(my_model_state, model_state, src=args.num_gpus)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1923, in scatter_object_list
-    scatter(
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 2290, in scatter
-    work.wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1634272068694/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [192.168.1.105]:39089
-WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 1539043 closing signal SIGTERM
-ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: 1) local_rank: 1 (pid: 1539044) of binary: /home/fzz/miniconda3/envs/pytorch1.10/bin/python
-Traceback (most recent call last):
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/runpy.py", line 194, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/runpy.py", line 87, in _run_code
-    exec(code, run_globals)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launch.py", line 193, in <module>
-    main()
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launch.py", line 189, in main
-    launch(args)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launch.py", line 174, in launch
-    run(args)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/run.py", line 710, in run
-    elastic_launch(
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 131, in __call__
-    return launch_agent(self._config, self._entrypoint, list(args))
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 259, in launch_agent
-    raise ChildFailedError(
-torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
-============================================================
-train_dist.py FAILED
-------------------------------------------------------------
-Failures:
-[1]:
-  time      : 2023-11-20_15:42:45
-  host      : gpu05
-  rank      : 2 (local_rank: 2)
-  exitcode  : 1 (pid: 1539045)
-  error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
-[2]:
-  time      : 2023-11-20_15:42:45
-  host      : gpu05
-  rank      : 3 (local_rank: 3)
-  exitcode  : -6 (pid: 1539046)
-  error_file: <N/A>
-  traceback : Signal 6 (SIGABRT) received by PID 1539046
-[3]:
-  time      : 2023-11-20_15:42:45
-  host      : gpu05
-  rank      : 4 (local_rank: 4)
-  exitcode  : 1 (pid: 1539047)
-  error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
-------------------------------------------------------------
-Root Cause (first observed failure):
-[0]:
-  time      : 2023-11-20_15:42:45
-  host      : gpu05
-  rank      : 1 (local_rank: 1)
-  exitcode  : 1 (pid: 1539044)
-  error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
-============================================================
-Using backend: pytorch
-Using backend: pytorch
-Using backend: pytorch
-Using backend: pytorch
-Using backend: pytorch
-Traceback (most recent call last):
-  File "train_dist.py", line 43, in <module>
-    torch.distributed.init_process_group(backend='gloo', timeout=datetime.timedelta(0, 3600))
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/site-packages/torch/distributed/distributed_c10d.py", line 500, in init_process_group
-    store, rank, world_size = next(rendezvous_iterator)
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/site-packages/torch/distributed/rendezvous.py", line 190, in _env_rendezvous_handler
-    store = TCPStore(master_addr, master_port, world_size, start_daemon, timeout)
-RuntimeError: Address already in use
-Traceback (most recent call last):
-  File "train_dist.py", line 43, in <module>
-    torch.distributed.init_process_group(backend='gloo', timeout=datetime.timedelta(0, 3600))
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/site-packages/torch/distributed/distributed_c10d.py", line 510, in init_process_group
-    timeout=timeout))
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/site-packages/torch/distributed/distributed_c10d.py", line 592, in _new_process_group_helper
-    timeout=timeout)
-RuntimeError: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:769] connect [192.168.1.105]:44954: Connection refused
-Traceback (most recent call last):
-  File "train_dist.py", line 43, in <module>
-    torch.distributed.init_process_group(backend='gloo', timeout=datetime.timedelta(0, 3600))
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/site-packages/torch/distributed/distributed_c10d.py", line 510, in init_process_group
-    timeout=timeout))
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/site-packages/torch/distributed/distributed_c10d.py", line 592, in _new_process_group_helper
-    timeout=timeout)
-RuntimeError: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:769] connect [192.168.1.105]:7596: Connection refused
-Traceback (most recent call last):
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/runpy.py", line 193, in _run_module_as_main
-    "__main__", mod_spec)
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/runpy.py", line 85, in _run_code
-    exec(code, run_globals)
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/site-packages/torch/distributed/launch.py", line 340, in <module>
-    main()
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/site-packages/torch/distributed/launch.py", line 326, in main
-    sigkill_handler(signal.SIGTERM, None)  # not coming back
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/site-packages/torch/distributed/launch.py", line 301, in sigkill_handler
-    raise subprocess.CalledProcessError(returncode=last_return_code, cmd=cmd)
-subprocess.CalledProcessError: Command '['/home/fzz/miniconda3/envs/tgl/bin/python', '-u', 'train_dist.py', '--local_rank=4', '--data', 'WIKI', '--config', './config/dist/TGN.yml', '--num_gpus', '4']' returned non-zero exit status 1.
-*****************************************
-Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-*****************************************
-Killing subprocess 483270
-Killing subprocess 483271
-Killing subprocess 483272
-Killing subprocess 483273
-Killing subprocess 483274
-Using backend: pytorch
-Using backend: pytorch
-Using backend: pytorch
-Using backend: pytorch
-Using backend: pytorch
-Epoch 0:
-  0%|          | 0/216 [00:00<?, ?it/s]libibverbs: Warning: couldn't load driver 'libefa-rdmav34.so': libefa-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libqedr-rdmav34.so': libqedr-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmthca-rdmav34.so': libmthca-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libsiw-rdmav34.so': libsiw-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav34.so': libbnxt_re-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav34.so': libipathverbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmlx4-rdmav34.so': libmlx4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhns-rdmav34.so': libhns-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libocrdma-rdmav34.so': libocrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'librxe-rdmav34.so': librxe-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav34.so': libvmw_pvrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav34.so': libhfi1verbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav34.so': libcxgb4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libefa-rdmav34.so': libefa-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libqedr-rdmav34.so': libqedr-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmthca-rdmav34.so': libmthca-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libsiw-rdmav34.so': libsiw-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav34.so': libbnxt_re-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav34.so': libipathverbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmlx4-rdmav34.so': libmlx4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhns-rdmav34.so': libhns-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libocrdma-rdmav34.so': libocrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'librxe-rdmav34.so': librxe-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav34.so': libvmw_pvrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav34.so': libhfi1verbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav34.so': libcxgb4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libefa-rdmav34.so': libefa-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libqedr-rdmav34.so': libqedr-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmthca-rdmav34.so': libmthca-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libsiw-rdmav34.so': libsiw-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav34.so': libbnxt_re-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav34.so': libipathverbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmlx4-rdmav34.so': libmlx4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhns-rdmav34.so': libhns-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libocrdma-rdmav34.so': libocrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'librxe-rdmav34.so': librxe-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav34.so': libvmw_pvrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav34.so': libhfi1verbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav34.so': libcxgb4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libefa-rdmav34.so': libefa-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libqedr-rdmav34.so': libqedr-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmthca-rdmav34.so': libmthca-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libsiw-rdmav34.so': libsiw-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav34.so': libbnxt_re-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav34.so': libipathverbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmlx4-rdmav34.so': libmlx4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhns-rdmav34.so': libhns-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libocrdma-rdmav34.so': libocrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'librxe-rdmav34.so': librxe-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav34.so': libvmw_pvrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav34.so': libhfi1verbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav34.so': libcxgb4-rdmav34.so: cannot open shared object file: No such file or directory
-*****************************************
-Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-*****************************************
-Killing subprocess 483408
-Killing subprocess 483409
-Killing subprocess 483410
-Killing subprocess 483411
-Killing subprocess 483412
-Main process received SIGINT, exiting
-Using backend: pytorch
-Using backend: pytorch
-Using backend: pytorch
-Using backend: pytorch
-Using backend: pytorch
-Epoch 0:
-  0%|          | 0/216 [00:00<?, ?it/s]libibverbs: Warning: couldn't load driver 'libefa-rdmav34.so': libefa-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libqedr-rdmav34.so': libqedr-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmthca-rdmav34.so': libmthca-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libsiw-rdmav34.so': libsiw-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav34.so': libbnxt_re-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav34.so': libipathverbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmlx4-rdmav34.so': libmlx4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhns-rdmav34.so': libhns-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libocrdma-rdmav34.so': libocrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'librxe-rdmav34.so': librxe-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav34.so': libvmw_pvrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav34.so': libhfi1verbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav34.so': libcxgb4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libefa-rdmav34.so': libefa-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libqedr-rdmav34.so': libqedr-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmthca-rdmav34.so': libmthca-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libsiw-rdmav34.so': libsiw-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav34.so': libbnxt_re-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav34.so': libipathverbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmlx4-rdmav34.so': libmlx4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhns-rdmav34.so': libhns-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libocrdma-rdmav34.so': libocrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'librxe-rdmav34.so': librxe-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav34.so': libvmw_pvrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav34.so': libhfi1verbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav34.so': libcxgb4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libefa-rdmav34.so': libefa-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libqedr-rdmav34.so': libqedr-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmthca-rdmav34.so': libmthca-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libsiw-rdmav34.so': libsiw-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav34.so': libbnxt_re-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav34.so': libipathverbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmlx4-rdmav34.so': libmlx4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhns-rdmav34.so': libhns-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libocrdma-rdmav34.so': libocrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'librxe-rdmav34.so': librxe-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav34.so': libvmw_pvrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav34.so': libhfi1verbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav34.so': libcxgb4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libefa-rdmav34.so': libefa-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libqedr-rdmav34.so': libqedr-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmthca-rdmav34.so': libmthca-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libsiw-rdmav34.so': libsiw-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav34.so': libbnxt_re-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav34.so': libipathverbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmlx4-rdmav34.so': libmlx4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhns-rdmav34.so': libhns-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libocrdma-rdmav34.so': libocrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'librxe-rdmav34.so': librxe-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav34.so': libvmw_pvrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav34.so': libhfi1verbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav34.so': libcxgb4-rdmav34.so: cannot open shared object file: No such file or directory
-Traceback (most recent call last):
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/runpy.py", line 193, in _run_module_as_main
-    "__main__", mod_spec)
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/runpy.py", line 85, in _run_code
-    exec(code, run_globals)
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/site-packages/torch/distributed/launch.py", line 340, in <module>
-    main()
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/site-packages/torch/distributed/launch.py", line 326, in main
-    sigkill_handler(signal.SIGTERM, None)  # not coming back
-  File "/home/fzz/miniconda3/envs/tgl/lib/python3.6/site-packages/torch/distributed/launch.py", line 301, in sigkill_handler
-    raise subprocess.CalledProcessError(returncode=last_return_code, cmd=cmd)
-subprocess.CalledProcessError: Command '['/home/fzz/miniconda3/envs/tgl/bin/python', '-u', 'train_dist.py', '--local_rank=4', '--data', 'WIKI', '--config', './config/dist/TGN.yml', '--num_gpus', '4']' died with <Signals.SIGKILL: 9>.
-*****************************************
-Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-*****************************************
-Killing subprocess 483620
-Killing subprocess 483621
-Killing subprocess 483622
-Killing subprocess 483623
-Killing subprocess 483624
-/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launch.py:178: FutureWarning: The module torch.distributed.launch is deprecated
-and will be removed in future. Use torchrun.
-Note that --use_env is set by default in torchrun.
-If your script expects `--local_rank` argument to be set, please
-change it to read from `os.environ['LOCAL_RANK']` instead. See 
-https://pytorch.org/docs/stable/distributed.html#launch-utility for 
-further instructions
-
-  warnings.warn(
-WARNING:torch.distributed.run:
-*****************************************
-Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-*****************************************
-  File "train_dist.py", line 536
-    print('\ttrain loss:{:.4f}  val ap:{:4f}  val auc:{:4f}'.format(total_loss, ap, auc))
-    ^
-SyntaxError: invalid syntax
-  File "train_dist.py", line 536
-    print('\ttrain loss:{:.4f}  val ap:{:4f}  val auc:{:4f}'.format(total_loss, ap, auc))
-    ^
-SyntaxError: invalid syntax
-ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: 1) local_rank: 0 (pid: 687223) of binary: /home/fzz/miniconda3/envs/pytorch1.10/bin/python
-Traceback (most recent call last):
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/runpy.py", line 194, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/runpy.py", line 87, in _run_code
-    exec(code, run_globals)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launch.py", line 193, in <module>
-    main()
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launch.py", line 189, in main
-    launch(args)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launch.py", line 174, in launch
-    run(args)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/run.py", line 710, in run
-    elastic_launch(
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 131, in __call__
-    return launch_agent(self._config, self._entrypoint, list(args))
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 259, in launch_agent
-    raise ChildFailedError(
-torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
-============================================================
-train_dist.py FAILED
-------------------------------------------------------------
-Failures:
-[1]:
-  time      : 2023-12-03_13:41:34
-  host      : gpu05
-  rank      : 1 (local_rank: 1)
-  exitcode  : 1 (pid: 687224)
-  error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
-------------------------------------------------------------
-Root Cause (first observed failure):
-[0]:
-  time      : 2023-12-03_13:41:34
-  host      : gpu05
-  rank      : 0 (local_rank: 0)
-  exitcode  : 1 (pid: 687223)
-  error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
-============================================================
-/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launch.py:178: FutureWarning: The module torch.distributed.launch is deprecated
-and will be removed in future. Use torchrun.
-Note that --use_env is set by default in torchrun.
-If your script expects `--local_rank` argument to be set, please
-change it to read from `os.environ['LOCAL_RANK']` instead. See 
-https://pytorch.org/docs/stable/distributed.html#launch-utility for 
-further instructions
-
-  warnings.warn(
-WARNING:torch.distributed.run:
-*****************************************
-Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-*****************************************
-Using backend: pytorchUsing backend: pytorch
-
-Epoch 0:
-  0%|          | 0/222 [00:00<?, ?it/s]libibverbs: Warning: couldn't load driver 'libefa-rdmav34.so': libefa-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libqedr-rdmav34.so': libqedr-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmthca-rdmav34.so': libmthca-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libsiw-rdmav34.so': libsiw-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav34.so': libbnxt_re-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav34.so': libipathverbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libmlx4-rdmav34.so': libmlx4-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhns-rdmav34.so': libhns-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libocrdma-rdmav34.so': libocrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'librxe-rdmav34.so': librxe-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav34.so': libvmw_pvrdma-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav34.so': libhfi1verbs-rdmav34.so: cannot open shared object file: No such file or directory
-libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav34.so': libcxgb4-rdmav34.so: cannot open shared object file: No such file or directory
-  0%|          | 1/222 [00:05<19:31,  5.30s/it]  1%|          | 2/222 [00:05<08:25,  2.30s/it]  1%|▏         | 3/222 [00:07<08:06,  2.22s/it]  4%|▍         | 9/222 [00:07<01:39,  2.15it/s]  7%|▋         | 16/222 [00:07<00:43,  4.78it/s] 10%|█         | 23/222 [00:07<00:24,  8.17it/s] 14%|█▎        | 30/222 [00:08<00:15, 12.43it/s] 17%|█▋        | 37/222 [00:08<00:10, 17.49it/s] 19%|█▉        | 43/222 [00:08<00:08, 22.19it/s] 23%|██▎       | 50/222 [00:08<00:06, 28.36it/s] 25%|██▌       | 56/222 [00:08<00:04, 33.36it/s] 28%|██▊       | 63/222 [00:08<00:04, 39.37it/s] 32%|███▏      | 70/222 [00:08<00:03, 44.43it/s] 35%|███▍      | 77/222 [00:08<00:03, 48.17it/s] 37%|███▋      | 83/222 [00:08<00:02, 49.89it/s] 40%|████      | 89/222 [00:09<00:02, 49.81it/s] 43%|████▎     | 95/222 [00:09<00:02, 50.66it/s] 45%|████▌     | 101/222 [00:09<00:02, 51.47it/s] 48%|████▊     | 107/222 [00:09<00:02, 50.82it/s] 51%|█████     | 113/222 [00:09<00:02, 50.45it/s] 54%|█████▎    | 119/222 [00:09<00:02, 50.90it/s] 56%|█████▋    | 125/222 [00:09<00:01, 50.48it/s] 59%|█████▉    | 131/222 [00:09<00:01, 50.58it/s] 62%|██████▏   | 137/222 [00:09<00:01, 51.81it/s] 64%|██████▍   | 143/222 [00:10<00:01, 51.59it/s] 67%|██████▋   | 149/222 [00:10<00:01, 51.51it/s] 70%|██████▉   | 155/222 [00:10<00:01, 50.98it/s] 73%|███████▎  | 161/222 [00:10<00:01, 50.91it/s] 75%|███████▌  | 167/222 [00:10<00:01, 50.08it/s] 78%|███████▊  | 173/222 [00:10<00:00, 49.80it/s] 80%|████████  | 178/222 [00:10<00:00, 49.68it/s] 82%|████████▏ | 183/222 [00:10<00:00, 49.57it/s]Training time: 10.894106149673462
- 85%|████████▍ | 188/222 [00:11<00:00, 44.18it/s] 87%|████████▋ | 193/222 [00:11<00:00, 44.44it/s] 89%|████████▉ | 198/222 [00:11<00:00, 44.69it/s] 91%|█████████▏| 203/222 [00:11<00:00, 44.74it/s] 94%|█████████▎| 208/222 [00:11<00:00, 44.66it/s] 96%|█████████▌| 213/222 [00:11<00:00, 44.57it/s] 98%|█████████▊| 218/222 [00:11<00:00, 44.44it/s]223it [00:11, 44.24it/s]                         228it [00:11, 44.42it/s]233it [00:12, 44.26it/s]238it [00:12, 44.14it/s]243it [00:12, 44.04it/s]248it [00:12, 43.78it/s]253it [00:12, 43.72it/s]258it [00:12, 43.37it/s]263it [00:12, 43.95it/s]263it [00:12, 20.62it/s]
-Traceback (most recent call last):
-  File "train_dist.py", line 534, in <module>
-    gpu_used = torch.cuda.memory_allocated(device)/1024/1024
-NameError: name 'device' is not defined
-Traceback (most recent call last):
-  File "train_dist.py", line 190, in <module>
-    torch.distributed.scatter_object_list(my_model_state, model_state, src=args.num_gpus)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1919, in scatter_object_list
-    broadcast(max_tensor_size, src=src, group=group)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1167, in broadcast
-    work.wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1634272068694/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [192.168.1.105]:13720
-WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 688755 closing signal SIGTERM
-ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: 1) local_rank: 1 (pid: 688756) of binary: /home/fzz/miniconda3/envs/pytorch1.10/bin/python
-Traceback (most recent call last):
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/runpy.py", line 194, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/runpy.py", line 87, in _run_code
-    exec(code, run_globals)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launch.py", line 193, in <module>
-    main()
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launch.py", line 189, in main
-    launch(args)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launch.py", line 174, in launch
-    run(args)
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/run.py", line 710, in run
-    elastic_launch(
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 131, in __call__
-    return launch_agent(self._config, self._entrypoint, list(args))
-  File "/home/fzz/miniconda3/envs/pytorch1.10/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 259, in launch_agent
-    raise ChildFailedError(
-torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
-============================================================
-train_dist.py FAILED
-------------------------------------------------------------
-Failures:
-  <NO_OTHER_FAILURES>
-------------------------------------------------------------
-Root Cause (first observed failure):
-[0]:
-  time      : 2023-12-03_13:43:01
-  host      : gpu05
-  rank      : 1 (local_rank: 1)
-  exitcode  : 1 (pid: 688756)
-  error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
-============================================================
-usage: train.py [-h] [--data DATA] [--config CONFIG] [--gpu GPU]
-                [--model_name MODEL_NAME] [--use_inductive]
-                [--rand_edge_features RAND_EDGE_FEATURES]
-                [--rand_node_features RAND_NODE_FEATURES]
-                [--eval_neg_samples EVAL_NEG_SAMPLES]
-train.py: error: argument --rand_edge_features: expected one argument

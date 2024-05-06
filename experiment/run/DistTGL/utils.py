@@ -23,17 +23,17 @@ def calc_f1_mic(y_true, y_pred):
 
 def load_feat(d):
     node_feats = None
-    if os.path.exists('../tgl-main/DATA/{}/node_features.pt'.format(d)):
-        node_feats = torch.load('../tgl-main/DATA/{}/node_features.pt'.format(d))
-    elif os.path.exists('../tgl-main/DATA/{}/learned_node_feats.pt'.format(d)):
-        node_feats = torch.load('../tgl-main/DATA/{}/learned_node_feats.pt'.format(d))
+    if os.path.exists('../TGL/DATA/{}/node_features.pt'.format(d)):
+        node_feats = torch.load('../TGL/DATA/{}/node_features.pt'.format(d))
+    elif os.path.exists('../TGL/DATA/{}/learned_node_feats.pt'.format(d)):
+        node_feats = torch.load('../TGL/DATA/{}/learned_node_feats.pt'.format(d))
     edge_feats = None
-    if os.path.exists('../tgl-main/DATA/{}/edge_features_e0.pt'.format(d)):
-        edge_feats = torch.load('../tgl-main/DATA/{}/edge_features_e0.pt'.format(d))
-    elif os.path.exists('../tgl-main/DATA/{}/edge_features.pt'.format(d)):
-        edge_feats = torch.load('../tgl-main/DATA/{}/edge_features.pt'.format(d))
+    if os.path.exists('../TGL/DATA/{}/edge_features_e0.pt'.format(d)):
+        edge_feats = torch.load('../TGL/DATA/{}/edge_features_e0.pt'.format(d))
+    elif os.path.exists('../TGL/DATA/{}/edge_features.pt'.format(d)):
+        edge_feats = torch.load('../TGL/DATA/{}/edge_features.pt'.format(d))
         edge_feats = torch.cat([edge_feats, torch.zeros((1, edge_feats.shape[1]), dtype=edge_feats.dtype)])
-        torch.save(edge_feats, '../tgl-main/DATA/{}/edge_features_e0.pt'.format(d))
+        torch.save(edge_feats, '../TGL/DATA/{}/edge_features_e0.pt'.format(d))
     if node_feats is not None:
         if node_feats.dtype == torch.bool:
             node_feats = node_feats.type(torch.int8)
@@ -43,11 +43,11 @@ def load_feat(d):
     return node_feats, edge_feats
 
 def load_graph(d):
-    if os.path.isfile('../tgl-main/DATA/{}/edges+uniq.csv'.format(d)):
-        df = pd.read_csv('../tgl-main/DATA/{}/edges+uniq.csv'.format(d))
+    if os.path.isfile('../TGL/DATA/{}/edges+uniq.csv'.format(d)):
+        df = pd.read_csv('../TGL/DATA/{}/edges+uniq.csv'.format(d))
     else:
-        df = pd.read_csv('../tgl-main/DATA/{}/edges.csv'.format(d))
-    g = np.load('../tgl-main/DATA/{}/ext_full.npz'.format(d))
+        df = pd.read_csv('../TGL/DATA/{}/edges.csv'.format(d))
+    g = np.load('../TGL/DATA/{}/ext_full.npz'.format(d))
     return g, df
 
 def parse_config(f):

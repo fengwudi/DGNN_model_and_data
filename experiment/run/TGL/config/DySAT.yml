@@ -5,7 +5,7 @@ sampling:
     strategy: 'uniform'
     prop_time: True
     history: 2  # 8
-    duration: 400000000 # 100000 32000000  7   100000000
+    duration: 100000 # 32000000  7  50
     num_thread: 32
 memory: 
   - type: 'none'

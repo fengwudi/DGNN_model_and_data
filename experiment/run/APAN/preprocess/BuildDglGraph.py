@@ -8,7 +8,7 @@ from dgl.data.utils import save_graphs
 import dgl.function as fn
 
 parser = argparse.ArgumentParser('Interface for TGN data preprocessing')
-parser.add_argument('-d', '--data', type=str, choices=["wikipedia", "reddit", "alipay","flight","ml25m","mooc","dgraphfin"], help='Dataset name (eg. wikipedia or reddit)',
+parser.add_argument('-d', '--data', type=str, choices=["wikipedia", "reddit", "alipay","flights","ml25m","mooc","dgraphfin"], help='Dataset name (eg. wikipedia or reddit)',
                         default='alipay')
 parser.add_argument('--new_node_count', action='store_true',
                         help='count how many nodes are not in training set')    

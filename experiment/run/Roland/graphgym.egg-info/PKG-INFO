@@ -4,8 +4,6 @@ Version: 0.1
 Summary: GraphGym package
 Author: Jiaxuan You, Rex Ying
 Author-email: jiaxuan@cs.stanford.edu, rexy@cs.stanford.edu
-License: UNKNOWN
-Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
@@ -362,5 +360,3 @@ If you find GraphGym or our paper useful, please cite our paper:
 }
 ```
 </details>
-
-
