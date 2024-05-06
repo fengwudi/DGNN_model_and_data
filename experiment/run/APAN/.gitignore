@@ -33,8 +33,7 @@ results/
 saved_checkpoints/
 pretrained_models/
 saved_models/
-data/
-data
+
 .DS_Store
 *.out
 *.ipynb

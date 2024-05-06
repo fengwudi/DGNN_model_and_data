@@ -7,7 +7,7 @@ log/
 results/
 saved_checkpoints/
 saved_models/
-data/
+
 .DS_Store
 
 ### PyCharm ###

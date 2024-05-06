@@ -2,7 +2,7 @@ experiment/datasets
 experiment/datasets/DGraphFin
 experiment/run/Roland/graphgym
 experiment/run/APAN/data/*
-!experiment/run/APAN/data
+!experiment/run/APAN/data/
 experiment/run/CAW/processed/*
 !experiment/run/CAW/processed
 experiment/run/DySAT/raw_data/*.npy
