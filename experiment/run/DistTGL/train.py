@@ -179,7 +179,8 @@ def main():
             read_status.zero_()
             write_status.zero_()
             reset_status.zero_()
-            mailbox_daemon = Process(target=start_mailbox_daemon, args=(args.omp_num_threads, group_id, dims_mailbox, args.edge_classification))
+            ctx = torch.multiprocessing.get_context('spawn')
+            mailbox_daemon = ctx.Process(target=start_mailbox_daemon, args=(args.omp_num_threads, group_id, dims_mailbox, args.edge_classification))
             mailbox_daemon.start()
             torch.distributed.barrier()
         else:
