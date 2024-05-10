@@ -19,6 +19,7 @@ experiment/run/SPEED/partition/data/*
 experiment/run/SPEED/partition/divided_nodes_seed/*
 experiment/run/DistTGL/minibatches/*
 experiment/run/DistTGL/__pycache__/
+experiment/run/DistTGL/models/*
 experiment/run/TGAT/__pycache__/
 experiment/run/EvolveGCN/__pycache__/
 experiment/run/TGAT/log/*
@@ -34,3 +35,4 @@ experiment/run/TGAT/saved_checkpoints/*
 !experiment/run/CAW/processed/.gitkeep
 !experiment/run/DySAT/data/.gitkeep
 !experiment/run/DistTGL/minibatches/.gitkeep
+!experiment/run/DistTGL/models/.gitkeep

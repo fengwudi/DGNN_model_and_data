@@ -1,12 +1,12 @@
-# DGNN_model_and_data
+# DGNN Model/Framework and Datasets
 
-## The code link of DGNN model/framwork
+## 1 The Code Link of DGNN Model and Framwork
 You can find them at [paper_code](https://github.com/fengwudi/DGNN_model_and_data/tree/main/paper_code)
 
-## Experiment of our paper
+## 2 Experiment of Our Paper
 
-### Environment
-You can install the required conda environment for the experiment through [environment](https://github.com/fengwudi/DGNN_model_and_data/tree/main/experiment/environment) 
+### 2.1 Environment
+You can install the required conda environment for the experiment through [environment](https://github.com/fengwudi/DGNN_model_and_data/tree/main/experiment/environment).
 
  We run TGN/JODIE/DyREP/EvolveGCN/TGAT/APAN/CAW use `apan.yml`.
 
@@ -16,12 +16,12 @@ You can install the required conda environment for the experiment through [envir
 
  Run DistTGL/SPEED use `speed.yml`.
 .
-### Datasets
+### 2.2 Datasets
 
 We give the experiment datasets, please notice that you show process data at each model and framework
 
 
-|datasets |  link |
+|Datasets |  Link |
 | ----------- | ----------- |
 Wikipedia | http://snap.stanford.edu/jodie/wikipedia.csv
 Reddit  | http://snap.stanford.edu/jodie/reddit.csv
@@ -39,18 +39,47 @@ Modify `ratings.csv` to `ml25m.csv` use
 mv experiment/datasets/ratings.csv experiment/datasets/ml25m.csv
 ```
 
-### Run
-If you have prepared the environment and dataset, you can start the experiment [run](https://github.com/fengwudi/DGNN_model_and_data/tree/main/experiment/run).
+### 2.3 Run
 
-#### Preprocess data in TGN format
-As many model use TGN's format dataset, we first preprocess dataset of TGN
+If you have prepared the environment and dataset, you can start the experiment.
+
+Our experiment is at 9 models and 3 frameworks.
+
+For JODIE and DyREP, we use the version implemented by TGN.
+
+For DySAT, we use the version implemented by pytorch.
+
+| Model | Code |
+| ----------- | ----------- |
+APAN |https://github.com/WangXuhongCN/APAN  
+EvolveGCN(-H/-O) |https://github.com/IBM/EvolveGCN  
+DySAT  |https://github.com/FeiGSSS/DySAT_pytorch
+TGAT  |https://github.com/StatsDLMathsRecomSys/Inductive-representation-learning-on-temporal-graphs 
+TGN(TGN/DyREP/JODIE) |https://github.com/twitter-research/tgn 
+CAW  |http://snap.stanford.edu/caw/  
+ROLAND |https://github.com/snap-stanford/roland 
+
+| Framework | Code |
+| ----------- | ----------- |
+TGL|https://github.com/amazon-science/tgl
+DistTGL|https://github.com/amazon-science/disttgl
+SPEED |https://github.com/chenxi1228/SPEED
+
+#### 2.3.1 Preprocess Data in TGN Format
+
+As many model use TGN's format dataset, we first preprocess dataset of TGN.
+
 ```shell
-conda activate apan
+cd experiment/run/TGN/
 cp ../../datasets/{wikipedia.csv,reddit.csv,mooc.csv,Flights.csv,ml25m.csv,dgraphfin.npz} data/
 python utils/preprocess_data.py --data wikipedia/reddit/mooc/Flights/ml25m/dgraphfin
 ```
 
-#### 1、APAN
+#### 2.3.2 DGNN Model
+
+The detailed steps for the model are listed below.
+
+##### (1) APAN
 
 ```shell
 conda activate apan
@@ -83,7 +112,7 @@ python train.py -d wikipedia/reddit/mooc --tasks NC --bs 100
 ```
 
 
-#### 2、CAW
+##### (2) CAW
 ```shell
 conda activate apan
 cd experiment/run/CAW/
@@ -97,7 +126,7 @@ python main.py -d ml25m --pos_dim 2 --bs 1000 --n_degree 20 --mode t --bias 1e-5
 python main.py -d wikipedia/reddit/Flights --bs 100/500/2000 --n_degree 20 --mode t --bias 1e-5 --pos_enc lp --walk_pool sum --n_layer 1
 ```
 
-#### 3、DySAT
+##### (3) DySAT
 ```shell
 conda activate pytorch1.10
 cd experiment/run/DySAT/
@@ -108,7 +137,7 @@ python raw_data/preprecess_data.py --dataset wikipedia/reddit/mooc/Flights/ml25m
 # run link prediction
 python -u train.py --dataset wikipedia/reddit/mooc/Flights/ml25m/dgraphfin --time_steps -1 --featureless False --epochs 50 --early_stop 3
 ```
-#### 4、EvolveGCN
+##### (4) EvolveGCN
 ```shell
 conda activate apan
 cd experiment/run/EvolveGCN/data/raw_data
@@ -150,7 +179,7 @@ python run_exp.py --config_file ./experiments/parameters_reddit_nodecls_egcn_o.y
 python run_exp.py --config_file ./experiments/parameters_mooc_nodecls_egcn_h.yaml
 python run_exp.py --config_file ./experiments/parameters_mooc_nodecls_egcn_o.yaml
 ```
-#### 5、Roland
+##### (5) Roland
 ```shell
 conda activate roland
 cd experiment/run/Roland
@@ -162,7 +191,7 @@ cd run/
 python main.py --cfg './(wikipedia/reddit/mooc/flights/ml25m/dgraphfin).yaml' --repeat 1
 ```
 
-#### 6、TGAT
+##### (6) TGAT
 ```shell
 conda activate apan
 cd experiment/run/TGAT
@@ -181,7 +210,7 @@ python -u learn_edge.py -d wikipedia/reddit/Flights --bs 1000 --uniform  --n_deg
 python -u learn_node.py -d wikipedia/reddit/mooc --n_layer 1 --bs 100 --uniform  --n_degree 20 --agg_method attn --attn_mode prod--n_head 2 --prefix wiki/reddit/mooc
 ```
 
-#### 7、TGN/DyREP/JODIE
+##### (7) TGN/DyREP/JODIE
 ```shell
 conda activate apan
 cd experiment/run/TGN/
@@ -206,7 +235,9 @@ python train_supervised.py -d wikipedia/reddit/mooc --use_memory --memory_update
 python train_supervised.py -d wikipedia/reddit/mooc --use_memory --memory_updater rnn --dyrep --use_destination_embedding_in_message --prefix dyrep_rnn # DyREP
 ```
 
-#### 8、TGL
+#### 2.3.3 DGNN Framework
+
+##### (1) TGL
 ```shell
 conda activate pytorch1.10
 cd experiment/run/TGL/
@@ -234,7 +265,7 @@ python -m torch.distributed.launch --nproc_per_node=3 train_dist.py --data ML25M
 python -m torch.distributed.launch --nproc_per_node=5 train_dist.py --data ML25M/DGraphFin --config ./config/dist/(APAN.yml/DySAT.yml/JODIE.yml/TGAT.yml/TGN.yml) --num_gpus 4 # 4GPU
 ```
 
-#### 9、DistTGL
+##### (2) DistTGL
 ```shell
 conda activate speed
 cd experiment/run/DistTGL/
@@ -253,7 +284,7 @@ torchrun --nnodes 2  --node_rank 0 --nproc_per_node 4 --master_addr  <CurrentSer
 torchrun --nnodes 2  --node_rank 1 --nproc_per_node 4 --master_addr  <RemoveServerIP>  --master_port <Port> train.py --data ML25M/DGraphFin --pbar --group 8 --seed 0 --profile --minibatch_parallelism 1 --model tgn # 8GPU
 ```
 
-#### 10、SPEED
+##### (3) SPEED
 ```shell
 conda activate speed
 cd experiment/run/SPEED/
