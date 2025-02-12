@@ -1,11 +1,14 @@
 # DGNN Model/Framework and Datasets
 
 ## 1 The Code Link of DGNN Model and Framwork
-You can find them at [paper_code](https://github.com/fengwudi/DGNN_model_and_data/tree/main/paper_code)
+You can find them at [paper_code](https://github.com/fengwudi/DGNN_model_and_data/tree/main/paper_code).
 
-## 2 Experiment of Our Paper
+## 2 Collated Datasets
+We collected almost all the data sets mentioned in the paper and organized them in [datasets](https://github.com/fengwudi/DGNN_model_and_data/tree/main/datasets).
 
-### 2.1 Environment
+## 3 Experiment of Our Paper
+
+### 3.1 Environment
 You can install the required conda environment for the experiment through [environment](https://github.com/fengwudi/DGNN_model_and_data/tree/main/experiment/environment).
 
  We run TGN/JODIE/DyREP/EvolveGCN/TGAT/APAN/CAW use `apan.yml`.
@@ -18,7 +21,7 @@ You can install the required conda environment for the experiment through [envir
 
  Run DyGFormer/DyGLib/TGLite use `tglite.yml`
 .
-### 2.2 Datasets
+### 3.2 Datasets
 
 We give the experiment datasets, please notice that you show process data at each model and framework
 
@@ -41,7 +44,7 @@ Modify `ratings.csv` to `ml25m.csv` use
 mv experiment/datasets/ratings.csv experiment/datasets/ml25m.csv
 ```
 
-### 2.3 Run
+### 3.3 Run
 
 If you have prepared the environment and dataset, you can start the experiment.
 
@@ -70,7 +73,7 @@ SPEED |https://github.com/chenxi1228/SPEED
 DyGLib |https://github.com/yule-BUAA/DyGLib
 TGLite |https://github.com/ADAPT-uiuc/tglite
 
-#### 2.3.1 Preprocess Data in TGN Format
+#### 3.3.1 Preprocess Data in TGN Format
 
 As many model use TGN's format dataset, we first preprocess dataset of TGN.
 
@@ -81,7 +84,7 @@ python utils/preprocess_data.py --data wikipedia/reddit/mooc --bipartite
 python utils/preprocess_data.py --data dgraphfin/Flights/ml25m
 ```
 
-#### 2.3.2 DGNN Model
+#### 3.3.2 DGNN Model
 
 The detailed steps for the model are listed below.
 
