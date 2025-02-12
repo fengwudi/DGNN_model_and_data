@@ -57,7 +57,7 @@ def preprocess_dgraphfin(data_name):
         ts = edge_timestamp[idx]
         label = y[u]
         edge_feature = edge_type[idx]
-        one_hot = np.zeros(172)
+        one_hot = np.zeros(11)
         one_hot[(edge_feature - 1)] = 1
         edge_label_oh = one_hot
 
@@ -109,7 +109,7 @@ def preprocess_ml25m(data_name):
       ts = float(e[3]) - 789652009
       label = float(e[2])  # int(e[3])
 
-      feat = np.array([float(e[2]), float(0)])
+      feat = np.array(float(e[2]))
 
       u_list.append(u)
       i_list.append(i)
@@ -158,17 +158,22 @@ def run(data_name, bipartite=True):
   
   if data_name=='ml25m':
     df, feat = preprocess_ml25m(PATH)
+    df = df.sort_values(['ts', 'u'])
   elif data_name=='dgraphfin':
     df, feat = preprocess_dgraphfin(PATH)
   else:
     df, feat = preprocess(PATH)
   new_df = reindex(df, bipartite)
-
+  
+  if data_name=='ml25m':
+    feat = feat.reshape(-1,1)
+  
+  # print(feat.shape)
   empty = np.zeros(feat.shape[1])[np.newaxis, :]
   feat = np.vstack([empty, feat])
 
   max_idx = max(new_df.u.max(), new_df.i.max())
-  rand_feat = np.zeros((max_idx + 1, 172))
+  rand_feat = np.zeros((max_idx + 1, feat.shape[1]))
 
   new_df.to_csv(OUT_DF)
   np.save(OUT_FEAT, feat)

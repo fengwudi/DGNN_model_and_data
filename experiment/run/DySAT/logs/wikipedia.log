@@ -1,112 +1,78 @@
-/home/wtx/workspace/python_project/DySAT_pytorch/utils/minibatch.py:111: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at /opt/conda/conda-bld/pytorch_1670525541990/work/torch/csrc/utils/tensor_new.cpp:230.)
-  node_2_neg_list = [torch.LongTensor(node) for node in node_2_negative]
-Namespace(time_steps=-1, dataset='wikipedia', GPU_ID=0, epochs=200, val_freq=1, test_freq=1, batch_size=512, featureless=True, early_stop=10, residual=True, neg_sample_size=10, walk_len=20, neg_weight=1.0, learning_rate=0.01, spatial_drop=0.1, temporal_drop=0.5, weight_decay=0.0005, structural_head_config='16,8,8', structural_layer_config='128', temporal_head_config='16', temporal_layer_config='128', position_ffn='True', window=-1)
+Namespace(GPU_ID=0, batch_size=1000, dataset='wikipedia', early_stop=3, epochs=50, featureless=True, learning_rate=0.0001, neg_sample_size=1, neg_weight=1.0, position_ffn='True', residual=True, spatial_drop=0.1, structural_head_config='16,8,8', structural_layer_config='128', temporal_drop=0.5, temporal_head_config='16', temporal_layer_config='128', test_freq=1, time_steps=-1, val_freq=1, walk_len=20, weight_decay=0.0005, window=-1)
 Loaded 27 graphs 
 Computing training pairs ...
 # nodes with random walk samples: 1075
-# sampled pairs: 2140642
+# sampled pairs: 2140758
 # nodes with random walk samples: 1187
-# sampled pairs: 2370496
+# sampled pairs: 2369154
 # nodes with random walk samples: 1304
-# sampled pairs: 2635422
+# sampled pairs: 2638336
 # nodes with random walk samples: 1446
-# sampled pairs: 2966712
+# sampled pairs: 2964672
 # nodes with random walk samples: 1497
-# sampled pairs: 3032786
+# sampled pairs: 3028152
 # nodes with random walk samples: 1645
-# sampled pairs: 3343174
+# sampled pairs: 3340830
 # nodes with random walk samples: 1640
-# sampled pairs: 3371286
+# sampled pairs: 3373582
 # nodes with random walk samples: 1594
-# sampled pairs: 3275278
+# sampled pairs: 3275006
 # nodes with random walk samples: 1534
-# sampled pairs: 3159334
+# sampled pairs: 3162864
 # nodes with random walk samples: 1615
-# sampled pairs: 3320828
+# sampled pairs: 3323320
 # nodes with random walk samples: 1709
-# sampled pairs: 3567486
+# sampled pairs: 3572278
 # nodes with random walk samples: 1729
-# sampled pairs: 3575948
+# sampled pairs: 3581944
 # nodes with random walk samples: 1744
-# sampled pairs: 3702636
+# sampled pairs: 3702300
 # nodes with random walk samples: 1619
-# sampled pairs: 3327550
+# sampled pairs: 3335650
 # nodes with random walk samples: 1644
-# sampled pairs: 3383346
+# sampled pairs: 3390012
 # nodes with random walk samples: 1628
-# sampled pairs: 3318622
+# sampled pairs: 3316344
 # nodes with random walk samples: 1677
-# sampled pairs: 3460804
+# sampled pairs: 3461460
 # nodes with random walk samples: 1626
-# sampled pairs: 3338774
+# sampled pairs: 3340700
 # nodes with random walk samples: 1647
-# sampled pairs: 3350724
+# sampled pairs: 3353740
 # nodes with random walk samples: 1688
-# sampled pairs: 3476708
+# sampled pairs: 3479148
 # nodes with random walk samples: 1640
-# sampled pairs: 3402018
+# sampled pairs: 3403890
 # nodes with random walk samples: 1672
-# sampled pairs: 3416134
+# sampled pairs: 3415612
 # nodes with random walk samples: 1790
-# sampled pairs: 3654732
+# sampled pairs: 3654584
 # nodes with random walk samples: 1612
-# sampled pairs: 3328774
+# sampled pairs: 3330146
 # nodes with random walk samples: 1573
-# sampled pairs: 3221876
+# sampled pairs: 3219518
 # nodes with random walk samples: 1455
-# sampled pairs: 2962590
+# sampled pairs: 2962094
 # nodes with random walk samples: 1219
-# sampled pairs: 2462646
+# sampled pairs: 2460828
 Generating eval data ....
 No. Train: Pos=183, Neg=183 
 No. Val: Pos=183, Neg=183 
 No. Test: Pos=552, Neg=552
-Epoch 0  ,  Loss = nan, Val AUC 0.907 Test AUC 0.869
-val auc 0.903, ap 0.927, recall 0.940, acc 0.634
-test auc 0.862, ap 0.904, recall 0.889, acc 0.641
-average time 67.71905589103699, memory 15796887552.0
-Epoch 1  ,  Loss = 23.333, Val AUC 0.910 Test AUC 0.887
-val auc 0.907, ap 0.931, recall 0.945, acc 0.617
-test auc 0.873, ap 0.913, recall 0.909, acc 0.633
-average time 66.22344315052032, memory 19079776000.0
-Epoch 2  ,  Loss = nan, Val AUC 0.903 Test AUC 0.892
-val auc 0.907, ap 0.930, recall 0.949, acc 0.619
-test auc 0.878, ap 0.917, recall 0.912, acc 0.630
-average time 65.79287799199422, memory 20174072149.333332
-Epoch 3  ,  Loss = nan, Val AUC 0.903 Test AUC 0.887
-val auc 0.906, ap 0.927, recall 0.945, acc 0.622
-test auc 0.879, ap 0.917, recall 0.911, acc 0.630
-average time 65.04085153341293, memory 20721220224.0
-Epoch 4  ,  Loss = 19.867, Val AUC 0.902 Test AUC 0.881
-val auc 0.904, ap 0.925, recall 0.943, acc 0.621
-test auc 0.879, ap 0.915, recall 0.913, acc 0.631
-average time 64.3868375301361, memory 21049509068.8
-Epoch 5  ,  Loss = 19.565, Val AUC 0.895 Test AUC 0.882
-val auc 0.902, ap 0.922, recall 0.941, acc 0.628
-test auc 0.879, ap 0.915, recall 0.912, acc 0.633
-average time 64.51355838775635, memory 21268368298.666668
-Epoch 6  ,  Loss = 19.217, Val AUC 0.895 Test AUC 0.883
-val auc 0.900, ap 0.921, recall 0.940, acc 0.635
-test auc 0.880, ap 0.914, recall 0.914, acc 0.637
-average time 64.20393398829869, memory 21424696320.0
-Epoch 7  ,  Loss = nan, Val AUC 0.893 Test AUC 0.876
-val auc 0.899, ap 0.920, recall 0.938, acc 0.639
-test auc 0.879, ap 0.913, recall 0.915, acc 0.640
-average time 64.10130232572556, memory 21541942336.0
-Epoch 8  ,  Loss = nan, Val AUC 0.886 Test AUC 0.867
-val auc 0.897, ap 0.918, recall 0.935, acc 0.643
-test auc 0.878, ap 0.911, recall 0.915, acc 0.644
-average time 63.905666165881684, memory 21633133681.77778
-Epoch 9  ,  Loss = 18.492, Val AUC 0.877 Test AUC 0.857
-val auc 0.895, ap 0.917, recall 0.934, acc 0.646
-test auc 0.877, ap 0.909, recall 0.915, acc 0.645
-average time 63.73810129165649, memory 21706086758.4
-Epoch 10 ,  Loss = nan, Val AUC 0.877 Test AUC 0.859
-val auc 0.893, ap 0.915, recall 0.932, acc 0.648
-test auc 0.875, ap 0.907, recall 0.915, acc 0.647
-average time 63.56398289853876, memory 21765775639.272728
-Epoch 11 ,  Loss = nan, Val AUC 0.865 Test AUC 0.846
-val auc 0.891, ap 0.912, recall 0.931, acc 0.649
-test auc 0.873, ap 0.905, recall 0.914, acc 0.649
-average time 63.43051401774088, memory 21815516373.333332
-Best Test AUC = 0.887
+Epoch 0  ,  Loss = nan, Val AUC 0.619 Test AUC 0.656
+val auc 0.4613, ap 0.4924, recall 1.0000, acc 0.5000
+test auc 0.4269, ap 0.4415, recall 1.0000, acc 0.5000
+average time 57.37 s, memory 16252.91 MB
+Epoch 1  ,  Loss = nan, Val AUC 0.707 Test AUC 0.748
+val auc 0.4043, ap 0.4587, recall 1.0000, acc 0.5000
+test auc 0.3800, ap 0.4189, recall 1.0000, acc 0.5000
+average time 52.71 s, memory 19542.80 MB
+Epoch 2  ,  Loss = nan, Val AUC 0.770 Test AUC 0.802
+val auc 0.3710, ap 0.4436, recall 1.0000, acc 0.5000
+test auc 0.3587, ap 0.4101, recall 1.0000, acc 0.5000
+average time 51.01 s, memory 20639.43 MB
+Epoch 3  ,  Loss = nan, Val AUC 0.809 Test AUC 0.832
+val auc 0.3526, ap 0.4368, recall 1.0000, acc 0.5000
+test auc 0.3499, ap 0.4073, recall 1.0000, acc 0.5000
+average time 50.26 s, memory 21187.74 MB
+Best Test AUC = 0.656

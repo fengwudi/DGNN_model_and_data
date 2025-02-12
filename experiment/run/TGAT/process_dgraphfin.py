@@ -24,7 +24,7 @@ def preprocess(data_name):
         ts = edge_timestamp[idx]
         label = y[u]
         edge_feature = edge_type[idx]
-        one_hot = np.zeros(172)
+        one_hot = np.zeros(11)
         one_hot[(edge_feature - 1)] = 1
         edge_label_oh = one_hot
 
@@ -98,7 +98,7 @@ def run(data_name, bipartite=True):
 
     max_idx = max(new_df.u.max(), new_df.i.max())
 
-    rand_feat = np.zeros((max_idx + 1, 172))
+    rand_feat = np.zeros((max_idx + 1, 11))
 
     new_df.to_csv(OUT_DF)
     np.save(OUT_FEAT, feat)
@@ -114,4 +114,4 @@ args = parser.parse_args()
 
 
 if __name__ == '__main__':
-    run('dgraphfin', bipartite=True)
+    run('dgraphfin', bipartite=False)

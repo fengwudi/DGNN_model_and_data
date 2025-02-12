@@ -15,6 +15,8 @@ You can install the required conda environment for the experiment through [envir
  Run DySAT/TGL use `tgl.yml`.
 
  Run DistTGL/SPEED use `speed.yml`.
+
+ Run DyGFormer/DyGLib/TGLite use `tglite.yml`
 .
 ### 2.2 Datasets
 
@@ -58,12 +60,15 @@ TGAT  |https://github.com/StatsDLMathsRecomSys/Inductive-representation-learning
 TGN(TGN/DyREP/JODIE) |https://github.com/twitter-research/tgn 
 CAW  |http://snap.stanford.edu/caw/  
 ROLAND |https://github.com/snap-stanford/roland 
+DyGFormer |https://github.com/yule-BUAA/DyGLib
 
 | Framework | Code |
 | ----------- | ----------- |
 TGL|https://github.com/amazon-science/tgl
 DistTGL|https://github.com/amazon-science/disttgl
 SPEED |https://github.com/chenxi1228/SPEED
+DyGLib |https://github.com/yule-BUAA/DyGLib
+TGLite |https://github.com/ADAPT-uiuc/tglite
 
 #### 2.3.1 Preprocess Data in TGN Format
 
@@ -72,7 +77,8 @@ As many model use TGN's format dataset, we first preprocess dataset of TGN.
 ```shell
 cd experiment/run/TGN/
 cp ../../datasets/{wikipedia.csv,reddit.csv,mooc.csv,Flights.csv,ml25m.csv,dgraphfin.npz} data/
-python utils/preprocess_data.py --data wikipedia/reddit/mooc/Flights/ml25m/dgraphfin
+python utils/preprocess_data.py --data wikipedia/reddit/mooc --bipartite
+python utils/preprocess_data.py --data dgraphfin/Flights/ml25m
 ```
 
 #### 2.3.2 DGNN Model
@@ -116,11 +122,11 @@ python train.py -d wikipedia/reddit/mooc --tasks NC --bs 100
 ```shell
 conda activate apan
 cd experiment/run/CAW/
-cp ../TGN/data/{ml_wikipedia.npy,ml_wikipedia.csv,ml_wikipedia_node.npy,ml_reddit.npy,ml_reddit.csv,ml_reddit_node.npy,ml_mooc.npy,ml_mooc.csv,ml_mooc_node.npy,ml_Flights.npy,ml_Flights.csv,ml_Flights_node.npy,ml_ml25m.npy,ml_ml25m.csv,ml_ml25m_node.npy,ml_dgraphfin.npy,ml_dgraphfin.csv,ml_dgraphfin_node.npy} processed/
+ln -s ../TGN/data/ ./processed
 
 # run link prediction
-python main.py -d wikipedia/reddit/mooc/Flights/dgraphfin --bs 1000 --n_degree 20 --mode t --bias 1e-5 --pos_enc lp --walk_pool sum --n_layer 1
-python main.py -d ml25m --pos_dim 2 --bs 1000 --n_degree 20 --mode t --bias 1e-5 --pos_enc lp --walk_pool sum --n_layer 1 --walk_n_head 2
+python main.py -d wikipedia/reddit/mooc/Flights --bs 1000 --n_degree 20 --mode t --bias 1e-5 --pos_enc lp --walk_pool sum --n_layer 1
+python main.py -d ml25m/dgraphfin --bs 1000 --n_degree 20 --mode t --bias 1e-5 --pos_enc lp --walk_pool sum --n_layer 1 --walk_n_head 1
 
 # run hyperparameter batch size 100/500/2000
 python main.py -d wikipedia/reddit/Flights --bs 100/500/2000 --n_degree 20 --mode t --bias 1e-5 --pos_enc lp --walk_pool sum --n_layer 1
@@ -184,7 +190,7 @@ python run_exp.py --config_file ./experiments/parameters_mooc_nodecls_egcn_o.yam
 conda activate roland
 cd experiment/run/Roland
 python setup.py develop
-cp ../TGN/data/{ml_wikipedia.npy,ml_wikipedia.csv,ml_wikipedia_node.npy,ml_reddit.npy,ml_reddit.csv,ml_reddit_node.npy,ml_mooc.npy,ml_mooc.csv,ml_mooc_node.npy,ml_Flights.npy,ml_Flights.csv,ml_Flights_node.npy,ml_ml25m.npy,ml_ml25m.csv,ml_ml25m_node.npy,ml_dgraphfin.npy,ml_dgraphfin.csv,ml_dgraphfin_node.npy} roland_public_data/
+ln -s ../TGN/data/ ./roland_public_data
 cd run/
 
 # run link prediction
@@ -195,7 +201,7 @@ python main.py --cfg './(wikipedia/reddit/mooc/flights/ml25m/dgraphfin).yaml' --
 ```shell
 conda activate apan
 cd experiment/run/TGAT
-cp ../TGN/data/{ml_wikipedia.npy,ml_wikipedia.csv,ml_wikipedia_node.npy,ml_reddit.npy,ml_reddit.csv,ml_reddit_node.npy,ml_mooc.npy,ml_mooc.csv,ml_mooc_node.npy,ml_Flights.npy,ml_Flights.csv,ml_Flights_node.npy,ml_ml25m.npy,ml_ml25m.csv,ml_ml25m_node.npy,ml_dgraphfin.npy,ml_dgraphfin.csv,ml_dgraphfin_node.npy} processed/
+ln -s ../TGN/data/ ./processed
 
 # run link prediction
 python -u learn_edge.py -d wikipedia/reddit/mooc/Flights/ml25m/dgraphfin --bs 1000 --uniform  --n_degree 20 --agg_method attn --attn_mode prod --n_layer 1 --n_head 2 --prefix wiki/reddit/mooc/Flights/ml25m/dgraphfin
@@ -235,6 +241,20 @@ python train_supervised.py -d wikipedia/reddit/mooc --use_memory --memory_update
 python train_supervised.py -d wikipedia/reddit/mooc --use_memory --memory_updater rnn --dyrep --use_destination_embedding_in_message --prefix dyrep_rnn # DyREP
 ```
 
+##### (8) DyGFormer
+```shell
+conda activate tglite
+cd experiment/run/DyGLib/
+ln -s ../TGN/data/ ./processed_data
+
+python train_link_prediction.py --dataset_name wikipedia --model_name DyGFormer --batch_size 1000 # wikipedia
+python train_link_prediction.py --dataset_name reddit --model_name DyGFormer --batch_size 1000 # reddit
+python train_link_prediction.py --dataset_name mooc --model_name DyGFormer --batch_size 1000 # mooc
+python train_link_prediction.py --dataset_name Flights --model_name DyGFormer --batch_size 1000 # Flights
+python train_link_prediction.py --dataset_name dgraphfin --model_name DyGFormer --batch_size 1000 # dgraphfin
+python train_link_prediction.py --dataset_name ml25m --model_name DyGFormer --batch_size 1000 # ml25m
+```
+
 #### 2.3.3 DGNN Framework
 
 ##### (1) TGL
@@ -253,6 +273,7 @@ cd ..
 python gen_graph.py --data WIKI/REDDIT/MOOC/Flights/ML25M/DGraphFin
 
 # run link prediction
+(you should add --rand_edge_features 172 if data is MOOC)
 python train.py --data WIKI/REDDIT/MOOC/Flights/ML25M/DGraphFin --config ./config/APAN.yml # TGL-APAN
 python train.py --data WIKI/REDDIT/MOOC/Flights/ML25M/DGraphFin --config ./config/DySAT.yml # TGL-DySAT you should change yaml file `duration`:100000 for WIKI/REDDIT/MOOC ; 7 for Flights ; 50 for DGraphFin ; 32000000 for ML25M
 python train.py --data WIKI/REDDIT/MOOC/Flights/ML25M/DGraphFin --config ./config/JODIE.yml # TGL-JODIE
@@ -288,7 +309,7 @@ torchrun --nnodes 2  --node_rank 1 --nproc_per_node 4 --master_addr  <RemoveServ
 ```shell
 conda activate speed
 cd experiment/run/SPEED/
-cp ../TGN/data/{ml_wikipedia.npy,ml_wikipedia.csv,ml_wikipedia_node.npy,ml_reddit.npy,ml_reddit.csv,ml_reddit_node.npy,ml_mooc.npy,ml_mooc.csv,ml_mooc_node.npy,ml_Flights.npy,ml_Flights.csv,ml_Flights_node.npy,ml_ml25m.npy,ml_ml25m.csv,ml_ml25m_node.npy,ml_dgraphfin.npy,ml_dgraphfin.csv,ml_dgraphfin_node.npy} data/
+ln -s ../TGN/data/ ./data
 python partition/transform.py --data wikipedia/reddit/mooc/Flights/ml25m/dgraphfin
 cd partition
 java -jar dist/partition.jar wikipedia/reddit/mooc/Flights/ml25m/dgraphfin 1/2/4 0.01 -degree_compute decay -algorithm hashing -lambda 1 -beta 0.1  -seed 0 -threads 8 -output output
@@ -298,4 +319,90 @@ cd ..
 python ddp_train_self_supervised.py --gpu 0 --data wikipedia/reddit/mooc/Flights/ml25m/dgraphfin --part_exp 0 --[tgat/tgn/dyrep/jodie] --top_k 10 --seed 0 --sync_mode last --n_epochs 50 --divide_method pre --bs 1000 --no_ind_val # 1GPU
 python ddp_train_self_supervised.py --gpu 0,1 --data ml25m/dgraphfin --part_exp 1 --[tgat/tgn/dyrep/jodie] --top_k 10 --seed 0 --sync_mode last --n_epochs 50 --divide_method pre --bs 1000 --no_ind_val # 2GPU
 python ddp_train_self_supervised.py --gpu 0,1,2,3 --data ml25m/dgraphfin --part_exp 2 --[tgat/tgn/dyrep/jodie] --top_k 10 --seed 0 --sync_mode last --n_epochs 50 --divide_method pre --bs 1000 --no_ind_val # 4GPU
+```
+
+#### (4) DyGLib
+```shell
+conda activate tglite
+cd experiment/run/DyGLib/
+ln -s ../TGN/data/ ./processed_data
+
+# JODIE
+python train_link_prediction.py --dataset_name wikipedia --model_name JODIE --batch_size 1000
+python train_link_prediction.py --dataset_name reddit --model_name JODIE --batch_size 1000
+python train_link_prediction.py --dataset_name mooc --model_name JODIE --batch_size 1000
+python train_link_prediction.py --dataset_name Flights --model_name JODIE --batch_size 1000
+python train_link_prediction.py --dataset_name dgraphfin --model_name JODIE --batch_size 1000
+python train_link_prediction.py --dataset_name ml25m --model_name JODIE --batch_size 1000
+
+# DyRep
+python train_link_prediction.py --dataset_name wikipedia --model_name DyRep --batch_size 1000
+python train_link_prediction.py --dataset_name reddit --model_name DyRep --batch_size 1000
+python train_link_prediction.py --dataset_name mooc --model_name DyRep --batch_size 1000
+python train_link_prediction.py --dataset_name Flights --model_name DyRep --batch_size 1000
+python train_link_prediction.py --dataset_name dgraphfin --model_name DyRep --batch_size 1000
+python train_link_prediction.py --dataset_name ml25m --model_name DyRep --batch_size 1000
+
+# TGAT
+python train_link_prediction.py --dataset_name wikipedia --model_name TGAT --batch_size 1000
+python train_link_prediction.py --dataset_name reddit --model_name TGAT --batch_size 1000
+python train_link_prediction.py --dataset_name mooc --model_name TGAT --batch_size 1000
+python train_link_prediction.py --dataset_name Flights --model_name TGAT --batch_size 1000
+python train_link_prediction.py --dataset_name dgraphfin --model_name TGAT --batch_size 1000
+python train_link_prediction.py --dataset_name ml25m --model_name TGAT --batch_size 1000
+
+# TGN
+python train_link_prediction.py --dataset_name wikipedia --model_name TGN --batch_size 1000
+python train_link_prediction.py --dataset_name reddit --model_name TGN --batch_size 1000
+python train_link_prediction.py --dataset_name mooc --model_name TGN --batch_size 1000
+python train_link_prediction.py --dataset_name Flights --model_name TGN --batch_size 1000
+python train_link_prediction.py --dataset_name dgraphfin --model_name TGN --batch_size 1000
+python train_link_prediction.py --dataset_name ml25m --model_name TGN --batch_size 1000
+
+# CAWN
+python train_link_prediction.py --dataset_name wikipedia --model_name CAWN --batch_size 1000
+python train_link_prediction.py --dataset_name reddit --model_name CAWN --batch_size 1000
+python train_link_prediction.py --dataset_name mooc --model_name CAWN --batch_size 1000
+python train_link_prediction.py --dataset_name Flights --model_name CAWN --batch_size 1000
+python train_link_prediction.py --dataset_name dgraphfin --model_name CAWN --batch_size 1000
+python train_link_prediction.py --dataset_name ml25m --model_name CAWN --batch_size 1000
+```
+
+#### (5) TGLite
+```shell
+conda activate tglite
+cd experiment/run/TGLite/
+ln -s ../TGL/DATA/ ./data
+
+#apan
+python examples/apan/train.py -d WIKI --data-path ./examples --bsize 1000 --opt-all 
+python examples/apan/train.py -d REDDIT --data-path ./examples --bsize 1000 --opt-all 
+python examples/apan/train.py -d MOOC --data-path ./examples --bsize 1000 --opt-all 
+python examples/apan/train.py -d Flights --data-path ./examples --bsize 1000 --opt-all 
+python examples/apan/train.py -d DGraphFin --data-path ./examples --bsize 1000 --opt-all
+python examples/apan/train.py -d ML25M --data-path ./examples --bsize 1000 --opt-all
+
+#jodie
+python examples/jodie/train.py -d WIKI --data-path ./examples --bsize 1000
+python examples/jodie/train.py -d REDDIT --data-path ./examples --bsize 1000
+python examples/jodie/train.py -d MOOC --data-path ./examples --bsize 1000
+python examples/jodie/train.py -d Flights --data-path ./examples --bsize 1000
+python examples/jodie/train.py -d DGraphFin --data-path ./examples --bsize 1000
+python examples/jodie/train.py -d ML25M --data-path ./examples --bsize 1000
+
+#tgat
+python examples/tgat/train.py -d WIKI --data-path ./examples --bsize 1000 --opt-all 
+python examples/tgat/train.py -d REDDIT --data-path ./examples --bsize 1000 --opt-all
+python examples/tgat/train.py -d MOOC --data-path ./examples --bsize 1000 --opt-all
+python examples/tgat/train.py -d Flights --data-path ./examples --bsize 1000 --opt-all
+python examples/tgat/train.py -d DGraphFin --data-path ./examples --bsize 1000 --opt-all
+python examples/tgat/train.py -d ML25M --data-path ./examples --bsize 1000 --opt-all
+
+#tgn
+python examples/tgn/train.py -d WIKI --data-path ./examples --bsize 1000 --opt-all
+python examples/tgn/train.py -d REDDIT --data-path ./examples --bsize 1000 --opt-all
+python examples/tgn/train.py -d MOOC --data-path ./examples --bsize 1000 --opt-all
+python examples/tgn/train.py -d Flights --data-path ./examples --bsize 1000 --opt-all 
+python examples/tgn/train.py -d DGraphFin --data-path ./examples --bsize 1000 --opt-all
+python examples/tgn/train.py -d ML25M --data-path ./examples --bsize 1000 --opt-all
 ```

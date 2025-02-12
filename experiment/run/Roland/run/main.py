@@ -145,7 +145,8 @@ if __name__ == '__main__':
         # Set Pytorch environment
         torch.set_num_threads(cfg.num_threads)
         out_dir_parent = cfg.out_dir
-        cfg.seed = i + 1
+        # cfg.seed = i + 1
+        cfg.seed = 2024
         random.seed(cfg.seed)
         np.random.seed(cfg.seed)
         torch.manual_seed(cfg.seed)

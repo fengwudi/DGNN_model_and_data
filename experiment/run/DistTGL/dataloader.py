@@ -151,8 +151,8 @@ class DataLoader:
         self.prefetch_thread.join()
         if not 'mem' in self.prefetched_mfgs[0].srcdata:
             # print('here3 read_status:', self.read_status.data_ptr())
-            #while self.read_status[self.rank] == 1:
-                #pass
+            while self.read_status[self.rank] == 1:
+                pass
             if not self.edge_classification:
                 for idx, mfg in enumerate(self.prefetched_mfgs):
                     mfg.srcdata['mem'] = self.memory_read_buffer[self.rank][idx][:mfg.srcdata['ID'].shape[0]]

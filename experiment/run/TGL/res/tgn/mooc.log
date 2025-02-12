@@ -1,0 +1,43 @@
+Using backend: pytorch
+Epoch 0:
+	train loss:168909.5868  val ap:0.989224  val auc:0.994323  val recall:0.9985  val acc:0.9936
+	total time:4.9735 s sample time:0.0381 s prep time:1.3884 s
+	total memory usage:981.66 MB
+Epoch 1:
+	train loss:46329.0859  val ap:0.988869  val auc:0.994311  val recall:0.9992  val acc:0.9937
+	total time:3.7752 s sample time:0.0369 s prep time:1.1279 s
+	total memory usage:1136.73 MB
+Epoch 2:
+	train loss:39034.8315  val ap:0.989955  val auc:0.994931  val recall:0.9996  val acc:0.9943
+	total time:3.8062 s sample time:0.0426 s prep time:1.1101 s
+	total memory usage:1142.08 MB
+Epoch 3:
+	train loss:28908.9969  val ap:0.989843  val auc:0.994901  val recall:0.9997  val acc:0.9940
+	total time:3.8864 s sample time:0.0476 s prep time:1.0913 s
+	total memory usage:1142.08 MB
+Epoch 4:
+	train loss:21523.8423  val ap:0.989307  val auc:0.994732  val recall:0.9995  val acc:0.9939
+	total time:3.8322 s sample time:0.0464 s prep time:1.1451 s
+	total memory usage:1142.08 MB
+Epoch 5:
+	train loss:20367.2345  val ap:0.990322  val auc:0.995123  val recall:0.9995  val acc:0.9941
+	total time:3.7406 s sample time:0.0449 s prep time:1.1298 s
+	total memory usage:1142.10 MB
+Epoch 6:
+	train loss:20816.9116  val ap:0.989940  val auc:0.994891  val recall:0.9996  val acc:0.9939
+	total time:3.7596 s sample time:0.0473 s prep time:1.1391 s
+	total memory usage:1143.32 MB
+Epoch 7:
+	train loss:19949.2537  val ap:0.989386  val auc:0.994537  val recall:0.9997  val acc:0.9937
+	total time:3.9276 s sample time:0.0459 s prep time:1.0913 s
+	total memory usage:1143.32 MB
+Epoch 8:
+	train loss:19619.1991  val ap:0.989463  val auc:0.994620  val recall:0.9998  val acc:0.9938
+	total time:4.0305 s sample time:0.0486 s prep time:1.1142 s
+	total memory usage:1143.32 MB
+No improvment over 3 epochs, stop training
+Loading model at epoch 5...
+	stop at 8 epoch:
+	total average time:3.97 s
+	total average memory use:1124.08 MB
+	test AUC:0.9937  test AP:0.9876  test Recall:0.9956  test ACC:0.9915

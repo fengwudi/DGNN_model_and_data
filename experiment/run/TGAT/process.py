@@ -17,7 +17,7 @@ def preprocess(data_name):
             i = int(e[1])
             ts = float(e[2])
             label = int(e[3])
-            if data_name=='./processed/Flights.csv' or data_name=='./processed/mooc.csv':
+            if data_name=='./processed/Flights.csv' or data_name=='./processed/mooc.csv': 
                 feat = np.zeros(172)
             else:
                 feat = np.array([float(x) for x in e[4:]])
@@ -50,7 +50,7 @@ def preprocess_ml25m(data_name):
       ts = float(e[3]) - 789652009
       label = float(e[2])  # int(e[3])
 
-      feat = np.array([float(e[2]),float(0)])
+      feat = np.array(float(e[2]))
 
       u_list.append(u)
       i_list.append(i)
@@ -67,7 +67,7 @@ def preprocess_ml25m(data_name):
 
 def reindex(df, data_name):
     new_df = df.copy()
-    if data_name=='Flights' or data_name=='mooc' or data_name=='ml25m':
+    if data_name=='Flights' or data_name=='ml25m':
         new_df.u += 1
         new_df.i += 1
         new_df.idx += 1
@@ -94,6 +94,7 @@ def run(data_name):
     OUT_NODE_FEAT = './processed/ml_{}_node.npy'.format(data_name)
     if data_name=='ml25m':
         df, feat = preprocess_ml25m(PATH)
+        feat = feat.reshape(-1,1)
     else:
         df, feat = preprocess(PATH)
     new_df = reindex(df, data_name)
@@ -112,5 +113,8 @@ def run(data_name):
     
     
 # run('wikipedia')
-
-run('wikipedia')
+# run('reddit')
+# run('mooc')
+# run('Flights')
+# run('mooc')
+run('ml25m')

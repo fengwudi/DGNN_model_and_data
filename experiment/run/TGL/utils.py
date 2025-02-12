@@ -21,14 +21,18 @@ def load_feat(d, rand_de=0, rand_dn=0):
         if d == 'LASTFM':
             edge_feats = torch.randn(1293103, rand_de)
         elif d == 'MOOC':
-            edge_feats = torch.zeros(411749, rand_de)
-        elif d == 'Flight':
+            edge_feats = torch.zeros(411749, rand_de, dtype=torch.float32)
+        elif d == 'Flights':
             edge_feats = torch.zeros([1927145, rand_de], dtype=torch.float32)
+        elif d == 'DGraphFin':
+            edge_feats = torch.zeros([4300999, rand_de], dtype=torch.float32)
     if rand_dn > 0:
         if d == 'LASTFM':
             node_feats = torch.randn(1980, rand_dn)
         elif d == 'MOOC':
-            node_feats = torch.randn(7144, rand_dn)
+            node_feats = torch.zeros(7144, rand_dn, dtype=torch.float32)
+        elif d == 'ML25M':
+            node_feats = torch.randn(209172, rand_dn, dtype=torch.float32)
     if d == 'MAG':
         node_feats = node_feats.type(torch.float32)
     return node_feats, edge_feats

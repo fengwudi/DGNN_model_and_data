@@ -35,7 +35,7 @@ class splitter():
             # print ('train,dev,test',self.train_idx.size(), self.dev_idx.size(), self.test_idx.size())
             
             train = static_data_split(tasker, self.train_idx, test = False)
-            train = DataLoader(train, shuffle=True,**args.data_loading_params)
+            train = DataLoader(train, shuffle=False,**args.data_loading_params)
             
             dev = static_data_split(tasker, self.dev_idx, test = True)
             dev = DataLoader(dev, shuffle=False,**args.data_loading_params)

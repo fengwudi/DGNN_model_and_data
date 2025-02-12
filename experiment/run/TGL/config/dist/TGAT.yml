@@ -1,6 +1,7 @@
 sampling:
-  - layer: 1
+  - layer: 2
     neighbor: 
+      - 10
       - 10
     strategy: 'uniform'
     prop_time: False
@@ -12,13 +13,13 @@ memory:
     dim_out: 0
 gnn:
   - arch: 'transformer_attention'
-    layer: 1
+    layer: 2
     att_head: 2
     dim_time: 100
     dim_out: 100
 train:
-  - epoch: 50
-    batch_size: 1000 # local batch_size
+  - epoch: 3
+    batch_size: 4000 # local batch_size
     lr: 0.0001
     dropout: 0.1
     att_dropout: 0.1

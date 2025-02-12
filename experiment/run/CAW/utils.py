@@ -46,7 +46,7 @@ def get_args():
                         help='tolerated marginal improvement for early stopper')
 
     # parameters controlling computation settings but not affecting results in general
-    parser.add_argument('--seed', type=int, default=0, help='random seed for all randomized algorithms')
+    parser.add_argument('--seed', type=int, default=2024, help='random seed for all randomized algorithms')
     parser.add_argument('--ngh_cache', action='store_true',
                         help='(currently not suggested due to overwhelming memory consumption) cache temporal neighbors previously calculated to speed up repeated lookup')
     parser.add_argument('--gpu', type=int, default=0, help='which gpu to use')

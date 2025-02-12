@@ -134,7 +134,7 @@ train_val(train_val_data, cawn, args.mode, BATCH_SIZE, NUM_EPOCH, criterion, opt
 # final testing
 cawn.update_ngh_finder(full_ngh_finder)  # remember that testing phase should always use the full neighbor finder
 test_acc, test_ap, test_f1, test_auc, test_recall = eval_one_epoch('test for {} nodes'.format(args.mode), cawn, test_rand_sampler, test_src_l, test_dst_l, test_ts_l, test_label_l, test_e_idx_l)
-logger.info('Test statistics: {} all nodes -- acc: {:.4f}, auc: {:.4f}, ap: {:.4f}, recall: {:.4f}'.format(args.mode, test_acc, test_auc, test_ap, test_recall))
+logger.info('Test statistics: {} all nodes -- auc: {:.4f}, ap: {:.4f}, recall: {:.4f}, acc: {:.4f}'.format(args.mode, test_auc, test_ap, test_recall, test_acc))
 test_new_new_acc, test_new_new_ap, test_new_new_auc, test_new_old_acc, test_new_old_ap, test_new_old_auc = [-1]*6
 if args.mode == 'i':
     test_new_new_acc, test_new_new_ap, test_new_new_f1, test_new_new_auc, test_new_new_recall = eval_one_epoch('test for {} nodes'.format(args.mode), cawn, test_rand_sampler, test_src_new_new_l, test_dst_new_new_l, test_ts_new_new_l, test_label_new_new_l, test_e_idx_new_new_l)

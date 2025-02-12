@@ -1,11 +1,11 @@
 sampling:
   - layer: 1
     neighbor: 
-      - 10
+      - 20
     strategy: 'uniform'
     prop_time: True
-    history: 2  # 8
-    duration: 100000 # 32000000  7  50
+    history: 3
+    duration: 100000
     num_thread: 32
 memory: 
   - type: 'none'

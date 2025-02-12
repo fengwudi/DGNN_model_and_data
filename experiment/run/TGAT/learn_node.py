@@ -45,7 +45,7 @@ parser.add_argument('--prefix', type=str, default='')
 parser.add_argument('--n_degree', type=int, default=50, help='number of neighbors to sample')
 parser.add_argument('--n_neg', type=int, default=1)
 parser.add_argument('--n_head', type=int, default=2)
-parser.add_argument('--n_epoch', type=int, default=15, help='number of epochs')
+parser.add_argument('--n_epoch', type=int, default=50, help='number of epochs')
 parser.add_argument('--n_layer', type=int, default=2)
 parser.add_argument('--lr', type=float, default=3e-4)
 parser.add_argument('--tune', action='store_true', help='parameters tunning mode, use train-test split on training data only.')
@@ -257,16 +257,16 @@ for epoch in tqdm(range(args.n_epoch)):
         lr_loss.backward()
         lr_optimizer.step()
 
-    train_auc, train_loss, train_f1, train_ap = eval_epoch(train_src_l, train_dst_l, train_ts_l, train_label_l, BATCH_SIZE, lr_model, tgan)
-    test_auc, test_loss, test_f1, test_ap = eval_epoch(test_src_l, test_dst_l, test_ts_l, test_label_l, BATCH_SIZE, lr_model, tgan)
+    train_auc, train_loss, train_ap, train_f1 = eval_epoch(train_src_l, train_dst_l, train_ts_l, train_label_l, BATCH_SIZE, lr_model, tgan)
+    test_auc, test_loss, test_ap, test_f1 = eval_epoch(test_src_l, test_dst_l, test_ts_l, test_label_l, BATCH_SIZE, lr_model, tgan)
     #torch.save(lr_model.state_dict(), './saved_models/edge_{}_wkiki_node_class.pth'.format(DATA))
     logger.info(f'train auc: {train_auc:.4f}, test auc: {test_auc:.4f}')
     logger.info(f'train f1: {train_f1:.4f}, test f1: {test_f1:.4f}')
     logger.info(f'train ap: {train_ap:.4f}, test ap: {test_ap:.4f}')
 
-test_auc, test_loss, test_f1, test_ap = eval_epoch(test_src_l, test_dst_l, test_ts_l, test_label_l, BATCH_SIZE, lr_model, tgan)
+test_auc, test_loss, test_ap, test_f1 = eval_epoch(test_src_l, test_dst_l, test_ts_l, test_label_l, BATCH_SIZE, lr_model, tgan)
 #torch.save(lr_model.state_dict(), './saved_models/edge_{}_wkiki_node_class.pth'.format(DATA))
-logger.info(f'test auc: {test_auc:.4f}, test f1: {test_f1}, test ap: {test_ap:.4f}')
+logger.info(f'test auc: {test_auc:.4f}, test f1: {test_f1:.4f}, test ap: {test_ap:.4f}')
 
 
 

@@ -21,8 +21,8 @@ memory:
 gnn:
   - arch: 'identity'
 train:
-  - epoch: 50
-    batch_size: 1000 # local batch_size
+  - epoch: 30
+    batch_size: 4000 # local batch_size
     lr: 0.0001
     dropout: 0.1
     att_dropout: 0.1

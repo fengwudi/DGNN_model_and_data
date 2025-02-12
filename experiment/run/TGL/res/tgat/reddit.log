@@ -1,0 +1,35 @@
+Using backend: pytorch
+Epoch 0:
+	train loss:283616.7560  val ap:0.913091  val auc:0.951871  val recall:1.0000  val acc:0.9517
+	total time:5.0295 s sample time:0.0764 s prep time:0.7568 s
+	total memory usage:634.62 MB
+Epoch 1:
+	train loss:275471.5116  val ap:0.910482  val auc:0.950701  val recall:1.0000  val acc:0.9506
+	total time:3.7442 s sample time:0.0817 s prep time:0.5460 s
+	total memory usage:696.72 MB
+Epoch 2:
+	train loss:272792.2113  val ap:0.912957  val auc:0.951984  val recall:1.0000  val acc:0.9517
+	total time:3.3401 s sample time:0.0691 s prep time:0.5222 s
+	total memory usage:696.95 MB
+Epoch 3:
+	train loss:272640.1083  val ap:0.912253  val auc:0.951711  val recall:1.0000  val acc:0.9517
+	total time:3.1714 s sample time:0.0568 s prep time:0.4972 s
+	total memory usage:696.95 MB
+Epoch 4:
+	train loss:272551.2984  val ap:0.911471  val auc:0.951460  val recall:1.0000  val acc:0.9518
+	total time:3.2492 s sample time:0.0575 s prep time:0.5598 s
+	total memory usage:697.13 MB
+Epoch 5:
+	train loss:271977.1103  val ap:0.910128  val auc:0.950318  val recall:1.0000  val acc:0.9504
+	total time:3.1853 s sample time:0.0591 s prep time:0.4912 s
+	total memory usage:697.13 MB
+Epoch 6:
+	train loss:272961.3243  val ap:0.911398  val auc:0.951378  val recall:1.0000  val acc:0.9511
+	total time:3.1097 s sample time:0.0502 s prep time:0.4569 s
+	total memory usage:697.13 MB
+No improvment over 3 epochs, stop training
+Loading model at epoch 3...
+	stop at 6 epoch:
+	total average time:3.55 s
+	total average memory use:688.09 MB
+	test AUC:0.9533  test AP:0.9151  test Recall:1.0000  test ACC:0.9532

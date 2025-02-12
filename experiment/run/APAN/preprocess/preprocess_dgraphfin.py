@@ -24,7 +24,7 @@ def preprocess(data_name):
         ts = edge_timestamp[idx]
         label = y[u]
         edge_feature = edge_type[idx]
-        one_hot = np.zeros(172)
+        one_hot = np.zeros(11)
         one_hot[(edge_feature - 1)] = 1
         edge_label_oh = one_hot
 

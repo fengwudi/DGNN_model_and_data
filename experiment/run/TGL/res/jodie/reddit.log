@@ -1,0 +1,87 @@
+Using backend: pytorch
+Epoch 0:
+	train loss:292302.5304  val ap:0.967992  val auc:0.978800  val recall:0.9958  val acc:0.9553
+	total time:2.8427 s sample time:0.0000 s prep time:0.8526 s
+	total memory usage:507.64 MB
+Epoch 1:
+	train loss:145852.4935  val ap:0.972779  val auc:0.984741  val recall:0.9943  val acc:0.9589
+	total time:1.8927 s sample time:0.0000 s prep time:0.5501 s
+	total memory usage:511.70 MB
+Epoch 2:
+	train loss:133114.2789  val ap:0.985961  val auc:0.989405  val recall:0.9878  val acc:0.9637
+	total time:1.8875 s sample time:0.0000 s prep time:0.5454 s
+	total memory usage:511.70 MB
+Epoch 3:
+	train loss:113495.4468  val ap:0.985590  val auc:0.988922  val recall:0.9923  val acc:0.9666
+	total time:1.8906 s sample time:0.0000 s prep time:0.5479 s
+	total memory usage:511.70 MB
+Epoch 4:
+	train loss:115896.9169  val ap:0.988955  val auc:0.991350  val recall:0.9914  val acc:0.9683
+	total time:1.8856 s sample time:0.0000 s prep time:0.5472 s
+	total memory usage:511.70 MB
+Epoch 5:
+	train loss:100056.2861  val ap:0.989517  val auc:0.991893  val recall:0.9950  val acc:0.9666
+	total time:1.9338 s sample time:0.0000 s prep time:0.5467 s
+	total memory usage:511.70 MB
+Epoch 6:
+	train loss:95336.8722  val ap:0.989504  val auc:0.992122  val recall:0.9927  val acc:0.9685
+	total time:1.8904 s sample time:0.0000 s prep time:0.5476 s
+	total memory usage:511.70 MB
+Epoch 7:
+	train loss:93699.2350  val ap:0.992039  val auc:0.993914  val recall:0.9900  val acc:0.9720
+	total time:1.8868 s sample time:0.0000 s prep time:0.5471 s
+	total memory usage:511.70 MB
+Epoch 8:
+	train loss:92891.4514  val ap:0.992079  val auc:0.993679  val recall:0.9916  val acc:0.9712
+	total time:1.8861 s sample time:0.0000 s prep time:0.5490 s
+	total memory usage:511.70 MB
+Epoch 9:
+	train loss:89882.8967  val ap:0.991483  val auc:0.993328  val recall:0.9929  val acc:0.9713
+	total time:1.8867 s sample time:0.0000 s prep time:0.5486 s
+	total memory usage:511.70 MB
+Epoch 10:
+	train loss:89783.6160  val ap:0.993026  val auc:0.994452  val recall:0.9917  val acc:0.9724
+	total time:1.8835 s sample time:0.0000 s prep time:0.5458 s
+	total memory usage:511.70 MB
+Epoch 11:
+	train loss:84250.8764  val ap:0.992659  val auc:0.994218  val recall:0.9883  val acc:0.9733
+	total time:1.8810 s sample time:0.0000 s prep time:0.5455 s
+	total memory usage:511.70 MB
+Epoch 12:
+	train loss:83956.5672  val ap:0.993885  val auc:0.995113  val recall:0.9885  val acc:0.9752
+	total time:1.8809 s sample time:0.0000 s prep time:0.5459 s
+	total memory usage:511.70 MB
+Epoch 13:
+	train loss:81067.8494  val ap:0.992857  val auc:0.994400  val recall:0.9864  val acc:0.9734
+	total time:1.8863 s sample time:0.0000 s prep time:0.5472 s
+	total memory usage:511.70 MB
+Epoch 14:
+	train loss:84301.7267  val ap:0.992827  val auc:0.994395  val recall:0.9854  val acc:0.9741
+	total time:1.8880 s sample time:0.0000 s prep time:0.5484 s
+	total memory usage:511.70 MB
+Epoch 15:
+	train loss:82817.5850  val ap:0.994158  val auc:0.995340  val recall:0.9882  val acc:0.9746
+	total time:1.8966 s sample time:0.0000 s prep time:0.5498 s
+	total memory usage:511.70 MB
+Epoch 16:
+	train loss:78261.2728  val ap:0.994726  val auc:0.995792  val recall:0.9891  val acc:0.9758
+	total time:1.8883 s sample time:0.0000 s prep time:0.5493 s
+	total memory usage:511.70 MB
+Epoch 17:
+	train loss:77730.9592  val ap:0.994474  val auc:0.995487  val recall:0.9896  val acc:0.9751
+	total time:1.9337 s sample time:0.0000 s prep time:0.5473 s
+	total memory usage:511.70 MB
+Epoch 18:
+	train loss:77524.2947  val ap:0.994434  val auc:0.995467  val recall:0.9842  val acc:0.9754
+	total time:1.8884 s sample time:0.0000 s prep time:0.5483 s
+	total memory usage:511.70 MB
+Epoch 19:
+	train loss:77363.9282  val ap:0.994498  val auc:0.995569  val recall:0.9844  val acc:0.9755
+	total time:1.8875 s sample time:0.0000 s prep time:0.5482 s
+	total memory usage:511.70 MB
+No improvment over 3 epochs, stop training
+Loading model at epoch 16...
+	stop at 19 epoch:
+	total average time:1.94 s
+	total average memory use:511.50 MB
+	test AUC:0.9928  test AP:0.9908  test Recall:0.9736  test ACC:0.9682

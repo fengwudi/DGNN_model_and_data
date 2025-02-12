@@ -1,8 +1,9 @@
-nohup python -m torch.distributed.run --master_port=29501 --nproc_per_node=2 train.py --data WIKI --pbar --group 2 --seed 0 --minibatch_parallelism 1 --model tgn > res/tgn_wiki.log &
-nohup python -m torch.distributed.run --nproc_per_node=1 train.py --data REDDIT --pbar --group 1 --seed 0 --minibatch_parallelism 1 --model tgn > res/tgn_reddit.log &
-nohup python -m torch.distributed.run --nproc_per_node=1 train.py --data Flight --pbar --group 1 --seed 0 --minibatch_parallelism 1 --model tgn > res/tgn_flight.log &
-nohup python -m torch.distributed.run --nproc_per_node=1 train.py --data ML25M --pbar --group 1 --seed 0 --minibatch_parallelism 1 --model tgn > res/tgn_ml25m1.log &
-nohup python -m torch.distributed.run --nproc_per_node=1 train.py --data MOOC --pbar --group 1 --seed 0 --minibatch_parallelism 1 --model tgn > res/tgn_mooc.log &
+nohup python -m torch.distributed.run --master_port=29500 --nproc_per_node=1 train.py --data WIKI --pbar --group 1 --seed 2024 --minibatch_parallelism 1 --model tgn > res/tgn_wiki.log &
+nohup python -m torch.distributed.run --nproc_per_node=1 train.py --data REDDIT --pbar --group 1 --seed 2024 --minibatch_parallelism 1 --model tgn > res/tgn_reddit.log &
+nohup python -m torch.distributed.run --nproc_per_node=1 train.py --data MOOC --pbar --group 1 --seed 2024 --minibatch_parallelism 1 --model tgn > res/tgn_mooc.log &
+nohup python -m torch.distributed.run --nproc_per_node=1 train.py --data Flights --pbar --group 1 --seed 2024 --minibatch_parallelism 1 --model tgn > res/tgn_flight.log &
+nohup python -m torch.distributed.run --nproc_per_node=1 train.py --data DGraphFin --pbar --group 1 --seed 2024 --minibatch_parallelism 1 --model tgn --seed 2024 > res/tgn_dgraphfin.log &
+nohup python -m torch.distributed.run --nproc_per_node=1 train.py --data ML25M --pbar --group 1 --seed 2024 --minibatch_parallelism 1 --model tgn > res/tgn_ml25m.log &
 
 
 nohup python -m torch.distributed.run --master_port=29500 --nproc_per_node=2 train.py --data ML25M --pbar --group 2 --seed 0 --minibatch_parallelism 1 --model tgn > res/tgn_ml25m_2gpu.log &

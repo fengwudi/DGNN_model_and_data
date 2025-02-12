@@ -4,12 +4,12 @@ mooc_args:
   folder: ./data/
   edges_file: mooc.csv
   aggr_time: 100000 #three weeks in seconds: 1200000
-  feats_per_node: 3
+  feats_per_node: 172
 
 use_cuda: True
 use_logfile: False
 
-cuda_device: '3'
+cuda_device: '0'
 
 model: egcn_h
 
@@ -21,19 +21,19 @@ use_1_hot_node_feats: True
 save_node_embeddings: False
 
 train_proportion: 0.7 # with train_proportion: 0.715 we have the 70/30% of actual splits on the 50 timesteps
-dev_proportion: 0.1
+dev_proportion: 0.15
 
 num_epochs: 50 #number of passes though the data
 steps_accum_gradients: 1
 learning_rate: 0.005
 learning_rate_min: 0.005
 learning_rate_max: 0.05
-negative_mult_training: 10
-negative_mult_test: 10
+negative_mult_training: 1
+negative_mult_test: 1
 smart_neg_sampling: False
-seed: 1234
-target_measure: AP # measure to define the best epoch F1, Precision, Recall, MRR, MAP, Loss
-target_class: 0 # Target class to get the measure to define the best epoch (all, 0, 1)
+seed: 2024
+target_measure: MAP # measure to define the best epoch F1, Precision, Recall, MRR, MAP, Loss
+target_class: 1 # Target class to get the measure to define the best epoch (all, 0, 1)
 early_stop_patience: 3
 
 eval_after_epochs: -1

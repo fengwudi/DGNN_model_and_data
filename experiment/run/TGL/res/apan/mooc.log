@@ -1,0 +1,43 @@
+Using backend: pytorch
+Epoch 0:
+	train loss:214412.2582  val ap:0.989428  val auc:0.994346  val recall:0.9958  val acc:0.9920
+	total time:17.4115 s sample time:0.0308 s prep time:13.3548 s
+	total memory usage:248.57 MB
+Epoch 1:
+	train loss:68529.6866  val ap:0.988405  val auc:0.994108  val recall:0.9987  val acc:0.9901
+	total time:12.1894 s sample time:0.0278 s prep time:10.1070 s
+	total memory usage:248.66 MB
+Epoch 2:
+	train loss:47428.3427  val ap:0.989987  val auc:0.994784  val recall:0.9989  val acc:0.9913
+	total time:10.6018 s sample time:0.0296 s prep time:8.4834 s
+	total memory usage:248.66 MB
+Epoch 3:
+	train loss:45713.9784  val ap:0.989535  val auc:0.994441  val recall:0.9987  val acc:0.9912
+	total time:10.3594 s sample time:0.0292 s prep time:8.4031 s
+	total memory usage:248.66 MB
+Epoch 4:
+	train loss:40720.1361  val ap:0.989663  val auc:0.994594  val recall:0.9990  val acc:0.9905
+	total time:10.2641 s sample time:0.0293 s prep time:8.2508 s
+	total memory usage:248.66 MB
+Epoch 5:
+	train loss:37847.3109  val ap:0.989919  val auc:0.994761  val recall:0.9991  val acc:0.9909
+	total time:10.6848 s sample time:0.0302 s prep time:8.6978 s
+	total memory usage:248.66 MB
+Epoch 6:
+	train loss:32011.1701  val ap:0.988566  val auc:0.994160  val recall:0.9990  val acc:0.9918
+	total time:8.9332 s sample time:0.0316 s prep time:6.9971 s
+	total memory usage:248.66 MB
+Epoch 7:
+	train loss:29916.1335  val ap:0.988354  val auc:0.994099  val recall:0.9986  val acc:0.9916
+	total time:10.3189 s sample time:0.0299 s prep time:8.2274 s
+	total memory usage:248.66 MB
+Epoch 8:
+	train loss:27451.4580  val ap:0.988827  val auc:0.994333  val recall:0.9995  val acc:0.9918
+	total time:9.1248 s sample time:0.0301 s prep time:7.2313 s
+	total memory usage:248.66 MB
+No improvment over 3 epochs, stop training
+Loading model at epoch 5...
+	stop at 8 epoch:
+	total average time:11.10 s
+	total average memory use:248.65 MB
+	test AUC:0.9936  test AP:0.9869  test Recall:0.9927  test ACC:0.9873

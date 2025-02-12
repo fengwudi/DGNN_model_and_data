@@ -22,7 +22,7 @@ if __name__ == "__main__":
     df = pandas.read_csv(edge_file)
     node_feats = np.load(node_feat_file)
 
-    aggr_time = 100000 if args.dataset != "Flights" else 6
+    aggr_time = 100000 if args.dataset != "Flights" else 7
     print(f'Dataset {args.dataset}: num_nodes: {node_feats.shape[0]},'
           f' num_edge: {len(df)}, max_ts: {df["ts"].max()}, min_ts: {df["ts"].min()}')
 

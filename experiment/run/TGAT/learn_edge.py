@@ -28,7 +28,7 @@ parser.add_argument('--prefix', type=str, default='', help='prefix to name the c
 parser.add_argument('--n_degree', type=int, default=20, help='number of neighbors to sample')
 parser.add_argument('--n_head', type=int, default=2, help='number of heads used in attention layer')
 parser.add_argument('--n_epoch', type=int, default=50, help='number of epochs')
-parser.add_argument('--n_layer', type=int, default=2, help='number of network layers')
+parser.add_argument('--n_layer', type=int, default=1, help='number of network layers')
 parser.add_argument('--lr', type=float, default=0.0001, help='learning rate')
 parser.add_argument('--drop_out', type=float, default=0.1, help='dropout probability')
 parser.add_argument('--gpu', type=int, default=0, help='idx for the gpu to use')
@@ -133,7 +133,7 @@ ts_l = g_df.ts.values
 max_src_index = src_l.max()
 max_idx = max(src_l.max(), dst_l.max())
 
-random.seed(2020)
+# random.seed(2024)
 
 total_node_set = set(np.unique(np.hstack([g_df.u.values, g_df.i.values])))
 num_total_unique_nodes = len(total_node_set)

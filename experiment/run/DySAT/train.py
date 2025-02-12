@@ -48,7 +48,7 @@ if __name__ == "__main__":
                         help='dataset name')
     parser.add_argument('--GPU_ID', type=int, nargs='?', default=0,
                         help='GPU_ID (0/1 etc.)')
-    parser.add_argument('--epochs', type=int, nargs='?', default=200,
+    parser.add_argument('--epochs', type=int, nargs='?', default=50,
                         help='# epochs')
     parser.add_argument('--val_freq', type=int, nargs='?', default=1,
                         help='Validation frequency (in epochs)')
@@ -58,7 +58,7 @@ if __name__ == "__main__":
                         help='Batch size (# nodes)')
     parser.add_argument('--featureless', type=bool, nargs='?', default=False,
                     help='True if one-hot encoding.')
-    parser.add_argument("--early_stop", type=int, default=10,
+    parser.add_argument("--early_stop", type=int, default=3,
                         help="patient")
     # 1-hot encoding is input as a sparse matrix - hence no scalability issue for large datasets.
     # Tunable hyper-params
@@ -66,7 +66,7 @@ if __name__ == "__main__":
     parser.add_argument('--residual', type=bool, nargs='?', default=True,
                         help='Use residual')
     # Number of negative samples per positive pair.
-    parser.add_argument('--neg_sample_size', type=int, nargs='?', default=10,
+    parser.add_argument('--neg_sample_size', type=int, nargs='?', default=1,
                         help='# negative samples per positive')
     # Walk length for random walk sampling.
     parser.add_argument('--walk_len', type=int, nargs='?', default=20,
@@ -74,7 +74,7 @@ if __name__ == "__main__":
     # Weight for negative samples in the binary cross-entropy loss function.
     parser.add_argument('--neg_weight', type=float, nargs='?', default=1.0,
                         help='Weightage for negative samples')
-    parser.add_argument('--learning_rate', type=float, nargs='?', default=0.01,
+    parser.add_argument('--learning_rate', type=float, nargs='?', default=0.0001,
                         help='Initial learning rate for self-attention model.')
     parser.add_argument('--spatial_drop', type=float, nargs='?', default=0.1,
                         help='Spatial (structural) attention Dropout (1 - keep probability).')

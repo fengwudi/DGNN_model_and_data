@@ -4,8 +4,8 @@ def get_config(model, data, tot_rank, minibatch_parallelism=1):
     if model == 'tgn':
         sample_param = {
             'layer': 1, 
-            'neighbor': [10],
-            'strategy': 'recent',
+            'neighbor': [20],
+            'strategy': 'uniform',
             'prop_time': False,
             'history': 1,
             'duration': 0,
@@ -122,9 +122,9 @@ def get_config(model, data, tot_rank, minibatch_parallelism=1):
         #'epoch': math.ceil(epoch / tot_rank * minibatch_parallelism),
         'epoch': 50,
         'batch_size': 1000,
-        'lr': 0.0001 * tot_rank,
-        'dropout': 0.2,
-        'att_dropout': 0.2
+        'lr': 0.0001,
+        'dropout': 0.1,
+        'att_dropout': 0.1
     }
 
     train_param['train_neg_samples'] = 1

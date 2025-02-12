@@ -152,7 +152,7 @@ def train(args, logger):
         logger.info("average recall {:.4f}".format(sum(test_recalls)/len(test_recalls)))
         logger.info("average acc {:.4f}".format(sum(test_accs)/len(test_accs)))
         logger.info("average f1 {:.4f}".format(sum(test_f1s)/len(test_f1s)))
-        logger.info('Test {} Task | ap: {:.4f} | auc: {:.4f} | acc: {:.4f} | recall: {:.4f} | Loss: {:.4f}'.format(args.tasks, test_ap, test_auc, test_acc, test_recall, test_loss))
+        logger.info('Test {} Task | auc: {:.4f} | ap: {:.4f} | recall: {:.4f} | acc: {:.4f} | Loss: {:.4f}'.format(args.tasks, test_auc, test_ap, test_recall, test_acc, test_loss))
         test_result = [test_ap, test_auc, test_acc, test_loss]
 
         if early_stopper.best_epoch == epoch: 

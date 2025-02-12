@@ -19,8 +19,8 @@ class SequenceMemoryUpdater(MemoryUpdater):
     if len(unique_node_ids) <= 0:
       return
 
-    # assert (self.memory.get_last_update(unique_node_ids) <= timestamps).all().item(), "Trying to " \
-    #                                                                                  "update memory to time in the past"
+    assert (self.memory.get_last_update(unique_node_ids) <= timestamps).all().item(), "Trying to " \
+                                                                                     "update memory to time in the past"
 
     memory = self.memory.get_memory(unique_node_ids)
     self.memory.last_update[unique_node_ids] = timestamps

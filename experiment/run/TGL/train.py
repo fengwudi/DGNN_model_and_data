@@ -30,7 +30,7 @@ def set_seed(seed):
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
 
-# set_seed(0)
+# set_seed(2024)
 
 node_feats, edge_feats = load_feat(args.data, args.rand_edge_features, args.rand_node_features)
 g, df = load_graph(args.data)

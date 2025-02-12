@@ -12,7 +12,7 @@ import os
 def preprocess(args):
   Path("data/").mkdir(parents=True, exist_ok=True)
 
-  if args.data == 'wikipedia' or args.data == 'reddit' or args.data == "flights" or args.data == "ml25m" or args.data == 'mooc':
+  if args.data == 'wikipedia' or args.data == 'reddit' or args.data == "flights" or args.data == 'mooc':
     PATH = ['./data/{}_raw.csv'.format(args.data)]
     feat_dim = 172
   else:

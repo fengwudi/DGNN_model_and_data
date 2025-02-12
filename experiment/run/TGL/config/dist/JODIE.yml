@@ -15,7 +15,7 @@ gnn:
     time_transform: 'JODIE'
 train:
   - epoch: 10
-    batch_size: 1000 # local batch_size
+    batch_size: 4000 # local batch_size
     lr: 0.0001
     dropout: 0.1
     reorder: 8

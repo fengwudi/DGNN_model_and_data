@@ -34,10 +34,10 @@ def init_parser():
                         help='Do not pre-load data into GPU')
     # Model
     parser.add_argument('--n_layers', type=int, default=1, help='Number of graph layers')
-    parser.add_argument('--n_neighbors', type=int, default=10, help='Number of temporal neighbors')
+    parser.add_argument('--n_neighbors', type=int, default=20, help='Number of temporal neighbors')
     parser.add_argument('--n_heads', type=int, default=2, help='Number of graph heads')
     parser.add_argument('--dropout', type=float, default=0.1, help='Dropout probability')
-    parser.add_argument('--strategy', type=str, default="recent_edges",
+    parser.add_argument('--strategy', type=str, default="uniform",
                         choices=["recent_nodes", "recent_edges", "uniform"],
                         help='Sampling strategy for temporal aggregation')
     parser.add_argument('--msg_src', type=str, default="left", choices=["left", "right"],
@@ -90,7 +90,7 @@ def process_args_presets(args):
 
         if args.tgn:
             args.n_layers = 1
-            args.n_neighbors = 10
+            args.n_neighbors = 20
             args.upd_fn = 'gru'
             args.embedding_type = 'att'
         if args.jodie:
@@ -100,12 +100,12 @@ def process_args_presets(args):
             args.embedding_type = 'time'
         if args.dyrep:
             args.n_layers = 1
-            args.n_neighbors = 10
+            args.n_neighbors = 20
             args.upd_fn = 'rnn'
             args.embedding_type = 'att'
         if args.tgat:
             args.n_layers = 1
-            args.n_neighbors = 10
+            args.n_neighbors = 20
             args.strategy = 'uniform'
             args.no_memory = True
 

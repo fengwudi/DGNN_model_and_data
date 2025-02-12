@@ -1,83 +1,76 @@
-Namespace(GPU_ID=0, batch_size=512, dataset='mooc', early_stop=3, epochs=50, featureless=True, learning_rate=0.01, neg_sample_size=10, neg_weight=1.0, position_ffn='True', residual=True, spatial_drop=0.1, structural_head_config='16,8,8', structural_layer_config='128', temporal_drop=0.5, temporal_head_config='16', temporal_layer_config='128', test_freq=1, time_steps=-1, val_freq=1, walk_len=20, weight_decay=0.0005, window=-1)
+Namespace(GPU_ID=3, batch_size=1000, dataset='mooc', early_stop=3, epochs=50, featureless=True, learning_rate=0.0001, neg_sample_size=1, neg_weight=1.0, position_ffn='True', residual=True, spatial_drop=0.1, structural_head_config='16,8,8', structural_layer_config='128', temporal_drop=0.5, temporal_head_config='16', temporal_layer_config='128', test_freq=1, time_steps=-1, val_freq=1, walk_len=20, weight_decay=0.0005, window=-1)
 Loaded 26 graphs 
 Computing training pairs ...
-# nodes with random walk samples: 779
-# sampled pairs: 2199844
-# nodes with random walk samples: 1600
-# sampled pairs: 4528768
-# nodes with random walk samples: 1362
-# sampled pairs: 3851822
-# nodes with random walk samples: 1273
-# sampled pairs: 3583784
-# nodes with random walk samples: 1137
-# sampled pairs: 3197288
-# nodes with random walk samples: 1082
-# sampled pairs: 3034284
-# nodes with random walk samples: 1151
-# sampled pairs: 3246228
-# nodes with random walk samples: 1470
-# sampled pairs: 4181902
-# nodes with random walk samples: 1474
-# sampled pairs: 4192432
-# nodes with random walk samples: 1381
-# sampled pairs: 3915364
-# nodes with random walk samples: 1239
-# sampled pairs: 3513846
-# nodes with random walk samples: 1231
-# sampled pairs: 3484708
-# nodes with random walk samples: 1226
-# sampled pairs: 3480194
+# nodes with random walk samples: 800
+# sampled pairs: 2258030
+# nodes with random walk samples: 1610
+# sampled pairs: 4556250
+# nodes with random walk samples: 1368
+# sampled pairs: 3867756
+# nodes with random walk samples: 1279
+# sampled pairs: 3600550
+# nodes with random walk samples: 1140
+# sampled pairs: 3205262
+# nodes with random walk samples: 1086
+# sampled pairs: 3044256
+# nodes with random walk samples: 1162
+# sampled pairs: 3275490
+# nodes with random walk samples: 1481
+# sampled pairs: 4211314
+# nodes with random walk samples: 1483
+# sampled pairs: 4217960
+# nodes with random walk samples: 1392
+# sampled pairs: 3945714
+# nodes with random walk samples: 1246
+# sampled pairs: 3532282
+# nodes with random walk samples: 1237
+# sampled pairs: 3500688
 # nodes with random walk samples: 1238
-# sampled pairs: 3526208
-# nodes with random walk samples: 1293
-# sampled pairs: 3687302
-# nodes with random walk samples: 1330
-# sampled pairs: 3786222
-# nodes with random walk samples: 1176
-# sampled pairs: 3345140
-# nodes with random walk samples: 1107
-# sampled pairs: 3148728
-# nodes with random walk samples: 1257
-# sampled pairs: 3578806
-# nodes with random walk samples: 1244
-# sampled pairs: 3553564
-# nodes with random walk samples: 1128
-# sampled pairs: 3223240
-# nodes with random walk samples: 1313
-# sampled pairs: 3747578
-# nodes with random walk samples: 1058
-# sampled pairs: 3017956
-# nodes with random walk samples: 973
-# sampled pairs: 2775938
-# nodes with random walk samples: 1116
-# sampled pairs: 3183816
-# nodes with random walk samples: 1033
-# sampled pairs: 2946700
+# sampled pairs: 3511984
+# nodes with random walk samples: 1253
+# sampled pairs: 3564970
+# nodes with random walk samples: 1304
+# sampled pairs: 3717870
+# nodes with random walk samples: 1345
+# sampled pairs: 3819634
+# nodes with random walk samples: 1184
+# sampled pairs: 3367662
+# nodes with random walk samples: 1118
+# sampled pairs: 3179218
+# nodes with random walk samples: 1278
+# sampled pairs: 3636710
+# nodes with random walk samples: 1259
+# sampled pairs: 3594936
+# nodes with random walk samples: 1138
+# sampled pairs: 3251530
+# nodes with random walk samples: 1333
+# sampled pairs: 3796994
+# nodes with random walk samples: 1073
+# sampled pairs: 3056600
+# nodes with random walk samples: 987
+# sampled pairs: 2814968
+# nodes with random walk samples: 1138
+# sampled pairs: 3244760
+# nodes with random walk samples: 1054
+# sampled pairs: 3005770
 Generating eval data ....
-No. Train: Pos=1877, Neg=1877 
-No. Val: Pos=1877, Neg=1877 
+No. Train: Pos=1878, Neg=1878 
+No. Val: Pos=1878, Neg=1878 
 No. Test: Pos=5634, Neg=5634
-Traceback (most recent call last):
-  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/queues.py", line 236, in _feed
-    obj = _ForkingPickler.dumps(obj)
-  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/reduction.py", line 51, in dumps
-    cls(buf, protocol).dump(obj)
-TypeError: can't pickle generator objects
-Traceback (most recent call last):
-  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/queues.py", line 236, in _feed
-    obj = _ForkingPickler.dumps(obj)
-  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/reduction.py", line 51, in dumps
-    cls(buf, protocol).dump(obj)
-TypeError: can't pickle generator objects
-Traceback (most recent call last):
-  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/queues.py", line 236, in _feed
-    obj = _ForkingPickler.dumps(obj)
-  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/reduction.py", line 51, in dumps
-    cls(buf, protocol).dump(obj)
-TypeError: can't pickle generator objects
-Traceback (most recent call last):
-  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/queues.py", line 236, in _feed
-    obj = _ForkingPickler.dumps(obj)
-  File "/home/fzz/miniconda3/envs/evolve/lib/python3.7/multiprocessing/reduction.py", line 51, in dumps
-    cls(buf, protocol).dump(obj)
-TypeError: can't pickle generator objects
+Epoch 0  ,  Loss = nan, Val AUC 0.651 Test AUC 0.648
+val auc 0.4159, ap 0.4271, recall 1.0000, acc 0.5000
+test auc 0.4279, ap 0.4308, recall 1.0000, acc 0.5000
+average time 37.94 s, memory 11578.59 MB
+Epoch 1  ,  Loss = nan, Val AUC 0.697 Test AUC 0.692
+val auc 0.3534, ap 0.3962, recall 1.0000, acc 0.5000
+test auc 0.3635, ap 0.3995, recall 1.0000, acc 0.5000
+average time 32.19 s, memory 14000.44 MB
+Epoch 2  ,  Loss = nan, Val AUC 0.744 Test AUC 0.738
+val auc 0.3005, ap 0.3745, recall 1.0000, acc 0.5000
+test auc 0.3087, ap 0.3770, recall 1.0000, acc 0.5000
+average time 30.33 s, memory 14807.73 MB
+Epoch 3  ,  Loss = nan, Val AUC 0.783 Test AUC 0.777
+val auc 0.2578, ap 0.3594, recall 1.0000, acc 0.5000
+test auc 0.2643, ap 0.3612, recall 1.0000, acc 0.5000
+average time 29.49 s, memory 15211.37 MB
+Best Test AUC = 0.648

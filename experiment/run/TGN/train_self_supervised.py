@@ -14,8 +14,8 @@ from model.tgn import TGN
 from utils.utils import EarlyStopMonitor, RandEdgeSampler, get_neighbor_finder
 from utils.data_processing import get_data, compute_time_statistics
 
-torch.manual_seed(0)
-np.random.seed(0)
+torch.manual_seed(2024)
+np.random.seed(2024)
 
 writer = SummaryWriter(log_dir="/home/fzz/work/experiment/tgn-master/res/tensorboard/")
 

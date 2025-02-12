@@ -6,8 +6,8 @@ def dataloader(args, g):
     origin_num_edges = g.num_edges()//2
 
     train_eid = torch.arange(0, int(0.7 * origin_num_edges))
-    val_eid = torch.arange(int(0.7 * origin_num_edges), int(0.95 * origin_num_edges))
-    test_eid = torch.arange(int(0.95 * origin_num_edges), origin_num_edges)
+    val_eid = torch.arange(int(0.7 * origin_num_edges), int(0.85 * origin_num_edges))
+    test_eid = torch.arange(int(0.85 * origin_num_edges), origin_num_edges)
     # print(len(train_eid))
 
     # reverse_eids = torch.cat([torch.arange(origin_num_edges, 2 * origin_num_edges), torch.arange(0, origin_num_edges)])

@@ -491,11 +491,10 @@ def main():
                     if it > 0:
                         to_reset = True
                 
-                # fzz标注的地方
-                #if just_reset:
+                if just_reset:
                     # a virtual barrier for all reset trainers
-                    #while reset_status[0] != 2:
-                        #pass
+                    while reset_status[0] != 2:
+                        pass
                 
                 # torch.distributed.barrier()
 

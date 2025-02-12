@@ -51,17 +51,43 @@ def changewiki():
     
 def changereddit():
     
-    df = pd.read_csv('reddit.csv', index_col=False)
-    edges = {
-        'source': df['user_id'],
-        'target': df['item_id'],
-        'label': df['state_label'],
-        'timestamp': df['timestamp'],
-        'edge_feat': df['comma_separated_list_of_features']
-    }
-    df_edges = pd.DataFrame(edges)
-    df_edges = df_edges.sort_values(['timestamp', 'source'])
+    # df = pd.read_csv('reddit.csv', index_col=False)
+    # edges = {
+    #     'source': df['user_id'],
+    #     'target': df['item_id'],
+    #     'label': df['state_label'],
+    #     'timestamp': df['timestamp'],
+    #     'edge_feat': df['comma_separated_list_of_features']
+    # }
+    # df_edges = pd.DataFrame(edges)
+    # df_edges = df_edges.sort_values(['timestamp', 'source'])
     
+    # df_edges.to_csv('../reddit.csv', index=False, header=None)
+    u_list, i_list, ts_list, label_list = [], [], [], []
+    feat_l = []
+    idx_list = []
+
+    with open('./reddit.csv') as f:
+        s = next(f)
+        for idx, line in enumerate(f):
+            e = line.strip().split(',')
+            u = int(e[0])
+            i = int(e[1])
+
+            ts = float(e[2])
+            label = int(e[3])  # int(e[3])
+
+            feat = np.array([float(x) for x in e[4:]])
+            
+            u_list.append(u)
+            i_list.append(i)
+            ts_list.append(ts)
+            label_list.append(label)
+            idx_list.append(idx)
+
+            feat_l.append(feat)
+    df_edges = pd.DataFrame({'source': u_list, 'target': i_list, 'label': label_list, 'timestamp': ts_list})
+    df_edges = df_edges.sort_values(['timestamp', 'source'])
     df_edges.to_csv('../reddit.csv', index=False, header=None)
     
 def showwiki():
@@ -87,16 +113,43 @@ def changeFlight():
 
 def changemooc():
     
-    df = pd.read_csv('mooc.csv', index_col=False)
-    edges = {
-        'source': df['user_id'],
-        'target': df['item_id'],
-        'label': df['state_label'],
-        'timestamp': df['timestamp']
-    }
-    df_edges = pd.DataFrame(edges)
-    df_edges = df_edges.sort_values(['timestamp', 'source'])
+    # df = pd.read_csv('mooc.csv', index_col=False)
+    # edges = {
+    #     'source': df['user_id'],
+    #     'target': df['item_id'],
+    #     'label': df['state_label'],
+    #     'timestamp': df['timestamp']
+    # }
+    # df_edges = pd.DataFrame(edges)
+    # df_edges = df_edges.sort_values(['timestamp', 'source'])
     
+    # df_edges.to_csv('../mooc.csv', index=False, header=None)
+    
+    u_list, i_list, ts_list, label_list = [], [], [], []
+    feat_l = []
+    idx_list = []
+
+    with open('./mooc.csv') as f:
+        s = next(f)
+        for idx, line in enumerate(f):
+            e = line.strip().split(',')
+            u = int(e[0])
+            i = int(e[1])
+
+            ts = float(e[2])
+            label = int(e[3])  # int(e[3])
+
+            feat = np.array([float(x) for x in e[4:]])
+            
+            u_list.append(u)
+            i_list.append(i)
+            ts_list.append(ts)
+            label_list.append(label)
+            idx_list.append(idx)
+
+            feat_l.append(feat)
+    df_edges = pd.DataFrame({'source': u_list, 'target': i_list, 'label': label_list, 'timestamp': ts_list})
+    df_edges = df_edges.sort_values(['timestamp', 'source'])
     df_edges.to_csv('../mooc.csv', index=False, header=None)
 
 

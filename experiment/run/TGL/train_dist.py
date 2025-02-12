@@ -4,7 +4,7 @@ import os
 parser=argparse.ArgumentParser()
 parser.add_argument('--data', type=str, help='dataset name')
 parser.add_argument('--config', type=str, help='path to config file')
-parser.add_argument('--seed', type=int, default=0, help='random seed to use')
+parser.add_argument('--seed', type=int, default=2024, help='random seed to use')
 parser.add_argument('--num_gpus', type=int, default=4, help='number of gpus to use')
 parser.add_argument('--omp_num_threads', type=int, default=8)
 parser.add_argument("--local_rank", type=int, default=-1)
@@ -40,6 +40,7 @@ def set_seed(seed):
     torch.cuda.manual_seed_all(seed)
 
 set_seed(args.seed)
+
 torch.distributed.init_process_group(backend='gloo', timeout=datetime.timedelta(0, 18000))
 nccl_group = torch.distributed.new_group(ranks=list(range(args.num_gpus)), backend='nccl')
 

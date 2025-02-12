@@ -6,9 +6,10 @@ import torch
 import utils
 import matplotlib.pyplot as plt
 import time
-from sklearn.metrics import average_precision_score, roc_auc_score, recall_score, accuracy_score, f1_score
+from sklearn.metrics import average_precision_score, roc_auc_score, recall_score, accuracy_score, f1_score, auc
 from scipy.sparse import coo_matrix
 import numpy as np
+import math
 
 
 
@@ -65,10 +66,12 @@ class Logger():
         self.conf_mat_tp_at_k = {}
         self.conf_mat_fn_at_k = {}
         self.conf_mat_fp_at_k = {}
+        self.conf_mat_tn_at_k = {}
         for k in self.eval_k_list:
             self.conf_mat_tp_at_k[k] = {}
             self.conf_mat_fn_at_k[k] = {}
             self.conf_mat_fp_at_k[k] = {}
+            self.conf_mat_tn_at_k[k] = {}
 
         for cl in range(self.num_classes):
             self.conf_mat_tp[cl]=0
@@ -79,6 +82,7 @@ class Logger():
                 self.conf_mat_tp_at_k[k][cl]=0
                 self.conf_mat_fn_at_k[k][cl]=0
                 self.conf_mat_fp_at_k[k][cl]=0
+                self.conf_mat_tn_at_k[k][cl]=0
 
         if self.set == "TEST":
             self.conf_mat_tp_list = {}
@@ -109,11 +113,23 @@ class Logger():
             MRR = torch.tensor([0.0])
 
         MAP = torch.tensor(self.get_MAP(probs,true_classes, do_softmax=False))
-        AUC = torch.tensor(self.get_AUC(probs,true_classes, do_softmax=False))
-        AP = torch.tensor(self.get_MAP(probs,true_classes, do_softmax=False))
-        RECALL = torch.tensor(self.get_RECALL(probs,true_classes, do_softmax=False))
-        ACC = torch.tensor(self.get_ACC(probs,true_classes, do_softmax=False))
-        F1 = torch.tensor(self.get_F1(probs,true_classes, do_softmax=False))
+        # AUC = torch.tensor(self.get_AUC(probs,true_classes, do_softmax=False))
+        # AP = torch.tensor(self.get_MAP(probs,true_classes, do_softmax=False))
+        # RECALL = torch.tensor(self.get_RECALL(probs,true_classes, do_softmax=False))
+        # ACC = torch.tensor(self.get_ACC(probs,true_classes, do_softmax=False))
+        # F1 = torch.tensor(self.get_F1(probs,true_classes, do_softmax=False))
+        if self.args.task == 'link_pred':
+            size = probs.size(0)
+            pos_probs = probs[:size//2]
+            neg_probs = probs[math.ceil(size/2):]
+            pred_score = np.concatenate([pos_probs.detach().cpu().numpy(), neg_probs.detach().cpu().numpy()])
+            true_label = np.concatenate([np.ones(size//2), np.zeros(size//2)])
+            AP = average_precision_score(true_label, pred_score)
+            AUC = roc_auc_score(true_label, pred_score)
+            pred_label = pred_score > 0.85
+            RECALL = recall_score(true_label, pred_label)
+            ACC = accuracy_score(true_label, pred_label)
+            F1 = f1_score(true_label, pred_label)
 
         error, conf_mat_per_class = self.eval_predicitions(predictions, true_classes, self.num_classes)
         conf_mat_per_class_at_k={}
@@ -141,6 +157,7 @@ class Logger():
                 self.conf_mat_tp_at_k[k][cl]+=conf_mat_per_class_at_k[k].true_positives[cl]
                 self.conf_mat_fn_at_k[k][cl]+=conf_mat_per_class_at_k[k].false_negatives[cl]
                 self.conf_mat_fp_at_k[k][cl]+=conf_mat_per_class_at_k[k].false_positives[cl]
+                self.conf_mat_tn_at_k[k][cl]+=conf_mat_per_class_at_k[k].true_negatives[cl]
             if self.set == "TEST":
                 self.conf_mat_tp_list[cl].append(conf_mat_per_class.true_positives[cl])
                 self.conf_mat_fn_list[cl].append(conf_mat_per_class.false_negatives[cl])
@@ -158,9 +175,11 @@ class Logger():
             tp=conf_mat_per_class.true_positives
             fn=conf_mat_per_class.false_negatives
             fp=conf_mat_per_class.false_positives
+            tn=conf_mat_per_class.true_negatives
             logging.info(self.set+' batch %d / %d -  partial tp %s,fn %s,fp %s' % (self.minibatch_done, self.num_minibatches, tp, fn, fp))
-            precision, recall, f1 = self.calc_microavg_eval_measures(tp, fn, fp)
+            precision, recall, f1, auc, ap, acc = self.calc_microavg_eval_measures(tp, fn, fp, tn)
             logging.info (self.set+' batch %d / %d - measures partial microavg - precision %0.4f - recall %0.4f - f1 %0.4f ' % (self.minibatch_done, self.num_minibatches, precision,recall,f1))
+            logging.info (self.set+' batch %d / %d - auc %0.4f - ap %0.4f - recall %0.4f - acc %0.4f ' % (self.minibatch_done, self.num_minibatches, auc, ap, recall, acc))
             for cl in range(self.num_classes):
                 cl_precision, cl_recall, cl_f1 = self.calc_eval_measures_per_class(tp, fn, fp, cl)
                 logging.info (self.set+' batch %d / %d - measures partial for class %d - precision %0.4f - recall %0.4f - f1 %0.4f ' % (self.minibatch_done, self.num_minibatches, cl,cl_precision,cl_recall,cl_f1))
@@ -182,11 +201,16 @@ class Logger():
 
         epoch_MRR = self.calc_epoch_metric(self.batch_sizes, self.MRRs)
         epoch_MAP = self.calc_epoch_metric(self.batch_sizes, self.MAPs)
-        epoch_AUC = self.calc_epoch_metric(self.batch_sizes, self.aucs)
-        epoch_AP = self.calc_epoch_metric(self.batch_sizes, self.aps)
-        epoch_RECALL = self.calc_epoch_metric(self.batch_sizes, self.recalls)
-        epoch_ACC = self.calc_epoch_metric(self.batch_sizes, self.accs)
-        epoch_F1 = self.calc_epoch_metric(self.batch_sizes, self.f1s)
+        # epoch_AUC = self.calc_epoch_metric(self.batch_sizes, self.aucs)
+        # epoch_AP = self.calc_epoch_metric(self.batch_sizes, self.aps)
+        # epoch_RECALL = self.calc_epoch_metric(self.batch_sizes, self.recalls)
+        # epoch_ACC = self.calc_epoch_metric(self.batch_sizes, self.accs)
+        # epoch_F1 = self.calc_epoch_metric(self.batch_sizes, self.f1s)
+        epoch_AUC = np.mean(self.aucs)
+        epoch_AP = np.mean(self.aps)
+        epoch_RECALL = np.mean(self.recalls)
+        epoch_ACC = np.mean(self.accs)
+        epoch_F1 = np.mean(self.f1s)
         logging.info(self.set+' mean MRR '+ str(epoch_MRR)+' - mean MAP '+ str(epoch_MAP))
         if self.args.target_measure=='MRR' or self.args.target_measure=='mrr':
             eval_measure = epoch_MRR
@@ -196,8 +220,9 @@ class Logger():
             eval_measure = epoch_AP
 
         logging.info(self.set+' tp %s,fn %s,fp %s' % (self.conf_mat_tp, self.conf_mat_fn, self.conf_mat_fp))
-        precision, recall, f1 = self.calc_microavg_eval_measures(self.conf_mat_tp, self.conf_mat_fn, self.conf_mat_fp)
+        precision, recall, f1, auc, ap, acc = self.calc_microavg_eval_measures(self.conf_mat_tp, self.conf_mat_fn, self.conf_mat_fp, self.conf_mat_tn)
         logging.info (self.set+' measures microavg - precision %0.4f - recall %0.4f - f1 %0.4f ' % (precision,recall,f1))
+        logging.info (self.set+' AUC %0.4f - AP %0.4f - Recall %0.4f - Accuracy %0.4f ' % (auc, ap, recall, acc))
         if str(self.args.target_class) == 'AVG':
             if self.args.target_measure=='Precision' or self.args.target_measure=='prec':
                 eval_measure = precision
@@ -219,8 +244,8 @@ class Logger():
                     eval_measure = cl_f1
 
         for k in self.eval_k_list: #logging.info(self.set+' @%d tp %s,fn %s,fp %s' % (k, self.conf_mat_tp_at_k[k], self.conf_mat_fn_at_k[k], self.conf_mat_fp_at_k[k]))
-            precision, recall, f1 = self.calc_microavg_eval_measures(self.conf_mat_tp_at_k[k], self.conf_mat_fn_at_k[k], self.conf_mat_fp_at_k[k])
-            logging.info (self.set+' measures@%d microavg - precision %0.4f - recall %0.4f - f1 %0.4f ' % (k,precision,recall,f1))
+            # precision, recall, f1, auc, ap, acc = self.calc_microavg_eval_measures(self.conf_mat_tp_at_k[k], self.conf_mat_fn_at_k[k], self.conf_mat_fp_at_k[k], self.conf_mat_tn_at_k[k])
+            # logging.info (self.set+' measures@%d microavg - precision %0.4f - recall %0.4f - f1 %0.4f ' % (k,precision,recall,f1))
 
             for cl in range(self.num_classes):
                 cl_precision, cl_recall, cl_f1 = self.calc_eval_measures_per_class(self.conf_mat_tp_at_k[k], self.conf_mat_fn_at_k[k], self.conf_mat_fp_at_k[k], cl)
@@ -361,6 +386,7 @@ class Logger():
         conf_mat_per_class.true_positives = {}
         conf_mat_per_class.false_negatives = {}
         conf_mat_per_class.false_positives = {}
+        conf_mat_per_class.true_negatives = {}
 
         if predictions.size(0)<k:
             k=predictions.size(0)
@@ -380,25 +406,36 @@ class Logger():
             tp = hits.sum()
             fn = true_classes[cl_indices].size(0) - tp # This only if we want to consider the size at K -> hits.size(0) - tp
             fp = pos.sum() - tp
+            
+            # tn = ((true_classes[idx_preds_at_k][cl_indices] != cl) & (predicted_classes[cl_indices_at_k] != cl)).sum()
+            tn = (true_classes[cl_indices].size(0) - fn) - fp
 
             conf_mat_per_class.true_positives[cl] = tp
             conf_mat_per_class.false_negatives[cl] = fn
             conf_mat_per_class.false_positives[cl] = fp
+            conf_mat_per_class.true_negatives[cl] = tn
         return conf_mat_per_class
 
 
-    def calc_microavg_eval_measures(self, tp, fn, fp):
+    def calc_microavg_eval_measures(self, tp, fn, fp, tn):
         tp_sum = sum(tp.values()).item()
         fn_sum = sum(fn.values()).item()
         fp_sum = sum(fp.values()).item()
+        tn_sum = sum(tn.values()).item()
+        
+        TPR = tp_sum / (tp_sum + fn_sum)
+        FPR = fp_sum / (fp_sum + tn_sum)
+        auc = (TPR + FPR) / 2.0
 
         p = tp_sum*1.0 / (tp_sum+fp_sum)
         r = tp_sum*1.0 / (tp_sum+fn_sum)
+        acc = (tp_sum*1.0+tn_sum*1.0) / (tp_sum+fn_sum+fp_sum+tn_sum)
+        ap = p * r
         if (p+r)>0:
             f1 = 2.0 * (p*r) / (p+r)
         else:
             f1 = 0
-        return p, r, f1
+        return p, r, f1, auc, ap, acc
 
     def calc_eval_measures_per_class(self, tp, fn, fp, class_id):
         #ALDO

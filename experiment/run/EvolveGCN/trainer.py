@@ -62,35 +62,35 @@ class Trainer():
 		total_memory = 0
 
 		for e in range(self.args.num_epochs):
-			eval_train, nodes_embs, epoch_AUC, epoch_MP, epoch_RECALL, epoch_ACC, epoch_F1, epoch_time, memory_use = self.run_epoch(self.splitter.train, e, 'TRAIN', grad = True)
-			total_time += epoch_time
-			total_memory += memory_use
+			eval_train, nodes_embs, train_AUC, train_AP, train_RECALL, train_ACC, train_F1, train_time, train_memory_use = self.run_epoch(self.splitter.train, e, 'TRAIN', grad = True)
+			total_time += train_time
+			total_memory += train_memory_use
 			print('epoch: {}'.format(e))
-			print('\ttrain auc: {:.4f}, ap: {:.4f}, recall: {:.4f}, acc: {:.4f}, average time: {:.2f} s, memory usage: {:.2f} MB'.format(epoch_AUC, epoch_MP, epoch_RECALL, epoch_ACC, total_time/(e+1), total_memory/(e+1)))
+			print('\ttrain auc: {:.4f}, ap: {:.4f}, recall: {:.4f}, acc: {:.4f}, average time: {:.2f} s, memory usage: {:.2f} MB'.format(train_AUC, train_AP, train_RECALL, train_ACC, total_time/(e+1), total_memory/(e+1)))
    
 			if len(self.splitter.dev)>0 and e>self.args.eval_after_epochs:
-				eval_valid, nodes_embs, epoch_AUC, epoch_AP, epoch_RECALL, epoch_ACC, epoch_F1, epoch_time, memory_use = self.run_epoch(self.splitter.dev, e, 'VALID', grad = False)
-				print('epoch:{}, valid auc: {:.4f}, ap: {:.4f}, recall: {:.4f}, acc: {:.4f}'.format(e, epoch_AUC, epoch_MP, epoch_RECALL, epoch_ACC))
-				if epoch_AP>best_eval_valid:
-					best_eval_valid = epoch_AP
-					print ('### w'+str(self.args.rank)+') ep '+str(e)+' - Best valid AP:'+str(epoch_AP))
+				eval_valid, nodes_embs, val_AUC, val_AP, val_RECALL, val_ACC, val_F1, epoch_time, memory_use = self.run_epoch(self.splitter.dev, e, 'VALID', grad = False)
+				print('epoch:{}, valid auc: {:.4f}, ap: {:.4f}, recall: {:.4f}, acc: {:.4f}'.format(e, val_AUC, val_AP, val_RECALL, val_ACC))
+				if eval_valid>best_eval_valid:
+					best_eval_valid = eval_valid
+					print ('### w'+str(self.args.rank)+') ep '+str(e)+' - Best valid MAP:'+str(eval_valid))
 				else:
 					epochs_without_impr+=1
 					if epochs_without_impr>self.args.early_stop_patience:
 						print ('### w'+str(self.args.rank)+') ep '+str(e)+' - Early stop.')
-						eval_test, nodes_embs, epoch_AUC, epoch_AP, epoch_RECALL, epoch_ACC, epoch_F1, epoch_time, memory_use = self.run_epoch(self.splitter.test, e, 'TEST', grad = False)
-						print('test auc: {:.4f}, ap: {:.4f}, recall: {:.4f}, acc: {:.4f}, f1: {:.4f}'.format(epoch_AUC, epoch_MP, epoch_RECALL, epoch_ACC, epoch_F1))
+						eval_test, nodes_embs, test_AUC, test_AP, test_RECALL, test_ACC, test_F1, epoch_time, memory_use = self.run_epoch(self.splitter.test, e, 'TEST', grad = False)
+						print('test auc: {:.4f}, ap: {:.4f}, recall: {:.4f}, acc: {:.4f}, f1: {:.4f}'.format(test_AUC, test_AP, test_RECALL, test_ACC, test_F1))
 						break
 				
 
 			if len(self.splitter.test)>0 and eval_valid==best_eval_valid and e>self.args.eval_after_epochs:
-				eval_test, nodes_embs, epoch_AUC, epoch_AP, epoch_RECALL, epoch_ACC, epoch_F1, epoch_time, memory_use = self.run_epoch(self.splitter.test, e, 'TEST', grad = False)
+				eval_test, nodes_embs, test_AUC, test_AP, test_RECALL, test_ACC, test_F1, epoch_time, memory_use = self.run_epoch(self.splitter.test, e, 'TEST', grad = False)
 
 				if self.args.save_node_embeddings:
 					self.save_node_embs_csv(nodes_embs, self.splitter.train_idx, log_file+'_train_nodeembs.csv.gz')
 					self.save_node_embs_csv(nodes_embs, self.splitter.dev_idx, log_file+'_valid_nodeembs.csv.gz')
 					self.save_node_embs_csv(nodes_embs, self.splitter.test_idx, log_file+'_test_nodeembs.csv.gz')
-				print('test auc: {:.4f}, ap: {:.4f}, recall: {:.4f}, acc: {:.4f}, f1: {:.4f}'.format(epoch_AUC, epoch_MP, epoch_RECALL, epoch_ACC, epoch_F1))
+				print('test auc: {:.4f}, ap: {:.4f}, recall: {:.4f}, acc: {:.4f}, f1: {:.4f}'.format(test_AUC, test_AP, test_RECALL, test_ACC, test_F1))
 
 
 	def run_epoch(self, split, epoch, set_name, grad):
@@ -133,7 +133,7 @@ class Trainer():
 							  hist_ndFeats_list,
 							  mask_list)
 
-		predict_batch_size = 100000
+		predict_batch_size =  1000 # 100000
 		gather_predictions=[]
 		for i in range(1 +(node_indices.size(1)//predict_batch_size)):
 			cls_input = self.gather_node_embs(nodes_embs, node_indices[:, i*predict_batch_size:(i+1)*predict_batch_size])
