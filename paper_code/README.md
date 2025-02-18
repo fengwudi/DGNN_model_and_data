@@ -52,6 +52,7 @@
 [GraphNOTEARS](https://arxiv.org/abs/2211.17029) |https://github.com/googlebaba/GraphNOTEARS 
 [CDGP](https://dl.acm.org/doi/10.1145/3580305.3599281)  |https://github.com/AhaSokach/CDGP 
 [TIGER](https://arxiv.org/abs/2302.06057) |https://github.com/yzhang1918/www2023tiger 
+[TP-GNN](https://ieeexplore.ieee.org/document/10598033) | https://github.com/Jie-0828/TP-GNN
 
 | Framework | Code |
 | ----------- | ----------- |
@@ -62,3 +63,4 @@
 [DyGLib](https://arxiv.org/abs/2303.13047) |https://github.com/yule-BUAA/DyGLib
 [Zebra](https://dl.acm.org/doi/abs/10.14778/3583140.3583150) |https://github.com/LuckyLYM/Zebra
 [SPEED](https://arxiv.org/abs/2308.14129) |https://github.com/chenxi1228/SPEED
+[TGLite](https://dl.acm.org/doi/pdf/10.1145/3620665.3640414) | https://github.com/ADAPT-uiuc/tglite
