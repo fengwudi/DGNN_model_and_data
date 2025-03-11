@@ -20,8 +20,8 @@ experiment/run/TGAT/processed/*
 experiment/run/TGAT/res/*
 experiment/run/TGAT/__pycache__/*
 experiment/run/TGL/DATA/*
- experiment/run/TGL/models/*
-  experiment/run/TGL/res/
+experiment/run/TGL/models/*
+experiment/run/TGL/res/
 experiment/run/TGN/data/*
 experiment/run/TGN/res/*
 experiment/run/Roland/roland_public_data/*

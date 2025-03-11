@@ -1,5 +1,5 @@
 
-# The Link of DGNN Model and Framwork 
+# The Link of DGNN Models and Frameworks
 
 | Model | Code |
 | ----------- | ----------- |
@@ -53,6 +53,7 @@
 [CDGP](https://dl.acm.org/doi/10.1145/3580305.3599281)  |https://github.com/AhaSokach/CDGP 
 [TIGER](https://arxiv.org/abs/2302.06057) |https://github.com/yzhang1918/www2023tiger 
 [TP-GNN](https://ieeexplore.ieee.org/document/10598033) | https://github.com/Jie-0828/TP-GNN
+[SiGNN](https://www.sciencedirect.com/science/article/pii/S0031320324007775) | https://github.com/CharliedoD/SiGNN
 
 | Framework | Code |
 | ----------- | ----------- |

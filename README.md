@@ -1,6 +1,6 @@
-# DGNN Model/Framework and Datasets
+# DGNN Models, Frameworks and Datasets
 
-## 1 The Code Link of DGNN Model and Framwork
+## 1 The Code Link of DGNN Models and Frameworks
 You can find them at [paper_code](https://github.com/fengwudi/DGNN_model_and_data/tree/main/paper_code).
 
 ## 2 Collated Datasets
@@ -19,8 +19,8 @@ You can install the required conda environment for the experiment through [envir
 
  Run DistTGL/SPEED use `speed.yml`.
 
- Run DyGFormer/DyGLib/TGLite use `tglite.yml`
-.
+ Run DyGFormer/DyGLib/TGLite use `tglite.yml`.
+
 ### 3.2 Datasets
 
 We give the experiment datasets, please notice that you show process data at each model and framework

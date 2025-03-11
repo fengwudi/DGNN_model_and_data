@@ -23,13 +23,13 @@ FB-FORUM	|https://networkrepository.com/fb-forum.php	|TDGNN、CTDNE、HTGN、E-L
 Facebook	|http://socialnetworks.mpi-sws.org	|VGRNN、SIR-GN、DynGESN、TTGCN
 SBM|	✔|	EvolveGCN、DEFT、dyngraph2vec
 Elliptic	|https://www.kaggle.com/ellipticco/elliptic-data-set|	EvolveGCN、DEFT、PI-GNN、GNNExplainer
-Cora|	✔|	SGNN-GR、VGRNN、PIGNN
-Twitter|	✔|	TGN、CDGP、DyHATR
+Cora|	https://paperswithcode.com/dataset/cora |	SGNN-GR、VGRNN、PIGNN
+Twitter|	https://www.recsyschallenge.com/2020/|	TGN、CDGP、DyHATR
 AMiner	|https://www.aminer.cn/citation	|CDGP、RISD、SILD
 Brain|	✔|	DEFT、TIARA、STRIPE
 MAG	|https://s3.us-west-2.amazonaws.com/dgl-data/dataset/tgl/MAG/int_train.npz,https://s3.us-west-2.amazonaws.com/dgl-data/dataset/tgl/MAG/labels.csv,https://s3.us-west-2.amazonaws.com/dgl-data/dataset/tgl/MAG/int_full.npz,https://s3.us-west-2.amazonaws.com/dgl-data/dataset/tgl/MAG/ext_full.npz,https://s3.us-west-2.amazonaws.com/dgl-data/dataset/tgl/MAG/edges.csv,https://s3.us-west-2.amazonaws.com/dgl-data/dataset/tgl/MAG/node_features.pt|	RISD、DecoupledDGNN
 Reddit Hyperlink Network|	http://snap.stanford.edu/data/soc-RedditHyperlinks.html	|EvolveGCN、CLDG、SGNN-GR
-Citeseer	|✔|	SGNN-GR、PIGNN
+Citeseer	|https://paperswithcode.com/dataset/citeseer|	SGNN-GR、PIGNN
 Reddit-title	|✔	|WinGNN、Roland
 Tmall	|https://tianchi.aliyun.com/dataset/|	SpikeNet、M2DNE
 COLAB	|✔	|VGRNN、HTGN
