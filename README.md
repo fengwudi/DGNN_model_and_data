@@ -1,15 +1,15 @@
 # DGNN Models, Frameworks and Datasets
 
 ## 1 The Code Link of DGNN Models and Frameworks
-You can find them at [paper_code](https://github.com/fengwudi/DGNN_model_and_data/tree/main/paper_code).
+You can find them at [paper_code](./paper_code/README.md).
 
 ## 2 Collated Datasets
-We collected almost all the data sets mentioned in the paper and organized them in [datasets](https://github.com/fengwudi/DGNN_model_and_data/tree/main/datasets).
+We collected almost all the data sets mentioned in the paper and organized them in [datasets](./datasets/README.md).
 
 ## 3 Experiment of Our Paper
 
 ### 3.1 Environment
-You can install the required conda environment for the experiment through [environment](https://github.com/fengwudi/DGNN_model_and_data/tree/main/experiment/environment).
+You can install the required conda environment for the experiment through [environment](./experiment/environment).
 
  We run TGN/JODIE/DyREP/EvolveGCN/TGAT/APAN/CAW use `apan.yml`.
 
